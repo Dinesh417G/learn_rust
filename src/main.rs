@@ -1,6 +1,14 @@
-const DB_NAME: &str = "minidb";
-const MAX_KEY: usize = 1000;
+use minidb::{DB_NAME, MAX_KEY, can_add, show_banner};
+
 fn main() {
+    let key_len: u8 = 4;
+    // let temp:f64=23.5;
+    //   let  online:bool=true;
+    //   let  grade:char='A';
+    let entry: (f64, bool, char) = (23.5, true, 'A');
+    let (temp, online, grade) = entry;
+    let keys: [&str; 3] = ["temperature", "pressure", "level"];
+
     let port: u16 = 7878;
     let mut count = 0;
     count += 1;
@@ -11,10 +19,13 @@ fn main() {
     println!("{}", port);
     show_banner(host, p);
     println!("{}", can_add(count));
-}
-fn show_banner(host: &str, port: u16) {
-    println!("{} listening on {}:{}", DB_NAME, host, port);
-}
-fn can_add(count: usize) -> bool {
-    count < MAX_KEY
+    println!(
+        "the key.0={},the key.1={},the key.2={}",
+        keys[0], keys[1], keys[2]
+    );
+    println!("the key length is={}", keys.len());
+    println!(
+        "key_length {} ,temp {}, is_it_online {}, what_is_the_grade {}",
+        key_len, temp, online, grade
+    );
 }
