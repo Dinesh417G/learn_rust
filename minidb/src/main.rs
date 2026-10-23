@@ -47,6 +47,11 @@ fn main() {
     else {
         println!("nothing yet");
     }
+    let ok = "\u{2714} saved";
+    println!("{}",ok);
+println!("the length is {}",ok.len());
+    println!("the char is {}",ok.chars().last().unwrap());
+    println!("the count is {}",ok.chars().count());
     println!("{}",filled);
     println!("stauts={}", stauts);
     println!("the key length is={}", keys.len());

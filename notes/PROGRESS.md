@@ -4,7 +4,7 @@ The teacher updates this file. `[x]` = watched + exercise done, `[~]` = started.
 Chapter numbers = Ardan "Ultimate Rust Bundle" course player
 (full list: `D:\RustroverProjects\Rust_vedio\library\CURRICULUM.md`).
 
-**Now:** Block 1 · minidb task 6 (strings), step 3: `\u{2714}` unicode + `.len()` bytes vs `.chars().count()` (then step 4 multiline literal)
+**Now:** Block 1 · minidb task 6 (strings), step 4: help text as a real multiline literal (indent trap, then `\` continuation); then 1.3.9–1.3.10 Module 3 Review + Quiz
 **Next milestone:** M1 in-memory store (after Block 1)
 **DB spec:** unknown. The original 52-line paste was lost on 2026-10-15, so the plan
 below is a generic key-value database. When the spec arrives, save it as
@@ -162,3 +162,4 @@ bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
 - 2026-10-23 Repo pushed to github.com/Dinesh417G/learn_rust (public); minidb's own .git merged in, backup at `D:\RustroverProjects\_backup\minidb.git`.
 - 2026-10-23 Watched 1.3.6–1.3.7. minidb task 6 step 1 done: `.to_string()` first, then `let mut key = String::new(); key.push_str("Pressure");` + `if key != "" {..} else { "nothing yet" }`. Predicted the guard right; met `unused_mut` when push_str was commented out (nothing writes it). Needed the `if ___ != ""` fragment. Next: step 2 `\n` help text.
 - 2026-10-23 Step 2 done: `let help = "Commands:\n  set\n  get\n  delete";` (a `&str`, fixed text). Errors met: put help into `key` via push_str, spaces before `\n` (trailing) instead of after (indent) 3x, edit not saved (no `Compiling` line = unchanged file). Needed the `·` space diagram. Next: step 3 unicode.
+- 2026-10-23 Step 3 done: `let ok = "\u{2714} saved";` prints ✔; `ok.len()` = 9 (bytes: ✔ is 3 in UTF-8), `ok.chars().count()` = 7; found `ok.chars().last().unwrap()` = 'd' on their own. Errors met: `ok.char()` (E0599, it's `chars`), `ok.count()` on a &str (not an iterator), printing `ok.chars()` (E0277, Chars has no Display). Learned: chars() = conveyor, count() = counter, chain them. Next: step 4 multiline literal.
