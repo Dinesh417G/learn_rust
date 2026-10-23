@@ -4,7 +4,7 @@ The teacher updates this file. `[x]` = watched + exercise done, `[~]` = started.
 Chapter numbers = Ardan "Ultimate Rust Bundle" course player
 (full list: `D:\RustroverProjects\Rust_vedio\library\CURRICULUM.md`).
 
-**Now:** Block 1 · minidb task 6 (strings), step 4: help text as a real multiline literal (indent trap, then `\` continuation); then 1.3.9–1.3.10 Module 3 Review + Quiz
+**Now:** Block 1 · 1.3.10 Module 3 course quiz, then the 3-question practical quiz (types, control flow, strings)
 **Next milestone:** M1 in-memory store (after Block 1)
 **DB spec:** unknown. The original 52-line paste was lost on 2026-10-15, so the plan
 below is a generic key-value database. When the spec arrives, save it as
@@ -27,8 +27,8 @@ Exercises: `exercises/crash_course/<name>` (originals: `ardan/ultimate_rust_cras
 - [x] 1.3.3 Exercise D - Simple Types → done as minidb task 4 instead (2026-10-22)
 - [x] 1.3.4 Control Flow (watched 2026-10-23)
 - [x] 1.3.5 Exercise E - Control Flow → done as minidb task 5 instead (2026-10-23)
-- [ ] 1.3.6–1.3.7 Strings, String Literals
-- [ ] 1.3.8 Exercise F - Strings → `f_strings`
+- [x] 1.3.6–1.3.7 Strings, String Literals (2026-10-23)
+- [x] 1.3.8 Exercise F - Strings → done as minidb task 6 instead (2026-10-23)
 - [ ] 1.3.9–1.3.10 Module 3 Review + Quiz
 - [ ] 1.4.1 Ownership
 - [ ] 1.4.2 References & Borrowing
@@ -163,3 +163,4 @@ bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
 - 2026-10-23 Watched 1.3.6–1.3.7. minidb task 6 step 1 done: `.to_string()` first, then `let mut key = String::new(); key.push_str("Pressure");` + `if key != "" {..} else { "nothing yet" }`. Predicted the guard right; met `unused_mut` when push_str was commented out (nothing writes it). Needed the `if ___ != ""` fragment. Next: step 2 `\n` help text.
 - 2026-10-23 Step 2 done: `let help = "Commands:\n  set\n  get\n  delete";` (a `&str`, fixed text). Errors met: put help into `key` via push_str, spaces before `\n` (trailing) instead of after (indent) 3x, edit not saved (no `Compiling` line = unchanged file). Needed the `·` space diagram. Next: step 3 unicode.
 - 2026-10-23 Step 3 done: `let ok = "\u{2714} saved";` prints ✔; `ok.len()` = 9 (bytes: ✔ is 3 in UTF-8), `ok.chars().count()` = 7; found `ok.chars().last().unwrap()` = 'd' on their own. Errors met: `ok.char()` (E0599, it's `chars`), `ok.count()` on a &str (not an iterator), printing `ok.chars()` (E0277, Chars has no Display). Learned: chars() = conveyor, count() = counter, chain them. Next: step 4 multiline literal.
+- 2026-10-23 Step 4 skipped by choice: predicted right (code indent becomes part of a multiline literal) and asked to move on; `\` line continuation not practised. Task 6 complete. Next: Module 3 quiz.
