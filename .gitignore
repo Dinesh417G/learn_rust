@@ -1,0 +1,7 @@
+# Course repos: reference only, each cloned from its upstream
+# (github.com/CleanCut/* and github.com/thebracket/*). Update with git pull inside each.
+/ardan/
+
+target/
+.idea/
+.rust-drill/scratch/
