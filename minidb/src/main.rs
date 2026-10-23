@@ -39,6 +39,8 @@ fn main() {
 
     let mut key = String::new();
     key.push_str("Pressure");
+    let help ="Commands:\n  set\n  get\n  delete";
+    println!("{}", help);
     if key !=""{
         println!("the string is ={}", key);
     }
