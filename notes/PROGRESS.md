@@ -1,0 +1,161 @@
+# Rust learning progress
+
+The teacher updates this file. `[x]` = watched + exercise done, `[~]` = started.
+Chapter numbers = Ardan "Ultimate Rust Bundle" course player
+(full list: `D:\RustroverProjects\Rust_vedio\library\CURRICULUM.md`).
+
+**Now:** Block 1 · watch 1.3.6 Strings + 1.3.7 String Literals, then minidb task 6
+**Next milestone:** M1 in-memory store (after Block 1)
+**DB spec:** unknown. The original 52-line paste was lost on 2026-10-15, so the plan
+below is a generic key-value database. When the spec arrives, save it as
+`notes/db-spec.md` and re-tailor Blocks/milestones.
+
+## Block 1 · Language basics · Part 1 Crash Course → M1
+Exercises: `exercises/crash_course/<name>` (originals: `ardan/ultimate_rust_crash_course/exercise/`)
+
+- [x] 1.1.1–1.1.4 Introduction, Exercises Overview, Installation, Editor/IDE (known, skipped)
+- [x] 1.1.5–1.1.6 Module 1 Review + Quiz
+- [x] 1.2.1 Cargo (video skipped; covered by practical quiz 2026-10-22: package name = library name)
+- [x] 1.2.2–1.2.4 Variables, Scope, Memory Safety (all watched 2026-10-19)
+- [x] 1.2.5 Exercise A - Variables → done as minidb task 1 instead (2026-10-20)
+- [x] 1.2.6 Functions (2026-10-20)
+- [x] 1.2.7 Exercise B - Functions → done as minidb task 2 instead (2026-10-20)
+- [x] 1.2.8 Module System (re-watched 2026-10-22)
+- [x] 1.2.9 Exercise C - Module System → done as minidb task 3 instead (2026-10-22)
+- [x] 1.2.10–1.2.11 Module 2 Review + Quiz (PDF skipped by choice, course quiz done 2026-10-22)
+- [x] 1.3.1–1.3.2 Scalar Types, Compound Types (2026-10-22)
+- [x] 1.3.3 Exercise D - Simple Types → done as minidb task 4 instead (2026-10-22)
+- [x] 1.3.4 Control Flow (watched 2026-10-23)
+- [x] 1.3.5 Exercise E - Control Flow → done as minidb task 5 instead (2026-10-23)
+- [ ] 1.3.6–1.3.7 Strings, String Literals
+- [ ] 1.3.8 Exercise F - Strings → `f_strings`
+- [ ] 1.3.9–1.3.10 Module 3 Review + Quiz
+- [ ] 1.4.1 Ownership
+- [ ] 1.4.2 References & Borrowing
+- [ ] 1.4.3 Exercise G - Ownership & References → `g_ownership_references`
+- [ ] 1.4.4–1.4.5 Module 4 Review + Quiz
+- [ ] 1.5.1 Structs
+- [ ] 1.5.2 Exercise H - Structs → `h_structs`
+- [ ] 1.5.3 Traits
+- [ ] 1.5.4 Exercise I - Traits → `i_traits`
+- [ ] 1.5.5 Collections
+- [ ] 1.5.6 Exercise J - Collections → `j_collections`
+- [ ] 1.5.7 Enums
+- [ ] 1.5.8 Exercise K - Enums → `k_enums`
+- [ ] 1.5.9–1.5.10 Module 5 Review + Quiz
+- [ ] 1.6.1–1.6.2 Full Final Review + Final Exam
+- [ ] (optional) `z_final_project`
+- [ ] **M1** minidb: in-memory `set/get/delete/list` with `enum Value` + `HashMap<String, Value>`
+
+## Block 2 · The course builds a mini database · Part 2 §1 → M2
+Code-along projects go in `exercises/foundations/`.
+
+- [ ] 2.1.1–2.1.4 Introduction, Setup & Update Rust, Setup Dev Environment, IDE Configuration
+- [ ] 2.1.5 Rust Fundamentals (29 min)
+- [ ] 2.1.6 Console Text Input
+- [ ] 2.1.7 Create a Library
+- [ ] 2.1.8 World's Simplest Login System
+- [ ] 2.1.9–2.1.12 Enumerations, Structures, Vectors, HashMaps
+- [ ] 2.1.13 Serialization/Deserialization
+- [ ] 2.1.14 Hashing Passwords
+- [ ] 2.1.15 Start a CLI App (41 min)
+- [ ] 2.1.16–2.1.17 Module 1 Review + Quiz
+- [ ] **M2** minidb: command prompt + CLI, data saved to `db.json`, reloaded at start
+
+## Block 3 · Clean code · Part 5 §2 (Ultimate Rust 2) → M3
+Exercises: `exercises/ur2/<name>` (originals: `ardan/ultimate_rust2/exercise/`)
+
+- [ ] 5.1.1–5.1.2 Introduction, Exercises Overview
+- [ ] 5.2.1–5.2.2 Idiomatic Code + Exercise → `idiomatic`
+- [ ] 5.2.3–5.2.4 Documentation + Exercise → `docs`
+- [ ] 5.2.7–5.2.9 Iterators, Closures + Exercise → `closures_iterators`
+- [ ] 5.2.10–5.2.11 Common Traits + Exercise → `traits`
+- [ ] 5.2.12–5.2.14 Creating Errors, Handling Errors + Exercise → `errors`
+- [ ] 5.2.15–5.2.18 Unit Tests, Integration Tests, Benchmarks + Exercise → `testing`
+- [ ] 5.2.19–5.2.20 Logging + Exercise → `logging`
+- [ ] **M3** minidb: `DbError` enum, no `unwrap()`, a test for every command
+
+## Block 4 · On-disk format (the real database core) → M4
+- [ ] 2.4.4 The Drop Trait & RAII
+- [ ] 2.4.12 Packing, Reordering & Mangling
+- [ ] 2.4.13 From Bytes to Types
+- [ ] 2.5.1 Introduction & Planning Our Project
+- [ ] 2.5.2 Shared Data Structures
+- [ ] 2.5.9 Let's Use Less Bandwidth
+- [ ] 2.3.8 File I/O
+- [ ] **M4** minidb: append-only log file; each SET/DEL = one framed record (magic, version, length, payload, CRC32); re-read at start; stop at a bad CRC
+
+## Block 5 · Concurrency → M5
+- [ ] 2.2.1–2.2.8 Threads: overview → scoped threads
+- [ ] 2.2.9 Sharing Data with Atomics
+- [ ] 2.2.10 Sharing Data with Mutexes
+- [ ] 2.2.11 Read/Write Locks
+- [ ] 2.2.12 Deadlocks, Panics and Poisoning
+- [ ] 2.2.15–2.2.17 Channels, Worker Threads, Thread Pool
+- [ ] 2.4.5 Reference Counting
+- [ ] 2.4.6 Lifetimes
+- [ ] 2.4.7–2.4.8 Traits, Generics
+- [ ] (short version) 5.2.21–5.2.23 Multithreading, Channels + Exercise → `ur2/threads_channels`
+- [ ] **M5** minidb: `Arc<RwLock<Db>>`, `Storage` trait, one writer thread owns the log file
+
+## Block 6 · Network server → M6
+- [ ] 2.3.1–2.3.5 Async Overview, Hello Async/Await, Tokio, Tokio Futures, Blocking Tasks
+- [ ] 2.3.6 Unit Testing Tokio
+- [ ] 2.3.7 Handling Errors (42 min)
+- [ ] 2.3.9 Basic Network I/O
+- [ ] 2.3.10–2.3.12 Async Channels, Shared State, Selecting Futures
+- [ ] 2.3.14 Tokio Tracing
+- [ ] 2.5.3–2.5.5 Collection Daemon Mk 1, Collection Server Mk 1, Error Handling in the Collector
+- [ ] 3.1.1 Bi-Directional Communication
+- [ ] 3.1.2 Sending Commands & Prevent Unbounded Growth
+- [ ] 7.1.1 Webinar: Introducing Rust into your Company Ecosystem (see `ardan/ArdanLabs_RustInYourEnterprise/tcp_server`)
+- [ ] **M6** minidb: TCP server + CLI client; Ctrl-C saves to disk, then exits
+
+## Block 7 · HTTP API + operations (optional) → M7
+- [ ] 2.3.16 Axum
+- [ ] 6.1.1, 6.2.1–6.2.16 REST service: minimal server → error handling with IntoResponse
+- [ ] 6.2.19–6.2.21 Header auth + middleware
+- [ ] 6.3.1–6.3.4 Tracing, Timing Spans
+- [ ] 6.5.1–6.5.5 Configuration (.env, config crate, Clap)
+- [ ] 6.7.1–6.7.4 WebSockets
+- [ ] **M7** minidb: GET/PUT/DELETE `/kv/<key>`, token auth, `--data-dir` / `--port`
+
+## Block 8 · Compare with a real DB + speed → M8
+- [ ] 2.3.15 Working with Databases (sqlx + SQLite)
+- [ ] 3.1.3–3.1.5 Giving the Collector a Diet, Optimizing File Reading, Adapting Files In Flight
+- [ ] 2.4.9–2.4.11 Iterators, Linked Lists, Allocators & Arenas
+- [ ] 2.2.20–2.2.21 Rayon
+- [ ] 7.5.1 Webinar: Debugging & Optimizing Rust
+- [ ] **M8** minidb: benchmark against SQLite; one speed-up proven with numbers
+
+Any time: Part 4 Best Practices (start with 4.1.1 fmt and 4.1.2 clippy).
+Skipped for the DB: 5.3–5.5 (game engine), 2.2.13–2.2.14, 2.2.18–2.2.19, 2.3.13, 2.3.17,
+2.4.1–2.4.3, 2.4.14, 6.6 (gRPC), 6.8–6.9.
+
+## Tools (installed/checked 2026-10-15)
+Rust 1.96 stable + clippy + rustfmt, sqlx-cli, cargo-deny, cargo-audit, cargo-outdated,
+bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
+`rustup update`; that is done during lesson 2.1.2 (it updates Rust for all projects).
+
+## Log
+- 2026-10-15 Setup: folders, exercise copies, tools, teacher mode, boot launcher.
+- 2026-10-16 Skipped 1.1.1–1.1.4 (student already knows it). Next: Module 1 quiz.
+- 2026-10-16 Module 1 quiz passed (fixed: cargo run = build + run; both use debug profile, --release for optimized).
+- 2026-10-16 Built focus coach + phone push + Pixel Instagram block (rust_learn). Opened 2.1 Cargo 3 s, watched ~2 min of 2.2 Variables; Cargo skip-quiz unanswered. Next: the quiz.
+- 2026-10-16 18:56 Break 2h (other application). Cargo skip-quiz asked, unanswered. Next: answer it.
+- 2026-10-19 Watched 1.2.2 Variables. Asked where variables show up in minidb; got samples (const, let, mut, shadowing, type annotation). Next: 1.2.3-1.2.4.
+- 2026-10-19 Watched 1.2.3 Scope + 1.2.4 Memory Safety. Next: Exercise A.
+- 2026-10-19 Student chose minidb over Exercise A. `cargo init` in minidb done (hello world runs). Task 1 given (const DB_NAME/MAX_KEYS, port: u16, mut key_count, tuple unpack, println). Due tomorrow.
+- 2026-10-20 Task 1 re-given; not started. Student on another task all day (coach paused until 18:00). Next: task 1.
+- 2026-10-20 minidb task 1 done: const DB_NAME/MAX_KEY, port: u16, mut count, tuple unpack (host, p), println. Errors met: CODESYS-style `:`/`:=`, `&STR` case, unquoted text (`minidb`, `127.0.0.1` read as float), E0384 without mut. Next: 1.2.6 Functions.
+- 2026-10-20 Watched 1.2.6. minidb task 2 done: show_banner(host: &str, port: u16), can_add(count: usize) -> bool as tail expression; saw E0308 when adding `;`. Learned: const is global (no need to pass), return value must be used by caller. clippy clean. Next: 1.2.8 Module System.
+- 2026-10-21 08:03 Morning check-in; 1.2.8 given. Student studies in the evening, coach paused until 18:00. Next: 1.2.8 Module System, then minidb task 3.
+- 2026-10-21 22:08 Evening: 1.2.8 opened (coach saw lesson-2-8, lesson 24m today) but student says it did not sink in, tired. 4 pauses 19:12-20:11 (other task). Next: re-watch 1.2.8, then minidb task 3.
+- 2026-10-22 Re-watched 1.2.8. minidb task 3 done: src/lib.rs with pub const DB_NAME/MAX_KEY + pub fn can_add/show_banner; main.rs `use minidb::{...}`. Asked if it's `cargo new --lib` (no: same package, Cargo auto-finds src/lib.rs). Run same output, clippy clean. Next: 1.2.10–1.2.11 Module 2 Review + Quiz.
+- 2026-10-22 Task 3b: asked about glob/qualified imports and mod vs use. Created src/config.rs (consts), `mod config;` + `pub use config::{MAX_KEY, DB_NAME};` re-export in lib.rs, main.rs unchanged. Met E0425 (needs path/use) and E0603 (private use shortcut); needed the `pub use` fragment. Open: rename Config.rs -> config.rs, cargo fmt. Next: 1.2.10 review PDF + 1.2.11 quiz, then 3-question module quiz (incl. Cargo).
+- 2026-10-22 Module 2 done. Course quiz taken (score not given); review PDF skipped (student learns by doing, not reading). Practical quiz 3/3: rename package -> E0432 (lib name = Cargo.toml name, not folder); private `use` -> lib ok, main E0603; no `mod` -> file ignored. Next: 1.3.1-1.3.2.
+- 2026-10-22 Watched 1.3.1-1.3.2. minidb task 4 done: u8/f64/bool/char vars, typed tuple `entry: (f64, bool, char)` + destructure + `.0/.1/.2`, array `keys: [&str; 3]`, `keys.len()`, u8 = 300 -> `literal out of range` (0..=255). Errors met: `["A"]` for char (needs 'A'), unpack backwards `let entry = (temp, ..)`, C-style `let keys[]`, missing `:` before type, `key_len(keys)` / `keys_len()` (CODESYS LEN() habit; Rust = `keys.len()`), printed key_len instead of keys.len(). Shadowed key_len by accident (unused warning). Next: 1.3.4 Control Flow.
+- 2026-10-23 Watched 1.3.4. minidb task 5 steps 1-2 done: `for x in keys.iter()` prints each key; `for y in 0..keys.len()` with `keys[y]`. Errors met: `{}` with no value (+ unused `x`), `x.len()` = letter count not index (11/8/5), CODESYS `if count=3;` (needs `==` + `{}`), `loop` with no `break` inside -> unreachable, nested loops -> 9 lines, `y,y` instead of `y, keys[y]`; learned slots fill left to right. Break 09:14-10:30. Next: step 3 if-expression.
+- 2026-10-23 Evening: step 3 done: `let stauts = if online { "online" } else { "ofline" };` prints `online`. Errors met: ran cargo from `learn_rust\` (no Cargo.toml; use `--manifest-path minidb/Cargo.toml`), `if { online }` (missing condition), `if online { true } else { false }` (= copy of the bool), E0308 bool vs &str branches. Typos `stauts`/`ofline` left. Clippy: needless_range_loop on the step-2 index loop (kept on purpose). Next: step 4 `loop` + `break count`.
+- 2026-10-23 Step 4 done: `let filled = loop { slots += 1; if slots == 100 { break slots; } };` prints 100 (predicted 100, right). Errors met: bare `break` -> `filled` is `()` + unused warning; E0425 printing `filled` inside its own loop (not assigned until `};`). Next: step 5 break it.
+- 2026-10-23 Step 5 done, task 5 complete. `;` after `}` -> E0317 (if without else = `()`) + orphan `else`; `"online";` inside branch -> E0308 `()` vs `&str` ("consider removing this semicolon"). Learned: last line without `;` = the value. Reverted, builds. Next: 1.3.6–1.3.7 Strings.

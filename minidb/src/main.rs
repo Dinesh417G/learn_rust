@@ -19,10 +19,25 @@ fn main() {
     println!("{}", port);
     show_banner(host, p);
     println!("{}", can_add(count));
-    println!(
-        "the key.0={},the key.1={},the key.2={}",
-        keys[0], keys[1], keys[2]
-    );
+    for x in keys.iter() {
+
+        println!("the keys ={}", x);
+    }
+    for y in 0..keys.len() {
+        println!("the keys{}={}", keys[y],y);
+    }
+    let stauts = if  online { "online"} else { "ofline" };
+    let mut slots=0;
+    let filled =loop{
+        slots+=1;
+        println!("slots={}", slots);
+        if slots==100{
+            break slots;
+        }
+
+    };
+    println!("{}",filled);
+    println!("stauts={}", stauts);
     println!("the key length is={}", keys.len());
     println!(
         "key_length {} ,temp {}, is_it_online {}, what_is_the_grade {}",
