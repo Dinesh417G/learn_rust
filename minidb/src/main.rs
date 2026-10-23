@@ -31,11 +31,20 @@ fn main() {
     let filled =loop{
         slots+=1;
         println!("slots={}", slots);
-        if slots==100{
+        if slots==2{
             break slots;
         }
 
     };
+
+    let mut key = String::new();
+    key.push_str("Pressure");
+    if key !=""{
+        println!("the string is ={}", key);
+    }
+    else {
+        println!("nothing yet");
+    }
     println!("{}",filled);
     println!("stauts={}", stauts);
     println!("the key length is={}", keys.len());

@@ -4,7 +4,7 @@ The teacher updates this file. `[x]` = watched + exercise done, `[~]` = started.
 Chapter numbers = Ardan "Ultimate Rust Bundle" course player
 (full list: `D:\RustroverProjects\Rust_vedio\library\CURRICULUM.md`).
 
-**Now:** Block 1 · watch 1.3.6 Strings + 1.3.7 String Literals, then minidb task 6
+**Now:** Block 1 · minidb task 6 (strings), step 2: `\n` help text (then step 3 `\u{..}` unicode, step 4 multiline literal)
 **Next milestone:** M1 in-memory store (after Block 1)
 **DB spec:** unknown. The original 52-line paste was lost on 2026-10-15, so the plan
 below is a generic key-value database. When the spec arrives, save it as
@@ -159,3 +159,5 @@ bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
 - 2026-10-23 Evening: step 3 done: `let stauts = if online { "online" } else { "ofline" };` prints `online`. Errors met: ran cargo from `learn_rust\` (no Cargo.toml; use `--manifest-path minidb/Cargo.toml`), `if { online }` (missing condition), `if online { true } else { false }` (= copy of the bool), E0308 bool vs &str branches. Typos `stauts`/`ofline` left. Clippy: needless_range_loop on the step-2 index loop (kept on purpose). Next: step 4 `loop` + `break count`.
 - 2026-10-23 Step 4 done: `let filled = loop { slots += 1; if slots == 100 { break slots; } };` prints 100 (predicted 100, right). Errors met: bare `break` -> `filled` is `()` + unused warning; E0425 printing `filled` inside its own loop (not assigned until `};`). Next: step 5 break it.
 - 2026-10-23 Step 5 done, task 5 complete. `;` after `}` -> E0317 (if without else = `()`) + orphan `else`; `"online";` inside branch -> E0308 `()` vs `&str` ("consider removing this semicolon"). Learned: last line without `;` = the value. Reverted, builds. Next: 1.3.6–1.3.7 Strings.
+- 2026-10-23 Repo pushed to github.com/Dinesh417G/learn_rust (public); minidb's own .git merged in, backup at `D:\RustroverProjects\_backup\minidb.git`.
+- 2026-10-23 Watched 1.3.6–1.3.7. minidb task 6 step 1 done: `.to_string()` first, then `let mut key = String::new(); key.push_str("Pressure");` + `if key != "" {..} else { "nothing yet" }`. Predicted the guard right; met `unused_mut` when push_str was commented out (nothing writes it). Needed the `if ___ != ""` fragment. Next: step 2 `\n` help text.
