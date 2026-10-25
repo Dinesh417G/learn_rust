@@ -4,7 +4,7 @@ The teacher updates this file. `[x]` = watched + exercise done, `[~]` = started.
 Chapter numbers = Ardan "Ultimate Rust Bundle" course player
 (full list: `D:\RustroverProjects\Rust_vedio\library\CURRICULUM.md`).
 
-**Now:** Block 1 · 1.3.10 Module 3 course quiz, then the 3-question practical quiz (types, control flow, strings)
+**Now:** Block 1 · Module 3 practical quiz (types, control flow, strings), then 1.4.1 Ownership
 **Next milestone:** M1 in-memory store (after Block 1)
 **DB spec:** unknown. The original 52-line paste was lost on 2026-10-15, so the plan
 below is a generic key-value database. When the spec arrives, save it as
@@ -29,7 +29,7 @@ Exercises: `exercises/crash_course/<name>` (originals: `ardan/ultimate_rust_cras
 - [x] 1.3.5 Exercise E - Control Flow → done as minidb task 5 instead (2026-10-23)
 - [x] 1.3.6–1.3.7 Strings, String Literals (2026-10-23)
 - [x] 1.3.8 Exercise F - Strings → done as minidb task 6 instead (2026-10-23)
-- [ ] 1.3.9–1.3.10 Module 3 Review + Quiz
+- [x] 1.3.9–1.3.10 Module 3 Review + Quiz (PDF skipped by choice, course quiz done 2026-10-25)
 - [ ] 1.4.1 Ownership
 - [ ] 1.4.2 References & Borrowing
 - [ ] 1.4.3 Exercise G - Ownership & References → `g_ownership_references`
@@ -164,3 +164,4 @@ bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
 - 2026-10-23 Step 2 done: `let help = "Commands:\n  set\n  get\n  delete";` (a `&str`, fixed text). Errors met: put help into `key` via push_str, spaces before `\n` (trailing) instead of after (indent) 3x, edit not saved (no `Compiling` line = unchanged file). Needed the `·` space diagram. Next: step 3 unicode.
 - 2026-10-23 Step 3 done: `let ok = "\u{2714} saved";` prints ✔; `ok.len()` = 9 (bytes: ✔ is 3 in UTF-8), `ok.chars().count()` = 7; found `ok.chars().last().unwrap()` = 'd' on their own. Errors met: `ok.char()` (E0599, it's `chars`), `ok.count()` on a &str (not an iterator), printing `ok.chars()` (E0277, Chars has no Display). Learned: chars() = conveyor, count() = counter, chain them. Next: step 4 multiline literal.
 - 2026-10-23 Step 4 skipped by choice: predicted right (code indent becomes part of a multiline literal) and asked to move on; `\` line continuation not practised. Task 6 complete. Next: Module 3 quiz.
+- 2026-10-25 1.3.10 Module 3 course quiz done (score not given), review PDF skipped. Next: 3-question practical quiz.

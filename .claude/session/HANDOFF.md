@@ -32,18 +32,23 @@ _Not yet written._
 <!-- AUTO:BEGIN - rewritten by the dtree hooks. Edit outside this block. -->
 ## Machine snapshot
 
-- Refreshed: 2026-10-22 17:55:24 +05:30 (trigger: SessionEnd)
-- Branch: (not a git repo)    HEAD: 
-- Budget band: **normal** - 5h at 18% -> normal.
-- 5h used: 18%    7-day used: 46%
+- Refreshed: 2026-10-25 13:11:45 +05:30 (trigger: SessionEnd)
+- Branch: main    HEAD: da31931
+- Budget band: **normal** - 5h at 4% -> normal.
+- 5h used: 4%    7-day used: 2%
 
 ### Working tree
 ```
-(clean)
+M .claude/session/HANDOFF.md
+ M minidb/src/main.rs
 ```
 
 ### Last 5 commits
 ```
-(no commits)
+da31931 docs: task 6 strings complete, Module 3 quiz next
+08aa21b feat(minidb): task 6 step 3, unicode escape, bytes vs chars
+e872803 feat(minidb): task 6 step 2, help text with newline escapes
+aa8a6cd feat(minidb): task 6 step 1, owned String key with empty guard
+905dcec feat: add notes, exercises, tools; minidb task 5 control flow
 ```
 <!-- AUTO:END -->
