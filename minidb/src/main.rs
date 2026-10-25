@@ -70,3 +70,4 @@ fn main() {
 fn save(k:&str) {
     println!("{}", k);
 }
+fn mark()
