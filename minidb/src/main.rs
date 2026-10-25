@@ -42,7 +42,7 @@ fn main() {
 
     key.push_str("Pressure");
     let stored = key.clone();
-    save(stored);
+    save(&stored);
     key.push_str("!");
     println!("key={} stored={}", key, stored);
     let help = "Commands:\n  set\n  get\n  delete";
@@ -66,6 +66,6 @@ fn main() {
         key_len, temp, online, grade
     );
 }
-fn save(k:String) {
+fn save(k:&String) {
     println!("{}", k);
 }
