@@ -45,6 +45,7 @@ fn main() {
     save(&stored);
     save("level");
     key.push_str("!");
+    mark(&mut key);
     println!("key={} stored={}", key, stored);
     let help = "Commands:\n  set\n  get\n  delete";
     println!("{}", help);
@@ -70,4 +71,6 @@ fn main() {
 fn save(k:&str) {
     println!("{}", k);
 }
-fn mark()
+fn mark(k:&mut String){
+k.push('*');
+}

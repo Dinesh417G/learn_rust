@@ -4,7 +4,7 @@ The teacher updates this file. `[x]` = watched + exercise done, `[~]` = started.
 Chapter numbers = Ardan "Ultimate Rust Bundle" course player
 (full list: `D:\RustroverProjects\Rust_vedio\library\CURRICULUM.md`).
 
-**Now:** Block 1 · minidb task 8 step 3: write `fn mark(k: &mut String)` adding "*", call `mark(&mut key)`, predict output (Pressure!*)
+**Now:** Block 1 · minidb task 8 step 4: two `&mut key` at once (`let a = &mut key; let b = &mut key;` then use both), predict, see E0499
 **Next milestone:** M1 in-memory store (after Block 1)
 **DB spec:** unknown. The original 52-line paste was lost on 2026-10-15, so the plan
 below is a generic key-value database. When the spec arrives, save it as
@@ -176,3 +176,4 @@ bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
 - 2026-10-25 Watched 1.4.2 (coach saw lesson-4-2). Task 8 step 1 done unaided: `save(&stored)` + `fn save(k: &String)` -> builds, stored still usable, main still owns/frees it. Ran before predicting (again). Next: step 2 `&str` param accepts literals too.
 - 2026-10-25 Step 2 done: `save("level")` with `k: &String` -> E0308 expected &String found &'static str (predicted right). Re-explained string literal (baked into exe, `&str`, like VAR CONSTANT). Changed to `fn save(k: &str)`: both `save(&stored)` and `save("level")` work (&String -> &str auto, not reverse). Next: step 3 `&mut`.
 - 2026-10-25 Session ended ~19:30 by power cut. Step 3 (`&mut` fn mark) given, not started. Next: step 3, then step 4 two `&mut` at once (E0499), then 1.4.4-1.4.5 Module 4 quiz.
+- 2026-10-25 Step 3 done: `fn mark(k: &mut String) { k.push('*'); }` + `mark(&mut key);` -> `key=Pressure!* stored=Pressure`. Errors met: missing `;` after `mark(&mut key)`, `*k.push('!')` -> E0614 (`*` applies to push's `()` result; methods auto-deref through `&mut`, no `*` needed); read "add *" as the deref operator. Ran before predicting (3rd time today). Next: step 4 E0499.
