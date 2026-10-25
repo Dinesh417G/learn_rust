@@ -8,9 +8,9 @@ fn main() {
     let entry: (f64, bool, char) = (23.5, true, 'A');
     let (temp, online, grade) = entry;
     let keys: [&str; 3] = ["temperature", "pressure", "level"];
-    let total = key_len * 100;
-    println!("{}",total);
     let port: u16 = 7878;
+    let total = key_len as u16+ port ;
+    println!("{}",total);
     let mut count = 0;
     count += 1;
     let (host, p) = ("127.0.0.1", port);
