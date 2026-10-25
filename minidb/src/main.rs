@@ -12,6 +12,9 @@ impl Entery{
     fn show(& self){
         println!("The key is{} and the value is{}",self.key,self.value)
     }
+    fn  set(&mut self,value:f64){
+        self.value = value;
+    }
 }
 
 fn main() {
@@ -19,7 +22,9 @@ fn main() {
         key:"Pressure".to_string(),
         value:2.5,
     };
-    let e2 = Entery::new("din",2.55);
+    let mut e2 = Entery::new("din",2.55);
+    e2.show();
+    e2.set(9.9);
     e2.show();
     println!("{:?}", e2);
     println!("Entery {}={}",e.key,e.value);
