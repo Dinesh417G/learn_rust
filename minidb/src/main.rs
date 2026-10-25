@@ -1,5 +1,6 @@
-use minidb::{DB_NAME, MAX_KEY, can_add, show_banner};
 
+use minidb::{DB_NAME, MAX_KEY, can_add, show_banner};
+#[derive(Debug)]
 struct Entery{
     key: String,
     value:f64,
@@ -11,6 +12,7 @@ fn main() {
         value:2.5,
     };
     println!("Entery {}={}",e.key,e.value);
+    println!("{:?}", e);
     let key_len: u8 = 4;
     let k2 = key_len;
     println!("key_len={} k2={}", key_len, k2);
