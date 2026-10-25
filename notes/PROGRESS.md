@@ -4,7 +4,7 @@ The teacher updates this file. `[x]` = watched + exercise done, `[~]` = started.
 Chapter numbers = Ardan "Ultimate Rust Bundle" course player
 (full list: `D:\RustroverProjects\Rust_vedio\library\CURRICULUM.md`).
 
-**Now:** Block 1 · 1.4.1 Ownership (6:07), then 1.4.2 References & Borrowing (5:22)
+**Now:** Block 1 · 1.4.2 References & Borrowing (5:22), then fix minidb `save(stored)` E0382 with a borrow
 **Next milestone:** M1 in-memory store (after Block 1)
 **DB spec:** unknown. The original 52-line paste was lost on 2026-10-15, so the plan
 below is a generic key-value database. When the spec arrives, save it as
@@ -30,7 +30,7 @@ Exercises: `exercises/crash_course/<name>` (originals: `ardan/ultimate_rust_cras
 - [x] 1.3.6–1.3.7 Strings, String Literals (2026-10-23)
 - [x] 1.3.8 Exercise F - Strings → done as minidb task 6 instead (2026-10-23)
 - [x] 1.3.9–1.3.10 Module 3 Review + Quiz (PDF skipped by choice, course quiz done 2026-10-25)
-- [ ] 1.4.1 Ownership
+- [x] 1.4.1 Ownership (2026-10-25)
 - [ ] 1.4.2 References & Borrowing
 - [ ] 1.4.3 Exercise G - Ownership & References → `g_ownership_references`
 - [ ] 1.4.4–1.4.5 Module 4 Review + Quiz
@@ -172,3 +172,4 @@ bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
 - 2026-10-25 Watched 1.4.1 Ownership (coach saw lesson-4-1, 10m). minidb task 7 step 1-2 done: `let stored = key;` -> E0382 borrow of moved value (predicted error right, but said key becomes "empty"; it is gone, any use refused). Thought receiving a move needs `mut` (no: mut only on whoever changes it); `stored.push_str` -> E0596 + unused_mut on key. Final order: `let mut key` -> `key.push_str` -> `let stored = key;` -> read `stored`; prints Pressure. Next: step 3 `.clone()`.
 - 2026-10-25 Step 3 done: `let stored = key.clone();` + `key.push_str("!")` -> `key=Pressure! stored=Pressure` (predicted exactly right). Typo `key.clone` -> E0615 method, not a field. Learned: clone = separate copy, two owners. Next: step 4 Copy types (u8).
 - 2026-10-25 Step 4 done: `let k2 = key_len;` (u8) -> both print 4. Predicted wrong (thought key_len moves like key): u8 is Copy, String moves (heap pointer, one owner frees it). Next: step 5 passing a String into a fn moves it.
+- 2026-10-25 Step 5 done, task 7 complete: `fn save(k: String)` + `save(stored);` -> E0382 (predicted right): passing a String into a fn moves it, dropped at save's `}`. Met "unclosed delimiter" (missing `}`). Compiler note: borrow instead if owning isn't necessary. Error LEFT IN PLACE on purpose: fix it with `&` after 1.4.2. Exercise G replaced by task 7.
