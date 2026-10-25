@@ -4,7 +4,7 @@ The teacher updates this file. `[x]` = watched + exercise done, `[~]` = started.
 Chapter numbers = Ardan "Ultimate Rust Bundle" course player
 (full list: `D:\RustroverProjects\Rust_vedio\library\CURRICULUM.md`).
 
-**Now:** Block 1 · Module 3 practical quiz (types, control flow, strings), then 1.4.1 Ownership
+**Now:** Block 1 · 1.4.1 Ownership (6:07), then 1.4.2 References & Borrowing (5:22)
 **Next milestone:** M1 in-memory store (after Block 1)
 **DB spec:** unknown. The original 52-line paste was lost on 2026-10-15, so the plan
 below is a generic key-value database. When the spec arrives, save it as
@@ -168,3 +168,4 @@ bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
 - 2026-10-25 Practical quiz Q1 given (`let total = key_len + port;`, u8 + u16, predict first) but unanswered: edit unsaved, session ended. Old `key_len * 100` lines 11-12 left uncommented. Next: Q1 prediction, then Q2-Q3.
 - 2026-10-25 Practical quiz Q1 done (ran before predicting): `key_len + port` -> E0308 + E0277 (no u8 + u16). Fixed first by changing key_len to u16; then with `as`: wrote `port as u8` -> 202 (7878 = 0x1EC6, low byte 0xC6 = 198, silent truncation, like WORD_TO_BYTE), then `key_len as u16 + port` -> 7882. Learned: widen small->big, `as` down chops. Next: Q2 control flow (1..=len off-by-one).
 - 2026-10-25 Q2 done: predicted `1..=keys.len()` prints 1 and 2 only (half right); it printed pressure=1, level=2 then panicked at runtime (index out of bounds: len 3, index 3). Learned `..=` includes the end, compiles fine, checked while running. Revert slip: wrote `1..keys.len()` (skipped temperature), then fixed to `0..`. Next: Q3 strings (`ok[0]`).
+- 2026-10-25 Q3 done: predicted `ok[0]` won't build (right, no reason given) -> E0277 str cannot be indexed (byte 0 vs char 0 ambiguous). Fix took 3 tries: `ok[0].last()` (index still there), `ok.chars(0)` (E0061, chars takes no arg), then `ok.chars().nth(0).unwrap()` prints ✔. Clippy suggests `.next()` for `.nth(0)`. Module 3 practical quiz closed (predictions ~2/3, often ran before guessing). Next: 1.4.1 Ownership.

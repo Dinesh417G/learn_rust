@@ -53,6 +53,7 @@ fn main() {
 println!("the length is {}",ok.len());
     println!("the char is {}",ok.chars().last().unwrap());
     println!("the count is {}",ok.chars().count());
+    println!("{}", ok.chars().nth(0).unwrap());
     println!("{}",filled);
     println!("stauts={}", stauts);
     println!("the key length is={}", keys.len());
