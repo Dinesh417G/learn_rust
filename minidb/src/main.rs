@@ -39,11 +39,14 @@ fn main() {
     };
 
     let mut key = String::new();
+
     key.push_str("Pressure");
+    let stored = key;
+
     let help ="Commands:\n  set\n  get\n  delete";
     println!("{}", help);
-    if key !=""{
-        println!("the string is ={}", key);
+    if stored !=""{
+        println!("the string is ={}", stored);
     }
     else {
         println!("nothing yet");
