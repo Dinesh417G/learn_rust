@@ -4,7 +4,9 @@ The teacher updates this file. `[x]` = watched + exercise done, `[~]` = started.
 Chapter numbers = Ardan "Ultimate Rust Bundle" course player
 (full list: `D:\RustroverProjects\Rust_vedio\library\CURRICULUM.md`).
 
-**Now:** Block 1 · watch 1.5.3 Traits (5:05), then minidb task 10 (own `Display` for Entery, so `{}` works)
+**Now:** Block 1 · 1.5.3 Traits taught in chat (mobile mode), minidb task 10 step 1: own `trait Describe` + `impl Describe for Entery`
+**Journey:** Block 1 of 8. Modules 1-4 done; Module 5: Structs done. Left in Block 1: Traits, Collections,
+Enums (taught in chat, mobile mode, videos watched alongside), Module 5 quiz, Final Exam, then **M1**.
 **Next milestone:** M1 in-memory store (after Block 1)
 **DB spec:** unknown. The original 52-line paste was lost on 2026-10-15, so the plan
 below is a generic key-value database. When the spec arrives, save it as
@@ -187,3 +189,4 @@ bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
 - 2026-10-25 Step 3 done: `impl Entery { fn new(key: &str, value: f64) -> Self { Self { key: key.to_string(), value } } }`, `Entery::new("din", 2.55)` -> `Entery { key: "din", value: 2.55 }`. Used field-init shorthand `Self{key,value}` from the video. Errors met: param `key: String` + literal call -> E0308; switched to `&str` -> shorthand E0308 (shorthand only when types match); tried `Self{&key,value}` (parse error, & = borrow not own). Asked for the answer: given `key: key.to_string()`. Guess was `Entry{key=level.value=7.0}` (format: `:` not `=`, quotes on String, `,` between fields). Next: step 4 `&self` method.
 - 2026-10-25 22:13 Back from a 10m break. Step 4 done (from mobile, teacher pasted their code verbatim): `fn show(&self) { println!(.., self.key, self.value) }` + `e2.show();` then `{:?}` of e2 still works -> `The key isdin and the value is2.55`. Predicted A with the right reason (`&self` only borrows). Typos: `Println!` (case), `selfvalue` (missing `.`); missing space after "is" (same as task 6). Next: step 5 `&mut self`.
 - 2026-10-25 22:34 Step 5 done, task 9 complete: wrote `fn set(&mut self, value: f64) { self.value = value; }` unaided, called `e2.set(9.9)`. Predicted before running that a non-mut `e2` fails (E0596, right), added `let mut e2` -> show prints 2.55 then 9.9, Debug shows 9.9. Space after "is" still missing. Next: 1.5.3 Traits.
+- 2026-10-25 22:40 Student switched to mobile mode: Traits, Collections and Enums taught in chat by the teacher, videos in parallel; they send code as text, the teacher pastes it verbatim and runs cargo (rules in CLAUDE.md).

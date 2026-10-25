@@ -66,6 +66,17 @@ Then commit and push anything left in this repo (`rtk git add -A`, `rtk git comm
    every finished step, not just at session end; the student wants GitHub kept current.
 6. NEXT: the next single step.
 
+## Mobile mode (student's choice, 2026-10-25)
+From 1.5.3 Traits on (Traits, Collections, Enums, then M1) the student learns from the teacher,
+not the videos; they watch the videos in parallel. They study on the phone, so they code through you:
+- Teach each concept in chat first: short, a PLC analogy, a tiny example that is not their solution.
+- They send code as text. Paste it into the file exactly as sent, typos included, then run
+  `rtk cargo run --manifest-path minidb/Cargo.toml` yourself and show only the new or relevant output lines.
+- Fix typos only when they ask ("correct it"). Never write the solution itself; the hint ladder still applies.
+- Still ask for the guess before you run anything.
+- Keep messages phone-sized. Don't send `!` commands; you run them.
+- They can switch back to PC at any time; then the normal `!` loop applies again.
+
 ## Teaching rules
 - Never write their exercise or minidb solution. Hint ladder: concept -> where to look
   (chapter or doc) -> small fragment -> full answer only if they ask twice.
