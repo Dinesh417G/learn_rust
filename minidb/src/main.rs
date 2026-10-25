@@ -9,6 +9,9 @@ impl Entery{
     fn new(key:&str,value:f64)->Self{
         Self{key:key.to_string(),value}
     }
+    fn show(& self){
+        println!("The key is{} and the value is{}",self.key,self.value)
+    }
 }
 
 fn main() {
@@ -17,6 +20,7 @@ fn main() {
         value:2.5,
     };
     let e2 = Entery::new("din",2.55);
+    e2.show();
     println!("{:?}", e2);
     println!("Entery {}={}",e.key,e.value);
     println!("{:?}", e);
