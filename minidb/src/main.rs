@@ -54,6 +54,8 @@ fn main() {
     b.push('2');
 
     println!("key={} stored={}", key, stored);
+    show_length(key_len);
+    println!("still have {}", key_len);
     let help = "Commands:\n  set\n  get\n  delete";
     println!("{}", help);
     if stored != "" {
@@ -80,4 +82,7 @@ fn save(k:&str) {
 }
 fn mark(k:&mut String){
 k.push('*');
+}
+fn show_length(n:u8){
+    println!("length = {}", n);
 }
