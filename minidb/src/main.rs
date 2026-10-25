@@ -2,6 +2,8 @@ use minidb::{DB_NAME, MAX_KEY, can_add, show_banner};
 
 fn main() {
     let key_len: u8 = 4;
+    let k2=key_len;
+    println!("key_len={} k2={}", key_len, k2);
     // let temp:f64=23.5;
     //   let  online:bool=true;
     //   let  grade:char='A';
