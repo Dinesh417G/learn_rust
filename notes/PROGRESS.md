@@ -4,7 +4,7 @@ The teacher updates this file. `[x]` = watched + exercise done, `[~]` = started.
 Chapter numbers = Ardan "Ultimate Rust Bundle" course player
 (full list: `D:\RustroverProjects\Rust_vedio\library\CURRICULUM.md`).
 
-**Now:** Block 1 · 1.4.4–1.4.5 Module 4 Review + Quiz (course quiz in player, PDF optional), then 3-question practical quiz
+**Now:** Block 1 · Module 4 practical quiz Q1: add `a.push('3');` after `b.push('2');`, predict (E0499 at `let b`, `a` used later)
 **Next milestone:** M1 in-memory store (after Block 1)
 **DB spec:** unknown. The original 52-line paste was lost on 2026-10-15, so the plan
 below is a generic key-value database. When the spec arrives, save it as
@@ -33,7 +33,7 @@ Exercises: `exercises/crash_course/<name>` (originals: `ardan/ultimate_rust_cras
 - [x] 1.4.1 Ownership (2026-10-25)
 - [x] 1.4.2 References & Borrowing (2026-10-25)
 - [x] 1.4.3 Exercise G - Ownership & References → done as minidb tasks 7 + 8 instead (2026-10-25)
-- [ ] 1.4.4–1.4.5 Module 4 Review + Quiz
+- [x] 1.4.4–1.4.5 Module 4 Review + Quiz (PDF skipped by choice, course quiz done 2026-10-25)
 - [ ] 1.5.1 Structs
 - [ ] 1.5.2 Exercise H - Structs → `h_structs`
 - [ ] 1.5.3 Traits
@@ -178,3 +178,4 @@ bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
 - 2026-10-25 Session ended ~19:30 by power cut. Step 3 (`&mut` fn mark) given, not started. Next: step 3, then step 4 two `&mut` at once (E0499), then 1.4.4-1.4.5 Module 4 quiz.
 - 2026-10-25 Step 3 done: `fn mark(k: &mut String) { k.push('*'); }` + `mark(&mut key);` -> `key=Pressure!* stored=Pressure`. Errors met: missing `;` after `mark(&mut key)`, `*k.push('!')` -> E0614 (`*` applies to push's `()` result; methods auto-deref through `&mut`, no `*` needed); read "add *" as the deref operator. Ran before predicting (3rd time today). Next: step 4 E0499.
 - 2026-10-25 Step 4 done, task 8 complete. Predicted "error" (right) but thought `a` takes ownership and needs `let mut a` (no: borrow only; `&mut` already allows writing through it). Two live `&mut key` -> E0499 at the second borrow, because `a` is used later. Reordered so `a` finishes before `let b` -> builds, `key=Pressure!*12`. Learned: a borrow ends at its last use, not at `}`. Ran 4b before predicting. Next: 1.4.4–1.4.5 Module 4 quiz.
+- 2026-10-25 Module 4 course quiz done (score not given), PDF skipped; student annoyed the PDF was mentioned again. Next: 3-question practical quiz.
