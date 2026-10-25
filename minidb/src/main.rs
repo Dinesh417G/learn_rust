@@ -5,12 +5,19 @@ struct Entery{
     key: String,
     value:f64,
 }
+impl Entery{
+    fn new(key:&str,value:f64)->Self{
+        Self{key:key.to_string(),value}
+    }
+}
 
 fn main() {
     let e = Entery{
         key:"Pressure".to_string(),
         value:2.5,
     };
+    let e2 = Entery::new("din",2.55);
+    println!("{:?}", e2);
     println!("Entery {}={}",e.key,e.value);
     println!("{:?}", e);
     let key_len: u8 = 4;

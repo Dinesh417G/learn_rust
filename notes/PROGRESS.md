@@ -4,7 +4,7 @@ The teacher updates this file. `[x]` = watched + exercise done, `[~]` = started.
 Chapter numbers = Ardan "Ultimate Rust Bundle" course player
 (full list: `D:\RustroverProjects\Rust_vedio\library\CURRICULUM.md`).
 
-**Now:** Block 1 · minidb task 9 step 3: `impl Entery { fn new(key: &str, value: f64) -> Self }`, build `e2` with `Entery::new(..)`
+**Now:** Block 1 · minidb task 9 step 4: `&self` method `fn show(&self)` printing `key=value`, call `e2.show()`
 **Next milestone:** M1 in-memory store (after Block 1)
 **DB spec:** unknown. The original 52-line paste was lost on 2026-10-15, so the plan
 below is a generic key-value database. When the spec arrives, save it as
@@ -184,3 +184,4 @@ bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
 - 2026-10-25 Q3 done: `fn show_len(n: u8)` + `show_len(key_len);` then print key_len -> builds, `length = 4` / `still have 4`. Predicted A before running, reason "it's u8" (Copy; was wrong on this in task 7 step 4, now right). Module 4 practical quiz closed: Q1 right after a changed guess, Q2 no guess, Q3 right. Next: 1.5.1 Structs.
 - 2026-10-25 Watched 1.5.1 (coach saw lesson-5-1). minidb task 9 step 1 done: `struct Entery { key: String, value: f64 }` (typo kept, used the same both times), instance + `println!("Entery {}={}", e.key, e.value)` -> `Entery Pressure=2.5`, no warnings. Errors met: CODESYS-style `key="Pressure";,` (needs `key: value,`), missing `;` after the instance `}`, printed `e.value` twice -> dead_code "field `key` is never read". Found `"Pressure".to_string()` (&str -> String) unaided. Next: step 2 print whole struct.
 - 2026-10-25 Step 2 done: `println!("{}", e)` -> E0277 no Display (predicted B right, recalled `{:#?}` but wrote `{#?}` without colon); `{:?}` -> E0277 no Debug (ran before guessing); `#[derive(Debug)]` first put on line 1 above `use` -> E0774 (attribute applies to the item right below it); moved above struct -> `Entery { key: "Pressure", value: 2.5 }`. Next: step 3 `impl` + `fn new`.
+- 2026-10-25 Step 3 done: `impl Entery { fn new(key: &str, value: f64) -> Self { Self { key: key.to_string(), value } } }`, `Entery::new("din", 2.55)` -> `Entery { key: "din", value: 2.55 }`. Used field-init shorthand `Self{key,value}` from the video. Errors met: param `key: String` + literal call -> E0308; switched to `&str` -> shorthand E0308 (shorthand only when types match); tried `Self{&key,value}` (parse error, & = borrow not own). Asked for the answer: given `key: key.to_string()`. Guess was `Entry{key=level.value=7.0}` (format: `:` not `=`, quotes on String, `,` between fields). Next: step 4 `&self` method.
