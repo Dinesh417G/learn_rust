@@ -41,8 +41,9 @@ fn main() {
     let mut key = String::new();
 
     key.push_str("Pressure");
-    let stored = key;
-
+    let stored = key.clone();
+    key.push_str("!");
+    println!("key={} stored={}", key, stored);
     let help ="Commands:\n  set\n  get\n  delete";
     println!("{}", help);
     if stored !=""{
