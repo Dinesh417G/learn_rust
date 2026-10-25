@@ -48,8 +48,11 @@ fn main() {
     mark(&mut key);
     let a = &mut key;
     a.push('1');
+
+    save(&key);
     let b = &mut key;
     b.push('2');
+
     println!("key={} stored={}", key, stored);
     let help = "Commands:\n  set\n  get\n  delete";
     println!("{}", help);

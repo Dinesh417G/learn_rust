@@ -4,7 +4,7 @@ The teacher updates this file. `[x]` = watched + exercise done, `[~]` = started.
 Chapter numbers = Ardan "Ultimate Rust Bundle" course player
 (full list: `D:\RustroverProjects\Rust_vedio\library\CURRICULUM.md`).
 
-**Now:** Block 1 · Module 4 practical quiz Q2: delete `a.push('3');`, put `save(&key);` between `let b` and `b.push('2')`, predict (E0502 reader while writer live)
+**Now:** Block 1 · Module 4 practical quiz Q3: `fn show_len(n: u8)`, call `show_len(key_len);` then print `key_len` again, predict (builds: u8 is Copy)
 **Next milestone:** M1 in-memory store (after Block 1)
 **DB spec:** unknown. The original 52-line paste was lost on 2026-10-15, so the plan
 below is a generic key-value database. When the spec arrives, save it as
@@ -180,3 +180,4 @@ bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
 - 2026-10-25 Step 4 done, task 8 complete. Predicted "error" (right) but thought `a` takes ownership and needs `let mut a` (no: borrow only; `&mut` already allows writing through it). Two live `&mut key` -> E0499 at the second borrow, because `a` is used later. Reordered so `a` finishes before `let b` -> builds, `key=Pressure!*12`. Learned: a borrow ends at its last use, not at `}`. Ran 4b before predicting. Next: 1.4.4–1.4.5 Module 4 quiz.
 - 2026-10-25 Module 4 course quiz done (score not given), PDF skipped; student annoyed the PDF was mentioned again. Next: 3-question practical quiz.
 - 2026-10-25 Q1 done: first typed `b.push('3')` (builds, predicted A right), then `a.push('3')` after `b.push('2')` -> predicted error, first said line 53 (the late `a` use), changed to the `let b` line before running: E0499 lands on line 51 `let b`, line 53 only "first borrow later used here". Learned: a later use stretches the borrow back over the new one. Teacher misnumbered `let b` as 50. Next: Q2 `&` while `&mut` live (E0502).
+- 2026-10-25 Q2 done (no guess, ran first twice, once with the file unchanged): `save(&key);` between `let b` and `b.push('2')` -> E0502 (read while writer live). Fixed alone by moving `save(&key);` up between `a.push('1')` and `let b` -> prints `Pressure!*1`, then `key=Pressure!*12`. Rule: many `&` or one `&mut`, never both. Next: Q3 Copy into fn.
