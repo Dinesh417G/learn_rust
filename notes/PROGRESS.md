@@ -4,7 +4,7 @@ The teacher updates this file. `[x]` = watched + exercise done, `[~]` = started.
 Chapter numbers = Ardan "Ultimate Rust Bundle" course player
 (full list: `D:\RustroverProjects\Rust_vedio\library\CURRICULUM.md`).
 
-**Now:** Block 1 · 1.5.3 Traits taught in chat (mobile mode), minidb task 10 step 1: own `trait Describe` + `impl Describe for Entery`
+**Now:** Block 1 · 1.5.3 Traits re-taught from zero in chat (4-20 mA analogy landed); minidb task 10 step 1: own `trait Describe` + `impl Describe for Entery`, student writes it
 **Journey:** Block 1 of 8. Modules 1-4 done; Module 5: Structs done. Left in Block 1: Traits, Collections,
 Enums (taught in chat, mobile mode, videos watched alongside), Module 5 quiz, Final Exam, then **M1**.
 **Next milestone:** M1 in-memory store (after Block 1)
@@ -191,3 +191,4 @@ bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
 - 2026-10-25 22:34 Step 5 done, task 9 complete: wrote `fn set(&mut self, value: f64) { self.value = value; }` unaided, called `e2.set(9.9)`. Predicted before running that a non-mut `e2` fails (E0596, right), added `let mut e2` -> show prints 2.55 then 9.9, Debug shows 9.9. Space after "is" still missing. Next: 1.5.3 Traits.
 - 2026-10-25 22:40 Student switched to mobile mode: Traits, Collections and Enums taught in chat by the teacher, videos in parallel; they send code as text, the teacher pastes it verbatim and runs cargo (rules in CLAUDE.md).
 - 2026-10-25 23:01 Traits lesson given in chat (trait = INTERFACE, `impl Status for Motor`, `format!`); task 10 step 1 (`trait Describe` for Entery) given, not started. Session end (STC). Next: task 10 step 1.
+- 2026-10-26 Student said traits had not landed (video + yesterday's chat). Re-taught from zero: CODESYS INTERFACE analogy failed (never used it); 4-20 mA analogy worked (trait = the rule, impl = each transmitter keeping it, analog card = fn taking `&impl FourTwenty`). Asked if 0-10 V breaks it: wrong method name -> E0407 + E0046; right name with wrong maths builds (shape checked, not value). Why traits: one fn for many types, Display/Debug/Clone/Copy are traits, swap parts (Storage at M5). No code yet. Next: task 10 step 1.
