@@ -5,3 +5,5 @@
 target/
 .idea/
 .rust-drill/scratch/
+# Private drill notes, kept on this PC only
+.rust-drill/focus.md
