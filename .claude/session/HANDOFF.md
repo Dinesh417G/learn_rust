@@ -32,23 +32,22 @@ _Not yet written._
 <!-- AUTO:BEGIN - rewritten by the dtree hooks. Edit outside this block. -->
 ## Machine snapshot
 
-- Refreshed: 2026-10-25 13:11:45 +05:30 (trigger: SessionEnd)
-- Branch: main    HEAD: da31931
-- Budget band: **normal** - 5h at 4% -> normal.
-- 5h used: 4%    7-day used: 2%
+- Refreshed: 2026-10-30 21:27:50 +05:30 (trigger: SessionEnd)
+- Branch: main    HEAD: 9904969
+- Budget band: **winddown** - 5h at 92% -> winddown. 7-day at 98% is over 70%, so dropped one band tighter to winddown.
+- 5h used: 92%    7-day used: 98%
 
 ### Working tree
 ```
 M .claude/session/HANDOFF.md
- M minidb/src/main.rs
 ```
 
 ### Last 5 commits
 ```
-da31931 docs: task 6 strings complete, Module 3 quiz next
-08aa21b feat(minidb): task 6 step 3, unicode escape, bytes vs chars
-e872803 feat(minidb): task 6 step 2, help text with newline escapes
-aa8a6cd feat(minidb): task 6 step 1, owned String key with empty guard
-905dcec feat: add notes, exercises, tools; minidb task 5 control flow
+9904969 drill: point progress.json at local focus notes, keep them out of git
+8b93e53 docs: task 10 step 1 re-given, student learns in the evening
+1fdd241 docs: student away until evening, task 10 step 1 next
+bb8933b docs: task 10 step 1 re-given, student away until evening
+d2a7b39 docs: traits re-taught, task 10 step 1 next
 ```
 <!-- AUTO:END -->
