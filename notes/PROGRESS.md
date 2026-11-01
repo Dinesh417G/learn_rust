@@ -199,3 +199,4 @@ bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
 - 2026-10-31 09:17 Step 1a given (write `trait Describe` only, guess A/B/C before run). Student back at 13:00; coach paused until then. Next: step 1a.
 - 2026-10-31 14:53 Not started; phone pauses 13:23 + 14:11 (2h), then STC. Next: step 1a.
 - 2026-11-01 15:00 Step 1a re-given (6th day); student back in the evening, coach paused until 18:00. Next: step 1a.
+- 2026-11-01 18:08 Student back at 22:00 instead; coach paused until then. Next: step 1a.
