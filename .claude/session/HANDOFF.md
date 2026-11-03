@@ -32,22 +32,22 @@ _Not yet written._
 <!-- AUTO:BEGIN - rewritten by the dtree hooks. Edit outside this block. -->
 ## Machine snapshot
 
-- Refreshed: 2026-10-30 21:27:50 +05:30 (trigger: SessionEnd)
-- Branch: main    HEAD: 9904969
-- Budget band: **winddown** - 5h at 92% -> winddown. 7-day at 98% is over 70%, so dropped one band tighter to winddown.
-- 5h used: 92%    7-day used: 98%
+- Refreshed: 2026-11-02 08:05:47 +05:30 (trigger: SessionEnd)
+- Branch: main    HEAD: 234cf10
+- Budget band: **normal** - 5h at 10% -> normal.
+- 5h used: 10%    7-day used: 12%
 
 ### Working tree
 ```
-M .claude/session/HANDOFF.md
+(clean)
 ```
 
 ### Last 5 commits
 ```
-9904969 drill: point progress.json at local focus notes, keep them out of git
-8b93e53 docs: task 10 step 1 re-given, student learns in the evening
-1fdd241 docs: student away until evening, task 10 step 1 next
-bb8933b docs: task 10 step 1 re-given, student away until evening
-d2a7b39 docs: traits re-taught, task 10 step 1 next
+234cf10 docs: step 1a re-given, student back in the evening
+f942947 docs: student back at 22:00, step 1a still next
+15bd6e5 docs: step 1a re-given, student back in the evening
+d5f97f6 docs: session end, step 1a still next
+aa54537 docs: step 1a given, student back at 13:00
 ```
 <!-- AUTO:END -->
