@@ -231,3 +231,4 @@ bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
 - 2026-11-10 15:36 Step 1a re-given (FourTwenty shape, guess A/B/C); student back at 19:00 (3rd move today), coach paused until then. Next: step 1a.
 - 2026-11-10 17:16 Student opened the lesson, then said back at 19:00 (4th move today); coach paused until then. Step 1a re-given. Next: step 1a.
 - 2026-11-10 19:18 Moved again to 21:00 (5th move today), coach paused until then. Next: step 1a.
+- 2026-11-10 21:55 Student said they will learn tomorrow; coach stopped for today (back on automatically). Step 1a not started. Next: step 1a.
