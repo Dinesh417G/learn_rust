@@ -225,3 +225,4 @@ bacon, cargo-watch, protoc 36 (for 6.6 gRPC), Docker, VS Code. The courses say
 - 2026-11-09 14:01 Not back at 14:00; moved to 19:00 (5th move today), coach paused until then. Next: step 1a.
 - 2026-11-09 19:00 Not back at 19:00; moved to 20:00 (6th move today), coach paused until then. Next: step 1a.
 - 2026-11-09 20:20 Not back at 20:00; moved to 22:00 (7th move today, most so far), coach paused until then. Next: step 1a.
+- 2026-11-10 08:12 Step 1a re-given (FourTwenty shape, guess A/B/C); student back at 09:00, coach paused until then. Next: step 1a.
