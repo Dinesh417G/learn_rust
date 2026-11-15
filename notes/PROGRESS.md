@@ -8,7 +8,9 @@ log: `notes/archive/PROGRESS-minidb.md`.
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
 **Now:** S1 · layer 1 (warm-up): `struct Axis` for the recoater in `rcnc/src/main.rs`, guess the output first
+**Hook:** level 0 · open bait: `Axis` with `max: 500.0` printed with `{}`: `500`, `500.0` or error? (answer: `500`) · then L1 fill-the-blank, the student has not typed it in 5 asks
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
+**Debt:** due 39 by end of 2026-11-16, 65 by 2026-11-22 (table in the `rust-teacher` skill).
 
 | Scoreboard | |
 |---|---|
