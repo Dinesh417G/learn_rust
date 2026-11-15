@@ -74,16 +74,50 @@ Daily: about 55 min of video (phone) + 20 to 40 min of building. There is no spa
 If a week slips, keep the videos on schedule and let the boss slip: bosses need no
 subscription. Weekly check every Sunday: chapters done against the table.
 
-## S1 layer plan (teacher's notes; the student writes all code)
-- L1 `struct Axis { name, pos, min, max }`, recoater 0..500, print it. Known material.
-- L2 `impl Axis`: `new`, `move_to(&mut self, target) -> bool` refusing moves past a limit.
-  Break it: jog to 600.
-- L3 `trait Status { fn status(&self) -> String; }` for `Axis` and for a new `Laser`
-  struct, then `fn report(item: &impl Status)`. Two types is the point: one `report` for both.
-- L4 `Vec<Axis>` for X, Z, W and a loop; `HashMap<String, f64>` as the pin table
-  (`recoater.pos-cmd`), like `halcmd show pin`.
-- L5 `enum DriveState { NotReady, ReadyToSwitchOn, SwitchedOn, OperationEnabled, Fault }`
-  and `match`; `enum Command { Home, Jog { axis, dist }, RunLayers(u32) }`.
-- Boss M1: the layer loop, 5 layers, end state equals the LinuxCNC sim.
+## S1 pull sequence (teacher's notes; the student writes the code)
+Each step exists because the machine misbehaved in the step before. Never present a step
+as a topic; present the misbehaviour.
+1. `Axis` has `name`, `max`. Moving `max` needs `mut`; `600` is not an `f64`. (2026-11-15)
+2. Add `pos`. Order: send the recoater to 480 (`x.pos = 480.0`).
+3. Order: send it to 900. It goes. Nothing stopped it. That creates the wish for a guarded
+   move: first `fn move_to(axis: &mut Axis, target: f64) -> bool`, then the same as a
+   method in `impl Axis`.
+4. Add `min`. Z travels from 0 down to -200, so the guard must hold at both ends.
+5. Typing three axes by hand three times → `Axis::new`.
+6. A `Laser` also has something to report, and printing both needs two functions →
+   `trait Status`, one `report()` for both (1.5.3-1.5.4). Two types is the whole point.
+7. Three variables for three axes → `Vec<Axis>` and a loop; then a pin table
+   `HashMap<String, f64>` (`x.pos-cmd`), like `halcmd show pin` (1.5.5-1.5.6).
+8. An axis moves although its drive is off → `enum DriveState` + `match`; operator orders
+   as `enum Command` (1.5.7-1.5.8).
+9. Boss M1: the layer loop, 5 layers, end state equals the LinuxCNC sim.
 
-Later stages get their layer plan when they start, so it fits what happened before.
+Later stages get their pull sequence when they start, so it fits what happened before.
+
+## Planted discoveries (all true; the student runs into them, the teacher never announces them)
+- `{}` hides the `.0` of a whole float. (found 2026-11-15)
+- Assigning to `pos` ignores every limit. Only code that checks can stop an axis.
+- Ask for 2000 layers: W refuses at layer 1063 (85 / 0.08 = 1062.5). The powder supplier
+  is empty long before the build plate is (200 / 0.04 = 5000 layers).
+- Add 0.04 five thousand times and compare with 200.0. Run it first and show what it
+  really prints. It leads to counting in whole µm (S3, 4.2.6 Floating Point Numbers).
+- A `match` on `DriveState` with one state left out does not build.
+Add more at the start of each stage. Every one must be checked by a real run first.
+
+## Release track (Rust beyond Ardan)
+Installed on the PC: 1.96.0. Newest stable: **1.100.0** (2026-11-12),
+https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/. The student updates in 2.1.2
+"Setup & Update Rust" (S2), which jumps four releases at once.
+
+Items the 1.100.0 announcement lists. Read the post before using any of them; this table
+is only where they would fit:
+| Item | Fits |
+|---|---|
+| never type `!` stable | S1, `loop` / `match` arms that never return |
+| Cargo reports unused dependencies; min-publish-age resolution | S3, tooling (4.1.3-4.1.7) |
+| `DropGuard` | S7, Drop and RAII (2.4.4): laser off on drop |
+| core of the Allocator API | S7, allocators and arenas (2.4.11) |
+
+| Date | Release | What the student ran into on `rcnc` |
+|---|---|---|
+| | | |

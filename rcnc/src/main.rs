@@ -1,3 +1,10 @@
+struct Axis {
+    name: String,
+    max: f64,
+}
+
 fn main() {
-    println!("Hello, world!");
+    let mut x = Axis { name: "X".to_string(), max: 500.0 };
+    x.max = 600;
+    println!("{} travels {}", x.name, x.max);
 }

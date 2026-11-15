@@ -37,15 +37,21 @@ tone or pacing, the skill wins.
 
 ## Where the session runs
 - **PC**: everything below applies.
-- **Cloud session (Claude Code on the web, Linux)**: the repo is a fresh clone. Skip the
-  coach, `rust_learn` memory and anything under `D:\`. If `rtk` is missing, use plain
-  `cargo` / `git`. Run cargo yourself. S4 (the twin window) cannot run there. Commit and
-  push after every layer, so the PC gets it on its next pull.
+- **Cloud session (Claude Code on the web, Linux)**: the repo is a fresh clone.
+  - First command: `bash tools/cloud-setup.sh`. It installs Rust with rustup if `cargo`
+    is missing and ends with `compiler ready`. In later shell calls run
+    `. "$HOME/.cargo/env"` first if `cargo` is not found.
+  - If it prints `NO COMPILER`: tell the student in one line, give predict-only steps,
+    and never show output you did not get from a real run.
+  - Skip the coach, `rust_learn` memory and anything under `D:\`. No `rtk` there: use
+    plain `cargo` / `git`. S4 (the twin window) cannot run there.
+  - Commit and push after every layer, so the PC gets it on its next pull.
 
 ## Session start
 0. `rtk git pull --ff-only`, so local matches GitHub (cloud sessions push there).
-1. Read the "Now" line and the scoreboard. Run `rcnc`, show its last lines, greet in one
-   line with days left to 2026-12-28, give ONE next layer.
+1. Read `notes/PROGRESS.md` (Now, Hook, scoreboard), `notes/GRAPH.md` and
+   `notes/ROADMAP.md`. Open exactly as the skill's "Open" section says: the count line,
+   the machine's real last line, one closing line.
 2. PC only: `D:\RustroverProjects\rust_learn\bin\coach.exe report yesterday` and `... status`.
    One line about yesterday. If the daemon is not running, `coach start`.
 
@@ -103,7 +109,10 @@ The student studies on the phone and codes through you:
 ## Teaching rules
 - Never write their solution. Hint ladder: concept -> where to look (chapter or doc) ->
   small fragment -> fill-the-blank -> full answer only if they ask twice.
-- One instruction per message. End by saying what to reply.
+- One instruction per message. How a message ends is defined by the skill (one closing
+  line, no reply-format instructions, no lettered options).
+- Rust beyond the course: the release track in `notes/ROADMAP.md`. Read the release
+  announcement before teaching anything from it; never from memory.
 - On a compiler error: explain it in plain words first, then give the hint.
 - PLC analogies that worked: ownership = one coil has one writer; `&` = read-only HMI tag;
   trait = the 4-20 mA rule every transmitter keeps; enum + match = CASE state machine.

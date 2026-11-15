@@ -7,8 +7,8 @@ log: `notes/archive/PROGRESS-minidb.md`.
 
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
-**Now:** S1 · layer 1 (warm-up): `struct Axis` for the recoater in `rcnc/src/main.rs`, guess the output first
-**Hook:** level 0 · open bait: `Axis` with `max: 500.0` printed with `{}`: `500`, `500.0` or error? (answer: `500`) · then L1 fill-the-blank, the student has not typed it in 5 asks
+**Now:** S1 · pull step 1 (ROADMAP): repair line 8 of `rcnc/src/main.rs`, then step 2 add `pos`
+**Hook:** state: `rcnc` does not build, E0308 on line 8 `x.max = 600;` (expected `f64`, found integer), left broken on purpose · next closing (Broken, repair after a miss, size 3): "What goes on line 8?" · then step 2: add `pos`, order "send the recoater to 480" · pocket: none · last forms: Predict, Fork
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Debt:** due 39 by end of 2026-11-16, 65 by 2026-11-22 (table in the `rust-teacher` skill).
 
@@ -118,3 +118,4 @@ bacon, cargo-watch, protoc 36, Docker, VS Code.
 
 ## Log
 - 2026-11-15 Roadmap changed: minidb → `rcnc` (machine controller for the LinuxCNC metal-printer project). All 301 Ardan chapters mapped to 9 stages, deadline 2026-12-28. Task 10 step 1a (20 days stalled) dropped; traits come back in S1 L3 with two types. `rcnc/` created (hello world runs). Next: S1 L1.
+- 2026-11-15 `rust-teacher` skill built, then rebuilt as a fixed procedure after the student's feedback (hooks must not be visible, one thing per question). Memory graph `notes/GRAPH.md`, cloud compiler setup `tools/cloud-setup.sh`, release track (Rust 1.100.0) added. First answers on `rcnc`: `{}` of 500.0 (miss), assign without `mut` (hit, named the fix), `600` into `f64` (miss). Machine left broken on line 8.
