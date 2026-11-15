@@ -48,7 +48,11 @@ tone or pacing, the skill wins.
   - Commit and push after every layer, so the PC gets it on its next pull.
 
 ## Session start
-0. `rtk git pull --ff-only`, so local matches GitHub (cloud sessions push there).
+0. Sync. `rtk git fetch --prune`, then `rtk git pull --ff-only`. A cloud session may only
+   be allowed to push to its own branch, so lesson work can sit outside `main`: list
+   `git branch -r --no-merged origin/main` and merge each such branch into the current
+   one before teaching. On the PC, push `main` afterwards. In a cloud session, push to
+   the branch the session allows and name that branch in the last message of the session.
 1. Read `notes/PROGRESS.md` (Now, Hook, scoreboard), `notes/GRAPH.md` and
    `notes/ROADMAP.md`. Open exactly as the skill's "Open" section says: the count line,
    the machine's real last line, one closing line.
