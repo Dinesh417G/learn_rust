@@ -8,7 +8,7 @@ log: `notes/archive/PROGRESS-minidb.md`.
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
 **Now:** S1 · pull step 1 (ROADMAP): repair line 8 of `rcnc/src/main.rs`, then step 2 add `pos`
-**Hook:** state: `rcnc` does not build, E0308 on line 8 `x.max = 600;` (expected `f64`, found integer), left broken on purpose · next closing (Broken, repair after a miss, size 3): "What goes on line 8?" · then step 2: add `pos`, order "send the recoater to 480" · pocket: none · last forms: Predict, Fork
+**Hook:** state: `rcnc` does not build, E0308 on line 8 `x.max = 600;` (expected `f64`, found integer), left broken on purpose · next closing (Broken, repair after a miss, size 3): "What goes on line 8?" · then step 2: add `pos`, order "send the recoater to 480" · pocket (given at session end 2026-11-15): "The recoater's wall is at 500 mm. In your program, what is stopping it from going to 900?" (answer: nothing yet; it sets up pull step 3) · last forms: Broken, Pocket
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Debt:** due 39 by end of 2026-11-16, 65 by 2026-11-22 (table in the `rust-teacher` skill).
 
