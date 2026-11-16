@@ -74,23 +74,32 @@ Daily: about 55 min of video (phone) + 20 to 40 min of building. There is no spa
 If a week slips, keep the videos on schedule and let the boss slip: bosses need no
 subscription. Weekly check every Sunday: chapters done against the table.
 
-## S1 pull sequence (teacher's notes; the student writes the code)
-Each step exists because the machine misbehaved in the step before. Never present a step
-as a topic; present the misbehaviour.
-1. `Axis` has `name`, `max`. Moving `max` needs `mut`; `600` is not an `f64`. (2026-11-15)
-2. Add `pos`. Order: send the recoater to 480 (`x.pos = 480.0`).
-3. Order: send it to 900. It goes. Nothing stopped it. That creates the wish for a guarded
-   move: first `fn move_to(axis: &mut Axis, target: f64) -> bool`, then the same as a
-   method in `impl Axis`.
-4. Add `min`. Z travels from 0 down to -200, so the guard must hold at both ends.
-5. Typing three axes by hand three times → `Axis::new`.
-6. A `Laser` also has something to report, and printing both needs two functions →
-   `trait Status`, one `report()` for both (1.5.3-1.5.4). Two types is the whole point.
-7. Three variables for three axes → `Vec<Axis>` and a loop; then a pin table
-   `HashMap<String, f64>` (`x.pos-cmd`), like `halcmd show pin` (1.5.5-1.5.6).
-8. An axis moves although its drive is off → `enum DriveState` + `match`; operator orders
-   as `enum Command` (1.5.7-1.5.8).
-9. Boss M1: the layer loop, 5 layers, end state equals the LinuxCNC sim.
+## S1 job queue (teacher's notes; the student writes the code; skill §12)
+Each job exists because the machine misbehaved in the job before. The card is shown
+openly; the twist in brackets is not. DONE WHEN lines are targets: the exact wording
+follows what the student's code prints, the fact it states must hold.
+1. ~~`Axis` has `name`, `max`; `600` is not an `f64`~~ done 2026-11-16 (cloud).
+2. ~~Add `pos`, send the recoater to 480~~ done 2026-11-16 (cloud).
+3. JOB: the recoater must refuse any order past its wall. DONE WHEN: an order to 900
+   prints a refusal naming the 500 limit, and X still stands where it was. Path: the move
+   goes inside the accepting branch, compare with `x.max`, then
+   `fn move_to(axis: &mut Axis, target: f64) -> bool`, then the same as a method.
+   (Twist: after their first fix the position print still says 900, because the
+   assignment above the check already ran.)
+4. JOB: the plate (Z) runs from 0 down to -200; refuse both ends. DONE WHEN: Z refuses
+   -250 and +10 and accepts -0.04. (Twist: a guard that only checks `max` lets -250 through.)
+5. JOB: bring up all three axes, X, Z, W, one line each. DONE WHEN: three lines with name
+   and travel. `Axis::new`. (Twist: copy-paste of the struct literal with one wrong field.)
+6. JOB (after 1.5.3-1.5.4): one status report for an axis and the laser. DONE WHEN: one
+   `report()` call per thing prints `X at 0.0` and `LASER off`. `trait Status`, two types.
+7. JOB (after 1.5.5-1.5.6): home every axis in one loop, then list the pins like
+   `halcmd show pin`. DONE WHEN: `x.pos-cmd 0.0`, `z.pos-cmd 0.0`, `w.pos-cmd 0.0`.
+   `Vec<Axis>`, `HashMap<String, f64>`.
+8. JOB (after 1.5.7-1.5.8): an axis must not move while its drive is off. DONE WHEN: a
+   move with the drive off prints a refusal with the drive state. `enum DriveState` +
+   `match`; orders as `enum Command`. (Twist: a `match` with one state left out does not build.)
+9. BOSS M1: the layer loop, 5 layers. DONE WHEN: Z = -0.200, W = 0.400, X = 0, the same
+   as the real LinuxCNC sim. (Twist: ask for 2000 layers; W runs dry at layer 1063.)
 
 Later stages get their pull sequence when they start, so it fits what happened before.
 

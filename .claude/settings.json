@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/tools/session_sync.py\" 2>/dev/null || python \"$CLAUDE_PROJECT_DIR/tools/session_sync.py\"",
+            "timeout": 120,
+            "statusMessage": "Syncing lessons from GitHub..."
+          }
+        ]
+      }
+    ]
+  }
+}

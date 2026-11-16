@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Cricket scoreboard for the Ardan chase (the student's own rules, v2 of 2026-11-16).
 
-Runs     = minutes of video (rounded up, at least 1) per item ticked; a Quiz is 5 runs,
-           a PDF or Text page 2. Target = all 301 items (from notes/CHAPTERS.md).
+Runs     = minutes of video (rounded up, at least 1) per item ticked. A PDF, Text or Quiz
+           item is 1 run: open it, mark it complete, never study it. Target = all 301
+           items (from notes/CHAPTERS.md).
 Over     = one day, IST, ending at 03:00 (late study counts for the evening it started).
            Over 1 = first_over. Nothing falls before it; runs before it still count.
 Par      = required run rate when the over opens: runs needed / bowled overs left.

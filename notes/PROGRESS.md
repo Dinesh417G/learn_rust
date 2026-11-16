@@ -8,20 +8,20 @@ log: `notes/archive/PROGRESS-minidb.md`.
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
 **Now:** S1 · pull step 3 (ROADMAP): order the recoater to 900, nothing stops it, then a guarded `move_to`
-**Hook:** state: `rcnc` builds and prints `x travels 600` / `x at 900` / `Enter the value below 480.0`: on the student's idea the if/else now sits below the position print (line 14); the axis still stands at 900 because line 11 `x.pos = 900.0;` runs unguarded, and the check compares with 480.0, not `x.max` · open closing (Bet, size 1): main shown with line numbers, "I delete line 11. Does it still reach 900?" (answer: no, it stays at 480) · then: the move belongs inside the accepting branch, compare the target with `x.max` → `fn move_to(axis: &mut Axis, target: f64) -> bool`; when a refused order leaves pos unchanged, mark layer 1 · last forms: Why, Bet · 2026-11-16 evening (PC): no lesson; innings rules v2 set (skill §11), over 1 starts 2026-11-17; steps 1-3 above came from the cloud branch merged that evening
+**Hook:** state: `rcnc` builds and prints `x travels 600` / `x at 900` / `Enter the value below 480.0`: on the student's idea the if/else now sits below the position print (line 14); the axis still stands at 900 because line 11 `x.pos = 900.0;` runs unguarded, and the check compares with 480.0, not `x.max` · **next: job card 3 (ROADMAP S1 job queue), first shift of 2026-11-17:** `JOB: the recoater must refuse any order past its wall.` / `DONE WHEN: rcnc refuses 900 naming the 500 limit, and X still stands at 480.` First move (small, doing): the order to 900 goes into the check instead of above it; the student types it · when the refusal leaves pos unchanged, mark layer 1 · last forms: Why, Bet (both quiz-shaped: next closings are doing forms, skill §4) · 2026-11-16 evening (PC): no lesson; innings rules v2 set (skill §11), over 1 starts 2026-11-17; steps 1-3 above came from the cloud branch merged that evening
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
-**Innings (student's rules, v2 2026-11-16):** chasing 2700 runs (1 run = 1 video minute; Quiz 5, PDF 2), 1 over = 1 day ending 03:00, over 1 = 2026-11-17, last 2026-12-27. Rules in skill §11. State `notes/innings.json`, board `python tools/score.py --chat`. The weekly table in the skill only says which stage closes when.
+**Innings (student's rules, v2 2026-11-16):** chasing 2572 runs (1 run = 1 video minute; PDF / quiz 1), 1 over = 1 day ending 03:00, over 1 = 2026-11-17, last 2026-12-27. Rules in skill §11. State `notes/innings.json`, board `python tools/score.py --chat`. The weekly table in the skill only says which stage closes when.
 
 | Scoreboard | |
 |---|---|
-| Chapters | 35 / 301 items · runs 153 / 2700 (6 %) |
-| Pace needed | RRR 62.1 runs a day (2547 off 41 overs; 1 run = 1 video min) |
+| Chapters | 35 / 301 items · runs 132 / 2572 (5 %) |
+| Pace needed | RRR 59.5 runs a day (2440 off 41 overs; 1 run = 1 video min) |
 | Layers printed | 0 (build height 0.00 mm; 1 layer = 0.04 mm) |
 | Bosses beaten | 0 / 9 |
 | Streak | 0 days |
 | Innings | innings 1 · 10 wkts · below par 0/3 · green run 0/5 · rain days 2 · last over none yet (`python tools/score.py`) |
 
-PDF = open it, scroll, mark complete (1 min, no reading). Quiz = do it, it is the level check.
+PDF, quiz, exam = open it, mark complete, 1 run, no reading. The level check is the boss on `rcnc`.
 
 ## S1 · The machine in memory · Part 1 (rest) · week 1
 - [x] 1.0.1–1.5.2 Modules 1-4 + Structs (done on minidb, 2026-10-16 to 10-25)

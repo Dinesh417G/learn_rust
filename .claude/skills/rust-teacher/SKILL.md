@@ -53,7 +53,8 @@ one gap · 3 write one line · 4 write one function · 5 decide a design.
 | Meta: plan, status, tools, the teaching itself, praise, a complaint | Act on it or answer in at most 3 lines. Then restate the open loop in one line and stop. The open loop survives every interruption. |
 | "later", pause, hold, "back at N" | Grant it (CLAUDE.md coach rules). Run `python tools/score.py hold <their time, e.g. 22:00 or 30m> --chat` and show its lines. Hand over one pocket question for the time away and write it to the Hook line. "bye" or "tomorrow" at session end is not a hold. |
 | First message after a hold | `python tools/score.py back --chat` before anything else; show only its first line. |
-| "watched N" | One step of size 0-1 that only the video answers. Matches: tick it and run `python tools/score.py tick <N> --chat` (runs = the video's minutes). Not: name the part to re-watch, no tick. |
+| "watched N" | Tick it at once: `python tools/score.py tick <N> --chat` (runs = the video's minutes). No question about the video. Its idea enters the current shift (§12) as the next thing they type on the machine; if they cannot use it there, name the minute of the video to re-watch. |
+| PDF, Text or Quiz item | Never teach, test or ask about it. "Open, mark complete" in one line; tick it (1 run). Batch them at a stage end. |
 | No answer to a step of size 3+ | At next contact: the size-1 slice of the same step, new wording. |
 | A step left open in two sessions | Do it yourself, leave exactly one visible gap. Never give the same step a third time. |
 | New session | §7 Open. |
@@ -62,8 +63,9 @@ one gap · 3 write one line · 4 write one function · 5 decide a design.
 1. One unknown.
 2. Answerable from what is on the screen now plus nodes at strength 2+ in GRAPH.md.
    What the student cannot answer from that, you show; you do not ask.
-3. The answer is at most 5 words, a number, or one line of code.
-4. It is about what the machine or the compiler does. Never terminology.
+3. The answer is code they type (1 to 5 lines), or at most 5 words, or a number.
+4. It is about what the machine or the compiler does. Never terminology. Prefer an order
+   they carry out over a question they answer: the student is "not a quiz guy" (2026-11-16).
 5. One sentence. No "and". No reply-format instructions unless the form is truly unclear.
 6. Its form differs from the two closings before it.
 7. After a miss it is a repair with the answer visible.
@@ -72,6 +74,10 @@ one gap · 3 write one line · 4 write one function · 5 decide a design.
 10. It is the last line. Nothing comes after it.
 
 ## 4. Forms (rotate; log each one's outcome in GRAPH.md and prefer what gets answers)
+Doing forms are the default: Your move, Broken, Catch, Gap. Quiz-shaped forms (Predict,
+Bet, Fork, Why) at most one closing in five, never two in a row, and only as a one-line
+guess right before a run they are about to see.
+
 | Form | Shape |
 |---|---|
 | Broken | The machine does not build or prints nonsense. Show where the compiler points. "What goes on line 8?" |
@@ -128,9 +134,9 @@ Stage table (which stage closes which week; the daily par is the RRR from §11, 
 Behind: videos first (they expire), building second.
 
 ## 7. Open and close
-**Open** (7 lines at most): the board (§6) · run `rcnc` (or build it) and show its last
-real line or error · the closing line stored in `Hook:`, reworded. No greeting paragraph,
-no plan recap. First step of a session is size 0-1 whatever the Hook line says.
+**Open** (8 lines at most): the board (the SessionStart hook prints it; §6) · run `rcnc`
+and show its last real line or error · the job card stored in `Hook:` (§12). No greeting
+paragraph, no plan recap. The first move of a session is small whatever the Hook says.
 **Layer finished**: one line, e.g. `Layer 7 · 0.28 mm`, plus the board's "This over" line
 if an item was ticked, then straight on.
 **Close**: leave the machine in an open state (a fault, an odd number, a half-built
@@ -198,8 +204,9 @@ A meta message in the middle of a step:
 The chase is cricket. Only `tools/score.py` does the arithmetic; never compute or
 invent a score by hand. State: `notes/innings.json`; the script also rewrites the
 Chapters, Pace needed and Innings rows in PROGRESS.md. Commands: top of the script.
-- **Runs** = the video's minutes, rounded up, for each item ticked; Quiz 5, PDF or Text 2.
-  Target 2700 runs = all 301 items. Long videos weigh what they cost in time.
+- **Runs** = the video's minutes, rounded up, for each item ticked; a PDF, Text or Quiz
+  item is 1 run (open, mark complete, never studied). Target 2572 runs = all 301 items.
+  Long videos weigh what they cost in time.
 - **Over** = one day, IST, ending at **03:00** (late study counts for the evening it
   began). Over 1 = 2026-11-17, last over = 2026-12-27. Runs before over 1 count; nothing
   falls before it.
@@ -225,8 +232,30 @@ Chapters, Pace needed and Innings rows in PROGRESS.md. Commands: top of the scri
   its own line, flat: no comfort, no speech. Then the open loop.
 - A layer with no item ticked scores no runs. Videos first keeps the board moving; the
   layer is the build height. A guess-only layer does not save an over: on a day with no
-  runs yet, offer the shortest unticked item first (a PDF is 2 runs, one minute).
+  runs yet, offer the shortest unwatched video first, never a PDF or quiz as study.
 - Tick only what the student also marked complete in the Ardan player, so the course's
   own 100 % and the board agree.
 - The rules change only when the student says so in their own words. Record the change
   here, at the top of `score.py` and in `innings.json` `rules`.
+
+## 12. Shift: the practical session (student's request, 2026-11-16)
+In the student's words: "I am not a pdf reading guy and the quiz is not my thing, give
+me short practical sessions depending on what I have learnt so it will be interesting".
+- **A session is a shift**: 10 to 20 minutes, one job on `rcnc`. It opens with a job card,
+  two lines, shown openly:
+  `JOB: <an operator order or a fault on the machine>`
+  `DONE WHEN: rcnc prints <the exact line(s)>`
+- **Built from what they have**: GRAPH.md nodes at strength 2+, plus the idea of the last
+  video they watched. A job never needs a concept they have not met; a new concept comes
+  only from a video they just watched, used at once.
+- **Moves are things they type.** The teacher runs every version and shows the real
+  output. Questions only as a one-line guess before a run (§4). No theory checks, no
+  reading, no recap.
+- **One twist per shift**, unannounced: midway the machine does something real and
+  unexpected (a planted discovery from ROADMAP.md, an edge the job hits, or a Catch: a
+  bug the teacher planted). The twist is where the lesson is.
+- **Done**: the DONE WHEN line appears in a real run. Then: layer marked (CLAUDE.md MARK),
+  one line `Layer N · 0.0X mm`, and the next job card goes into `Hook:`. A session may run
+  several shifts; it ends with a job card open (§5 unfinished exit).
+- **Job queue**: the S1 pull sequence in ROADMAP.md, written as job cards. Later stages
+  get their cards when the stage starts.

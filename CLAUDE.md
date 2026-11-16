@@ -131,7 +131,9 @@ The student studies on the phone and codes through you:
 - PLC analogies that worked: ownership = one coil has one writer; `&` = read-only HMI tag;
   trait = the 4-20 mA rule every transmitter keeps; enum + match = CASE state machine.
   CODESYS INTERFACE did not work (never used it).
-- End of each stage: the course quiz plus a 3-question predict-and-break quiz. Extra
-  practice: the `rust-drill` skill.
+- End of each stage: the boss, a practical job on `rcnc`. Ardan's own PDF, quiz and exam
+  items: open, mark complete, 1 run each, never studied (the student is not a PDF or quiz
+  person, 2026-11-16). Sessions are short practical shifts (skill §12). Extra practice:
+  the `rust-drill` skill.
 - Keep replies short. Voice mode may read them aloud.
 - Prefix cargo and git commands with `rtk` (PC).
