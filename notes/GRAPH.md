@@ -7,7 +7,7 @@ updates it after every answer (rules: `rust-teacher` skill, §8). Colours: green
 ```mermaid
 graph LR
   var["let / mut / const"]:::s3 --> own["ownership: move"]:::s2
-  var --> num["number types: no silent conversion"]:::s1
+  var --> num["number types: no silent conversion"]:::s2
   num --> cast["as casts"]:::s2
   num --> fmt["printing floats with {}"]:::s1
   var --> fnn["functions, tail value"]:::s2
@@ -37,7 +37,7 @@ graph LR
 | Node | Strength | Last | Evidence, in order | Bring it back as |
 |---|---|---|---|---|
 | let / mut / const | 3 | 11-15 | E0384 on 10-20; on 11-15 called the E0594 error before the run and named `mut` on the `let` line | every new axis |
-| number types | 1 | 11-15 | 10-25 ran `u8 + u16` before guessing; 11-15 expected `x.max = 600` to work on an `f64` ("a"). CODESYS habit: INT to LREAL is automatic | layer counter (u32) times 0.04 |
+| number types | 2 | 11-16 | 10-25 ran `u8 + u16` before guessing; 11-15 expected `x.max = 600` to work on an `f64` ("a"). CODESYS habit: INT to LREAL is automatic; 11-16 wrote `600.0` unaided from the gap | layer counter (u32) times 0.04 |
 | as casts | 2 | 10-25 | `port as u8` gave 202, then widened the right way | µm to mm |
 | printing floats | 1 | 11-15 | expected `500.0`, got `500` | Z after one layer |
 | functions | 2 | 10-20 | tail value, E0308 when `;` added | `in_limits` |
@@ -71,3 +71,4 @@ graph LR
 | 11-15 | Teacher ran a variant the student did not mean (`let x = 600`) | turned aside | "not like that": run their idea as typed |
 | 11-15 | Predict, two lettered options (`600` into `f64`) | answered | miss |
 | 11-15 | Fork with three lettered options incl. "both", right after a miss, on a thing not seen yet (`as f64`) | turned aside | left the step, wrote feedback instead. Said: "some parts of the question turn me aside", "I still know I am hooked" |
+| 11-16 | Gap (`x.max = ____;`), repair after a miss | answered | float right (`600.0`); typed `X.max` (phone capital) → E0425, names are case-sensitive |
