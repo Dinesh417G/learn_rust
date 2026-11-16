@@ -8,7 +8,7 @@ log: `notes/archive/PROGRESS-minidb.md`.
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
 **Now:** S1 · pull step 3 (ROADMAP): order the recoater to 900, nothing stops it, then a guarded `move_to`
-**Hook:** state: `rcnc` does not build: line 12 `if x.pos=<480.0 then {println!("The value accepted") } else{println!("Enter the value below 480.0")}`, error "expected type, found `480.0`" at `=<` · done: both blocks closed · still to repair: (1) `=<` is `<=`, (2) `then` does not exist; afterwards: compare with `x.max` not 480.0, and check before the move, not after · open closing (Fork): `x.pos =< 480.0` / `x.pos <= 480.0`, "First or second?" · then the guard becomes `fn move_to(axis: &mut Axis, target: f64) -> bool` · last forms: Gap, Fork
+**Hook:** state: `rcnc` does not build: line 12 `if x.pos<=480.0 then {println!("The value accepted") } else{println!("Enter the value below 480.0")}`, error "expected `{`, found `then`" · done: blocks closed, `<=` · last repair: remove `then` · open closing (Broken, size 0): "Which word on line 12 does Rust not know?" · afterwards Predict what it prints (pos is 900 → the else message; the axis still stands at 900: the check came after the move and compares with 480.0, not `x.max`) → guard before the move → `fn move_to(axis: &mut Axis, target: f64) -> bool` · last forms: Fork, Broken
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Debt:** due 39 by end of 2026-11-16, 65 by 2026-11-22 (table in the `rust-teacher` skill).
 
