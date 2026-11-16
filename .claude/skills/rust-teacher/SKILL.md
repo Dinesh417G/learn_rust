@@ -244,6 +244,11 @@ Chapters, Pace needed and Innings rows in PROGRESS.md. Commands: top of the scri
   difference. `sync --apply` ticks what Ardan marks but the board lacks; an item on the
   board that Ardan does not mark gets named, and stays only if the student says they
   watched it. Do this at the first PC session of each day and on Sundays.
+- **Baseline** (`tools/data/ardan_baseline.txt`, frozen 2026-11-16): 58 items Ardan
+  already marked before the innings, which the student has forgotten and redoes. Never
+  credit them from Ardan; `sync` skips them. They count only on the student's "done",
+  and the shift checks it by using the idea. The board started at the 35 items covered
+  with the teacher.
 - A layer with no item ticked scores no runs. Videos first keeps the board moving; the
   layer is the build height. A guess-only layer does not save an over: on a day with no
   runs yet, offer the shortest unwatched video first, never a PDF or quiz as study.

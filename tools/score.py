@@ -464,10 +464,15 @@ def LINKS_CACHE():
     return _links
 
 
-def ardan_done_items():
-    """Items the Ardan player marks Completed (tools/data/ardan_done.txt)."""
+BASELINE = ROOT / "tools" / "data" / "ardan_baseline.txt"
+
+
+def ardan_done_items(path=DONE):
+    """Items the Ardan player marks Completed (tools/data/ardan_done.txt, or the baseline)."""
+    if not path.exists():
+        return set()
     ids = set()
-    for line in DONE.read_text(encoding="utf-8").splitlines():
+    for line in path.read_text(encoding="utf-8").splitlines():
         if not line.strip() or line.startswith("#"):
             continue
         tok = line.split()
@@ -577,13 +582,20 @@ def main(argv):
             print(line)
         return
     elif cmd == "sync":
+        # Marks in the baseline (2026-11-16) were made before the innings and are being
+        # redone: they never prove a watch. Only marks that are new since then do.
         ardan = ardan_done_items()
+        base = ardan_done_items(BASELINE)
         mine = {k for k, i in items.items() if i["done"] or k in st["ticked"]}
-        new = [k for k in items if k in ardan and k not in mine]
+        new = [k for k in items if k in ardan and k not in base and k not in mine]
         only_board = sorted(k for k in mine if k not in ardan and k in LINKS_CACHE())
+        redo = [k for k in items if k in base and k not in mine]
         gain = sum(items[k]["runs"] for k in new)
         print(f"Ardan marks {len(ardan)} of the 301 items complete; the board has {len(mine)}.")
-        print(f"In Ardan, not on the board: {len(new)} items, +{gain} runs: {' '.join(new) or '-'}")
+        print(f"New marks since the baseline, not on the board: {len(new)} items, +{gain} runs: "
+              f"{' '.join(new) or '-'}")
+        print(f"Redo (marked before 2026-11-16, forgotten): {len(redo)} items still to redo; "
+              f"Ardan cannot prove these, the student's word and the shift do")
         print(f"On the board, not complete in Ardan: {' '.join(only_board) or '-'}")
         if "--apply" in args and new:
             st["ticked"].extend(new)
