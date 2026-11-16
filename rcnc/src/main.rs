@@ -1,6 +1,7 @@
 struct Axis {
-    name: String,
-    max: f64,
+name: String,
+max:f64,
+pos:f64,
 }
 
 fn main() {

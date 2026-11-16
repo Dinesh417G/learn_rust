@@ -8,7 +8,7 @@ log: `notes/archive/PROGRESS-minidb.md`.
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
 **Now:** S1 · pull step 2 (ROADMAP): add `pos` to `Axis`, order "send the recoater to 480"
-**Hook:** state: `rcnc` does not build, E0609 on line 9 `x.pos = 480.0;` (no field `pos` on `Axis`), teacher's line, left in · open closing (Your move, size 2-3): struct shown, "Write the line that gives it one." (answer `pos: f64,`) · after that the literal on line 7 breaks (E0063 missing field `pos`): next repair · pocket (2026-11-15): "The recoater's wall is at 500 mm. In your program, what is stopping it from going to 900?" (answer: nothing yet; sets up pull step 3) · last forms: Bet, Your move
+**Hook:** state: `rcnc` does not build, E0063 on line 8: the `Axis { .. }` literal is missing field `pos` (struct now has `pos:f64,`, pasted as sent, unformatted) · open closing (Broken, size 3): "What does line 8 need between its braces?" (answer `pos: 0.0`) · then it prints; next order: send it to 900 (pull step 3) · pocket (2026-11-15): "The recoater's wall is at 500 mm. In your program, what is stopping it from going to 900?" (answer: nothing yet) · last forms: Your move, Broken
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Debt:** due 39 by end of 2026-11-16, 65 by 2026-11-22 (table in the `rust-teacher` skill).
 

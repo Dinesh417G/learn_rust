@@ -74,3 +74,4 @@ graph LR
 | 11-16 | Gap (`x.max = ____;`), repair after a miss | answered | float right (`600.0`); typed `X.max` (phone capital) → E0425, names are case-sensitive |
 | 11-16 | Why, size 0 ("Which letter does line 8 need?") | answered | hit: `x`; machine runs, prints `X travels 600` |
 | 11-16 | Bet (`x.pos = 480.0;` builds or not) | answered with their own idea | hit, gave the reason: "We are not having pos variable" |
+| 11-16 | Your move ("Write the line that gives it one.") | answered | hit: sent the whole struct with `pos:f64,` |
