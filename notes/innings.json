@@ -1,0 +1,19 @@
+{
+  "rules": "Student's rules 2026-11-16. Runs = Ardan items ticked. 1 over = 1 day. Wicket: a day with 0 runs; every 3rd hold; 3 days in a row below par. 10 wickets = all out = match lost, follow-on next day. Tool: python tools/score.py",
+  "target": 301,
+  "first_over": "2026-11-17",
+  "last_over": "2026-12-27",
+  "utc_offset_minutes": 330,
+  "orange_at": 0.75,
+  "score": 35,
+  "innings": 1,
+  "wickets": [],
+  "holds": 0,
+  "below_par_run": 0,
+  "open_day": "2026-11-17",
+  "open_start": null,
+  "open_par": null,
+  "overs": [],
+  "matches": [],
+  "finished": false
+}

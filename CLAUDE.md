@@ -54,16 +54,18 @@ tone or pacing, the skill wins.
    one before teaching. On the PC, push `main` afterwards. In a cloud session, push to
    the branch the session allows and name that branch in the last message of the session.
 1. Read `notes/PROGRESS.md` (Now, Hook, scoreboard), `notes/GRAPH.md` and
-   `notes/ROADMAP.md`. Open exactly as the skill's "Open" section says: the count line,
+   `notes/ROADMAP.md`. Run `python tools/score.py --chat` (cloud: `python3`); it closes
+   any finished overs and drops wickets. Open exactly as the skill's "Open" section says: the board,
    the machine's real last line, one closing line.
 2. PC only: `D:\RustroverProjects\rust_learn\bin\coach.exe report yesterday` and `... status`.
    One line about yesterday. If the daemon is not running, `coach start`.
 
 ## Focus coach (PC; the student put the teacher in charge of focus, 2026-10-16)
 Act on these at once, no confirmation, with `D:\RustroverProjects\rust_learn\bin\coach.exe`:
-- "pause" / "pause for N min" / "leave me for N hrs" / "back in N" -> first offer the
+- "pause" / "hold" / "pause for N min" / "leave me for N hrs" / "back in N" -> first offer the
   guess-only layer in one line (see below), then `coach pause <N>m|<N>h <reason>`
-  (no duration -> 15m). Say when it resumes.
+  (no duration -> 15m) and `python tools/score.py hold --chat` (every 3rd hold is a
+  wicket, skill §11). Say when it resumes and show the hold count.
 - "stop monitoring" -> `coach stop`. "start monitoring" / "I'm back" -> `coach start`.
 - "how did I do" / "report" -> `coach report`.
 A pause is always granted; on the third in an hour, say so in one line first.
@@ -85,8 +87,9 @@ A layer = one concept, about 10 minutes, ends with new machine output.
 3. BUILD: the step in `rcnc`, with the file. Ask for the guess before any run.
 4. CHECK: read their files yourself, run `rtk cargo build` / `test` / `clippy`. One line
    on what is right, then at most 2 fixes.
-5. MARK: update PROGRESS.md (`[x]`, Now line, scoreboard: chapters, layers, build height
-   = layers x 0.04 mm, streak, bosses; one dated log line), then commit and push.
+5. MARK: `python tools/score.py run <items ticked>` (it updates the Chapters, Pace and
+   Innings rows), then PROGRESS.md (`[x]`, Now line, layers, build height = layers x
+   0.04 mm, streak, bosses; one dated log line), then commit and push.
 6. NEXT: the next single layer.
 
 ## Anti-stall rules (from the 20-day stall on one trait step, 2026-10-26 to 11-15)

@@ -10,15 +10,16 @@ metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the v
 **Now:** S1 · pull step 1 (ROADMAP): repair line 8 of `rcnc/src/main.rs`, then step 2 add `pos`
 **Hook:** state: `rcnc` does not build, E0308 on line 8 `x.max = 600;` (expected `f64`, found integer), left broken on purpose · next closing (Broken, repair after a miss, size 3): "What goes on line 8?" · then step 2: add `pos`, order "send the recoater to 480" · pocket (given at session end 2026-11-15): "The recoater's wall is at 500 mm. In your program, what is stopping it from going to 900?" (answer: nothing yet; it sets up pull step 3) · 2026-11-16 20:42 paused to 22:00, pocket re-handed (operator at 900 mm, which line refuses?) · last forms: Broken, Pocket
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
-**Debt:** due 39 by end of 2026-11-16, 65 by 2026-11-22 (table in the `rust-teacher` skill).
+**Innings (student's rules, 2026-11-16):** chasing 301, 1 over = 1 day, over 1 = 2026-11-17, last over 2026-12-27. Par = RRR at the start of the over. Wicket: a day with 0 runs · every 3rd hold · 3 overs in a row not green. 10 wickets = all out, match lost, follow-on. State `notes/innings.json`, board `python tools/score.py --chat`. The weekly due table in the skill now only says which stage closes when.
 
 | Scoreboard | |
 |---|---|
 | Chapters | 35 / 301 (12 %) |
-| Pace needed | 7 chapters + about 55 min of video a day |
+| Pace needed | RRR 6.49 items a day (266 off 41 overs) |
 | Layers printed | 0 (build height 0.00 mm; 1 layer = 0.04 mm) |
 | Bosses beaten | 0 / 9 |
 | Streak | 0 days |
+| Innings | 10 wkts in hand · hold 0/3 · below par 0/3 · last over none yet (`python tools/score.py`) |
 
 PDF = open it, scroll, mark complete (1 min, no reading). Quiz = do it, it is the level check.
 

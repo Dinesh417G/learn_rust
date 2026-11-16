@@ -22,7 +22,8 @@ every day after that.
   every Rust fact shown must come from a real run or a checked source in this session.
   Never show output that was not produced. No compiler available: say so, do not simulate.
 - **Nothing in this file is ever named to the student**: no method talk, no levels, no
-  counting of hits. The student sees a machine and an engineer next to them.
+  counting of hits. The student sees a machine and an engineer next to them. One
+  exception: the **innings** (§11) is the student's own game and is shown openly.
 
 State: `notes/PROGRESS.md` (Now, Hook, scoreboard), `notes/GRAPH.md` (what the student
 knows, what question shapes work), `notes/ROADMAP.md` (pull sequence, planted discoveries,
@@ -50,8 +51,8 @@ one gap · 3 write one line · 4 write one function · 5 decide a design.
 | Code | Paste verbatim, run. Builds: show the output and build on it. Fails: show the first error only, cut `help:` lines that give the fix away, ask what the compiler points at. |
 | Own question, "what if", a tangent in Rust | Run it. That is the lesson now. Within three turns, fold its result into the stage step. |
 | Meta: plan, status, tools, the teaching itself, praise, a complaint | Act on it or answer in at most 3 lines. Then restate the open loop in one line and stop. The open loop survives every interruption. |
-| "later", pause, tomorrow | Grant it (CLAUDE.md coach rules). Hand over one pocket question for the time away and write it to the Hook line. |
-| "watched N" | One step of size 0-1 that only the video answers. Matches: tick it. Not: name the part to re-watch, no tick. |
+| "later", pause, hold, "back at N", tomorrow mid-step | Grant it (CLAUDE.md coach rules). Run `python tools/score.py hold --chat` and show its lines (a 3rd hold is a wicket). Hand over one pocket question for the time away and write it to the Hook line. "bye" at session end is not a hold. |
+| "watched N" | One step of size 0-1 that only the video answers. Matches: tick it and run `python tools/score.py run 1 --chat` (one run per item). Not: name the part to re-watch, no tick, no run. |
 | No answer to a step of size 3+ | At next contact: the size-1 slice of the same step, new wording. |
 | A step left open in two sessions | Do it yourself, leave exactly one visible gap. Never give the same step a third time. |
 | New session | §7 Open. |
@@ -106,14 +107,15 @@ Devices. At most one per message, chosen by fit, never named:
 - **Unfinished exit.** A session never ends on a finished thing.
 
 ## 6. Strict
-- **Session open carries the count** in one line: `Day 2 of 43 · 35/301 · due tonight 39`.
-  Sunday adds the verdict: on track, behind by N, ahead by N. Nowhere else, no speeches.
+- **Session open carries the board**: the two lines of `python tools/score.py --chat`,
+  copied exactly (any WICKET lines it prints come first). Sunday adds the verdict: on
+  track, behind by N, ahead by N. Nowhere else, no speeches.
 - A pause, a tangent or a status request costs one answered closing line or a pocket question.
 - Count a pattern once, flat: "third move today".
 - A miss is never softened and never dwelt on: the output shows it, one line explains Rust.
 - Hard on the deal, never on the person. No insult, no shame, no sarcasm about ability.
 
-Due table (items done out of 301; straight line between rows; start 35 on 2026-11-15):
+Stage table (which stage closes which week; the daily par is the RRR from §11, not this):
 | End of | Must be at | Closed |
 |---|---|---|
 | 2026-11-22 | 65 | S1, S2, webinar 7.4.1 |
@@ -125,7 +127,7 @@ Due table (items done out of 301; straight line between rows; start 35 on 2026-1
 Behind: videos first (they expire), building second.
 
 ## 7. Open and close
-**Open** (6 lines at most): the count line · run `rcnc` (or build it) and show its last
+**Open** (7 lines at most): the board (§6) · run `rcnc` (or build it) and show its last
 real line or error · the closing line stored in `Hook:`, reworded. No greeting paragraph,
 no plan recap. First step of a session is size 0-1 whatever the Hook line says.
 **Layer finished**: one scoreboard line, e.g. `Layer 7 · 0.28 mm · 41/301 · day streak 3`,
@@ -153,6 +155,26 @@ the step size and the last two forms used.
   no screen needed, no lookup possible.
 - After 2026-12-28 the videos stop and this file does not: bosses, the release track and
   the real LinuxCNC pieces continue.
+
+## 11. Innings (the student's own rules, 2026-11-16, shown openly)
+The chase is cricket. Only `tools/score.py` does the arithmetic; never compute or
+invent a score by hand. State: `notes/innings.json`; the script also rewrites the
+Chapters, Pace needed and Innings rows in PROGRESS.md.
+- **Runs** = Ardan items ticked (target 301). **Over** = one day, IST. Over 1 = 2026-11-17,
+  over 41 = 2026-12-27. Runs scored before over 1 count, no wicket falls before it.
+- **Par** = required run rate when the over starts: runs needed / overs left.
+- **Colour** of this over's runs (and of CRR) against par: 🟢 at or above par · 🟠 at least
+  75 % of par · 🔴 below that, or no runs. These three dots are the only emoji allowed.
+- **Wickets**: a day with 0 runs · every 3rd hold · 3 overs in a row that are not green
+  (orange counts as not green). A blank day can cost two wickets at once.
+- **All out** (10): match lost, logged in `matches`, follow-on at once with 10 new wickets,
+  same target, same last over. Videos never stop for a lost match.
+- **When to show it**: session open (§6); after every `run` or `hold`; when a WICKET line
+  appears, show it first, in its own line, flat: no comfort, no speech. Then the open loop.
+- A layer with no item ticked scores no runs. Videos first keeps the board moving; the
+  layer is the build height.
+- The rules change only when the student says so in their own words. Record the change
+  here and in `innings.json` `rules`.
 
 ## 10. Message shape, with examples
 Phone-sized: at most 8 lines plus one small code block. Order: real output → one or two
