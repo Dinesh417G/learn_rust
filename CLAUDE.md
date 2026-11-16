@@ -88,8 +88,11 @@ Everywhere: commit and push (`rtk git add -A`, `rtk git commit`, `rtk git push`)
 ## Layer loop (one step per reply)
 A layer = one concept, about 10 minutes, ends with new machine output.
 1. HOOK: show what the machine does now and one open question about it.
-2. WATCH: the exact chapter(s) with number, title, length, and what to look for. The
-   student may watch on the phone at any time and just say "watched <number>".
+2. WATCH: only the lines of `python tools/score.py next` (▶ number, title, minutes and
+   the direct Ardan player link). No description, no "what to look for": the link alone,
+   so the student taps it and is in the video (student's request, 2026-11-16: names
+   distract, links do not). They may watch on the phone and just say "done" or
+   "watched <number>".
 3. BUILD: the step in `rcnc`, with the file. Ask for the guess before any run.
 4. CHECK: read their files yourself, run `rtk cargo build` / `test` / `clippy`. One line
    on what is right, then at most 2 fixes.

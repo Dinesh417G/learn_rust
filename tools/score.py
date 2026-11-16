@@ -447,6 +447,56 @@ def alert(argv):
         print("no alert: " + (lines[1] if len(lines) > 1 else lines[0]))
 
 
+# ---------- Ardan links and marks ----------
+LINKS = ROOT / "notes" / "ardan_links.tsv"
+DONE = ROOT / "tools" / "data" / "ardan_done.txt"
+FP = ROOT / "tools" / "data" / "ardan_fp.txt"
+_links = {}
+
+
+def LINKS_CACHE():
+    """item id -> Ardan player URL (notes/ardan_links.tsv, from tools/gen_links.py)."""
+    if not _links and LINKS.exists():
+        for line in LINKS.read_text(encoding="utf-8").splitlines():
+            if line and not line.startswith("#"):
+                k, url = line.split("\t", 1)
+                _links[k] = url
+    return _links
+
+
+def ardan_done_items():
+    """Items the Ardan player marks Completed (tools/data/ardan_done.txt)."""
+    ids = set()
+    for line in DONE.read_text(encoding="utf-8").splitlines():
+        if not line.strip() or line.startswith("#"):
+            continue
+        tok = line.split()
+        if tok[0] == "crash-all-except":
+            crash = {l.split()[1] for l in FP.read_text(encoding="utf-8").splitlines()
+                     if l.startswith("1 ")}
+            ids |= crash - set(tok[1:])
+        else:
+            ids |= set(tok)
+    by_id = {url.rsplit("/", 1)[1].split("-")[0]: k for k, url in LINKS_CACHE().items()}
+    return {by_id[i] for i in ids if i in by_id}
+
+
+def next_items(st, items, n):
+    """The next n items not done, in roadmap order (CHAPTERS.md is sorted by stage)."""
+    out = []
+    for k, i in items.items():
+        if i["done"] or k in st["ticked"]:
+            continue
+        url = LINKS_CACHE().get(k, "(no link: run tools/gen_links.py)")
+        if i["kind"] == "Video":
+            out.append(f"▶ {k} {i['title']} · {i['runs']} min\n  {url}")
+        else:
+            out.append(f"☐ {k} {i['title']} · open, mark complete\n  {url}")
+        if len(out) >= n:
+            break
+    return out
+
+
 # ---------- main ----------
 def main(argv):
     try:
@@ -521,6 +571,27 @@ def main(argv):
             sys.exit("boss: give M1..M9, each once")
         st["bosses"].append(name)
         restore(st, f"boss {name} beaten", ev)
+    elif cmd == "next":
+        n = int(args[1]) if len(args) > 1 else 1
+        for line in next_items(st, items, n):
+            print(line)
+        return
+    elif cmd == "sync":
+        ardan = ardan_done_items()
+        mine = {k for k, i in items.items() if i["done"] or k in st["ticked"]}
+        new = [k for k in items if k in ardan and k not in mine]
+        only_board = sorted(k for k in mine if k not in ardan and k in LINKS_CACHE())
+        gain = sum(items[k]["runs"] for k in new)
+        print(f"Ardan marks {len(ardan)} of the 301 items complete; the board has {len(mine)}.")
+        print(f"In Ardan, not on the board: {len(new)} items, +{gain} runs: {' '.join(new) or '-'}")
+        print(f"On the board, not complete in Ardan: {' '.join(only_board) or '-'}")
+        if "--apply" in args and new:
+            st["ticked"].extend(new)
+            st["last_score"] = score(st, items)
+            ev.append(f"synced from Ardan: +{gain} runs ({len(new)} items)")
+        elif new:
+            print("(dry run: add --apply to tick them)")
+            return
     elif cmd not in ("show", "card"):
         sys.exit(f"unknown command {cmd!r} (see the top of tools/score.py)")
     STATE.write_text(json.dumps(st, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

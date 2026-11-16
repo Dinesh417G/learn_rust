@@ -233,6 +233,17 @@ Chapters, Pace needed and Innings rows in PROGRESS.md. Commands: top of the scri
 - **When to show it**: session open (§6); after every `tick`, `hold`, `back`, `boss`;
   Sundays `card` (the scorecard with the projected finish). A WICKET line comes first, in
   its own line, flat: no comfort, no speech. Then the open loop.
+- **Links**: a video is always given as the lines of `score.py next` (or the item's row
+  in `notes/ardan_links.tsv`): ▶ number, title, minutes, direct player link. Never a
+  name alone, never a description.
+- **How a watch is measured**: the student says "done" / "watched N" (phone or PC) and
+  the item is ticked at once; runs = the video's length, not time watched. The check is
+  Ardan's own mark: on the PC, with Chrome logged in, open one video page per course that
+  has progress, read the sidebar (each item link holding `aria-label="Completed"`), write
+  the ids to `tools/data/ardan_done.txt`, run `score.py sync` (dry) and show the
+  difference. `sync --apply` ticks what Ardan marks but the board lacks; an item on the
+  board that Ardan does not mark gets named, and stays only if the student says they
+  watched it. Do this at the first PC session of each day and on Sundays.
 - A layer with no item ticked scores no runs. Videos first keeps the board moving; the
   layer is the build height. A guess-only layer does not save an over: on a day with no
   runs yet, offer the shortest unwatched video first, never a PDF or quiz as study.
