@@ -5,7 +5,7 @@ pos:f64,
 }
 
 fn main() {
-    let mut x= Axis {name:"x".to_string(),max:500.0,pos:450.0}
+    let mut x= Axis {name:"x".to_string(),max:500.0,pos:450.0};
     x.max=600.0;
     x.pos = 480.0;
     println!("{} travels {}", x.name, x.max);

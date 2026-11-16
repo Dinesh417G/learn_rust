@@ -8,7 +8,7 @@ log: `notes/archive/PROGRESS-minidb.md`.
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
 **Now:** S1 · pull step 2 (ROADMAP): add `pos` to `Axis`, order "send the recoater to 480"
-**Hook:** state: `rcnc` does not build: line 8 `let mut x= Axis {name:"x".to_string(),max:500.0,pos:450.0}` has no `;` at its end (pasted as sent; student chose start pos 450.0 and name "x") · open closing (repair, size 0): "What is missing at the end of line 8?" · then it prints; add `pos` to the println, next order: send it to 900 (pull step 3) · pocket (2026-11-15): "The recoater's wall is at 500 mm. In your program, what is stopping it from going to 900?" (answer: nothing yet) · last forms: Broken, Why
+**Hook:** state: `rcnc` builds and prints `x travels 600`; `pos` starts at 450.0, is set to 480.0 on line 10, never printed (warning: field `pos` is never read) · open closing (Predict, size 1): proposed line `println!("{} at {}", x.name, x.pos);` shown, NOT in the file, "What does it print?" (answer `x at 480`; touches printing floats and 450 vs 480) · then order: send it to 900 (pull step 3) · pocket (2026-11-15): "The recoater's wall is at 500 mm. In your program, what is stopping it from going to 900?" (answer: nothing yet) · last forms: Why, Predict
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Debt:** due 39 by end of 2026-11-16, 65 by 2026-11-22 (table in the `rust-teacher` skill).
 
