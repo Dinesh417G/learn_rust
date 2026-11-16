@@ -8,7 +8,7 @@ log: `notes/archive/PROGRESS-minidb.md`.
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
 **Now:** S1 · pull step 3 (ROADMAP): order the recoater to 900, nothing stops it, then a guarded `move_to`
-**Hook:** state: `rcnc` does not build: line 12, pasted as sent, `if x.pos=<480.0 then {println!("The value accepted") else(println!("Enter the value below 480.0")` · faults to repair one at a time, each with the answer on screen: (1) `else(` must be `else {` and both blocks closed with `}`, (2) `then` does not exist, (3) `=<` is `<=`; afterwards: compare with `x.max` not 480.0, and check before the move, not after · open closing (Broken, size 0): "What replaces the `(` after `else`?" · then the guard becomes `fn move_to(axis: &mut Axis, target: f64) -> bool` · last forms: Your move, Broken
+**Hook:** state: `rcnc` does not build: line 12 `if x.pos=<480.0 then {println!("The value accepted") else{println!("Enter the value below 480.0")}` · done: `else{..}` · still to repair, one at a time, answer on screen: (1) the first `{` is never closed before `else`, (2) `then` does not exist, (3) `=<` is `<=`; afterwards: compare with `x.max` not 480.0, and check before the move, not after · open closing (Gap, size 0): `{println!("The value accepted") ____ else{` · then the guard becomes `fn move_to(axis: &mut Axis, target: f64) -> bool` · last forms: Broken, Gap
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Debt:** due 39 by end of 2026-11-16, 65 by 2026-11-22 (table in the `rust-teacher` skill).
 
