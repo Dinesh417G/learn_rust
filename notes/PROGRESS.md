@@ -10,16 +10,16 @@ metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the v
 **Now:** S1 · pull step 1 (ROADMAP): repair line 8 of `rcnc/src/main.rs`, then step 2 add `pos`
 **Hook:** state: `rcnc` does not build, E0308 on line 8 `x.max = 600;` (expected `f64`, found integer), left broken on purpose · next closing (Broken, repair after a miss, size 3): "What goes on line 8?" · then step 2: add `pos`, order "send the recoater to 480" · pocket (given at session end 2026-11-15): "The recoater's wall is at 500 mm. In your program, what is stopping it from going to 900?" (answer: nothing yet; it sets up pull step 3) · 2026-11-16 20:42 paused, then the student designed the innings rules and ended the day at 21:55 (no lesson, no hold counted); pocket re-handed (operator at 900 mm, which line refuses?) · **next session first:** the student wants to fine-tune the innings rules: ask in one line what to change (my guesses to confirm: "miss an entire wicket" read as a blank day; all out = follow-on), apply via `tools/score.py` + skill §11, then the board, then line 8 · last forms: Broken, Pocket
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
-**Innings (student's rules, 2026-11-16):** chasing 301, 1 over = 1 day, over 1 = 2026-11-17, last over 2026-12-27. Par = RRR at the start of the over. Wicket: a day with 0 runs · every 3rd hold · 3 overs in a row not green. 10 wickets = all out, match lost, follow-on. State `notes/innings.json`, board `python tools/score.py --chat`. The weekly due table in the skill now only says which stage closes when.
+**Innings (student's rules, v2 2026-11-16):** chasing 2700 runs (1 run = 1 video minute; Quiz 5, PDF 2), 1 over = 1 day ending 03:00, over 1 = 2026-11-17, last 2026-12-27. Rules in skill §11. State `notes/innings.json`, board `python tools/score.py --chat`. The weekly table in the skill only says which stage closes when.
 
 | Scoreboard | |
 |---|---|
-| Chapters | 35 / 301 (12 %) |
-| Pace needed | RRR 6.49 items a day (266 off 41 overs) |
+| Chapters | 35 / 301 items · runs 153 / 2700 (6 %) |
+| Pace needed | RRR 62.1 runs a day (2547 off 41 overs; 1 run = 1 video min) |
 | Layers printed | 0 (build height 0.00 mm; 1 layer = 0.04 mm) |
 | Bosses beaten | 0 / 9 |
 | Streak | 0 days |
-| Innings | 10 wkts in hand · hold 0/3 · below par 0/3 · last over none yet (`python tools/score.py`) |
+| Innings | innings 1 · 10 wkts · below par 0/3 · green run 0/5 · rain days 2 · last over none yet (`python tools/score.py`) |
 
 PDF = open it, scroll, mark complete (1 min, no reading). Quiz = do it, it is the level check.
 

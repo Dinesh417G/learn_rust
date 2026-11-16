@@ -64,8 +64,9 @@ tone or pacing, the skill wins.
 Act on these at once, no confirmation, with `D:\RustroverProjects\rust_learn\bin\coach.exe`:
 - "pause" / "hold" / "pause for N min" / "leave me for N hrs" / "back in N" -> first offer the
   guess-only layer in one line (see below), then `coach pause <N>m|<N>h <reason>`
-  (no duration -> 15m) and `python tools/score.py hold --chat` (every 3rd hold is a
-  wicket, skill §11). Say when it resumes and show the hold count.
+  (no duration -> 15m) and `python tools/score.py hold <same time> --chat` (skill §11:
+  3 holds a day or a broken return is a wicket). Say when it resumes and show the hold
+  line. On their next message: `python tools/score.py back --chat`.
 - "stop monitoring" -> `coach stop`. "start monitoring" / "I'm back" -> `coach start`.
 - "how did I do" / "report" -> `coach report`.
 A pause is always granted; on the third in an hour, say so in one line first.
@@ -87,7 +88,7 @@ A layer = one concept, about 10 minutes, ends with new machine output.
 3. BUILD: the step in `rcnc`, with the file. Ask for the guess before any run.
 4. CHECK: read their files yourself, run `rtk cargo build` / `test` / `clippy`. One line
    on what is right, then at most 2 fixes.
-5. MARK: `python tools/score.py run <items ticked>` (it updates the Chapters, Pace and
+5. MARK: `python tools/score.py tick <item ids>` (it updates the Chapters, Pace and
    Innings rows), then PROGRESS.md (`[x]`, Now line, layers, build height = layers x
    0.04 mm, streak, bosses; one dated log line), then commit and push.
 6. NEXT: the next single layer.
