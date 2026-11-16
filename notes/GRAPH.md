@@ -11,7 +11,7 @@ graph LR
   num --> cast["as casts"]:::s2
   num --> fmt["printing floats with {}"]:::s2
   var --> fnn["functions, tail value"]:::s2
-  fnn --> flow["if as value, loop, for, ranges"]:::s2
+  fnn --> flow["if as value, loop, for, ranges"]:::s1
   var --> strs["String vs &str"]:::s1
   own --> clone["clone"]:::s3
   own --> copy["Copy types"]:::s2
@@ -41,7 +41,7 @@ graph LR
 | as casts | 2 | 10-25 | `port as u8` gave 202, then widened the right way | µm to mm |
 | printing floats | 2 | 11-16 | expected `500.0`, got `500`; 11-16 predicted `480` for `{}` of 480.0 | Z after one layer |
 | functions | 2 | 10-20 | tail value, E0308 when `;` added | `in_limits` |
-| if / loop / for | 2 | 10-25 | `1..=len` off by one found at runtime | layer loop |
+| if / loop / for | 1 | 11-16 | `1..=len` off by one found at runtime; 11-16 wrote the guard in ST shape: `if x.pos=<480.0 then {println!(..) else(println!(..)` (`then`, `=<`, `else(`, first `{` never closed). Idea right: accept / reject message | layer loop |
 | String vs &str | 1 | 10-25 | asked again what a string literal is | axis names, fault text |
 | ownership: move | 2 | 10-25 | thought a moved value is "empty", then predicted E0382 correctly | who owns the drive |
 | clone | 3 | 10-25 | predicted the output exactly | copy of a position |
@@ -81,3 +81,4 @@ graph LR
 | 11-16 | Your move, size 3, wrapped in a story ("operator slips a digit ... Send it there.") | turned aside | "What should I need to do": the order was not clear enough as a task. Shrunk to a Gap on the same line |
 | 11-16 | Gap (`x.pos = ____;` for 900) | answered | hit: `x.pos=900.0` (float unaided again; sent the whole line, no `;`, taken as the gap in the given frame) |
 | 11-16 | Why ("What in the program checked that move?") | answered with their own idea | skipped "nothing" and went to the fix: "Weather we need an if condition" |
+| 11-16 | Your move with a frame ("Write the `if` line") | answered with their own idea | miss on syntax, wrote a full if/else with two messages instead of the framed line; compares against 480.0, not `x.max` |
