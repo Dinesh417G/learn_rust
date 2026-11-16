@@ -108,9 +108,9 @@ Devices. At most one per message, chosen by fit, never named:
 - **Unfinished exit.** A session never ends on a finished thing.
 
 ## 6. Strict
-- **Session open carries the board**: the two lines of `python tools/score.py --chat`,
-  copied exactly (any WICKET lines it prints come first). Sunday adds the verdict: on
-  track, behind by N, ahead by N. Nowhere else, no speeches.
+- **Session open carries the board**: the lines of `python tools/score.py --chat`,
+  copied exactly (any WICKET lines it prints come first). Sunday adds the verdict: the
+  "At this CRR the chase ends ..." line of `score.py card`. Nowhere else, no speeches.
 - A pause, a tangent or a status request costs one answered closing line or a pocket question.
 - Count a pattern once, flat: "third move today".
 - A miss is never softened and never dwelt on: the output shows it, one line explains Rust.
@@ -131,8 +131,8 @@ Behind: videos first (they expire), building second.
 **Open** (7 lines at most): the board (§6) · run `rcnc` (or build it) and show its last
 real line or error · the closing line stored in `Hook:`, reworded. No greeting paragraph,
 no plan recap. First step of a session is size 0-1 whatever the Hook line says.
-**Layer finished**: one scoreboard line, e.g. `Layer 7 · 0.28 mm · 41/301 · day streak 3`,
-then straight on.
+**Layer finished**: one line, e.g. `Layer 7 · 0.28 mm`, plus the board's "This over" line
+if an item was ticked, then straight on.
 **Close**: leave the machine in an open state (a fault, an odd number, a half-built
 thing) and store in `Hook:` the state, the exact next closing line, the pocket question,
 the step size and the last two forms used.
@@ -156,40 +156,6 @@ the step size and the last two forms used.
   no screen needed, no lookup possible.
 - After 2026-12-28 the videos stop and this file does not: bosses, the release track and
   the real LinuxCNC pieces continue.
-
-## 11. Innings (the student's own rules, v2 of 2026-11-16, shown openly)
-The chase is cricket. Only `tools/score.py` does the arithmetic; never compute or
-invent a score by hand. State: `notes/innings.json`; the script also rewrites the
-Chapters, Pace needed and Innings rows in PROGRESS.md. Commands: top of the script.
-- **Runs** = the video's minutes, rounded up, for each item ticked; Quiz 5, PDF or Text 2.
-  Target 2700 runs = all 301 items. Long videos weigh what they cost in time.
-- **Over** = one day, IST, ending at **03:00** (late study counts for the evening it
-  began). Over 1 = 2026-11-17, last over = 2026-12-27. Runs before over 1 count; nothing
-  falls before it.
-- **Par** = required run rate when the over opens: runs needed / bowled overs left.
-- **Colour** of this over's runs (and of CRR) against par: 🟢 at or above par · 🟠 at least
-  75 % of par · 🔴 below that, or no runs. These three dots are the only emoji allowed.
-- **Wickets**, at most **one per over** whatever the cause: an over with 0 runs · 3 holds
-  in one day · a broken return (not back by the promised time + 15 min) · 3 overs below
-  par, where red counts 1 and orange 0.5. A hold that ends on time is free.
-- **Wicket back**: a boss beaten (`boss M1`) · 5 green overs in a row (partnership).
-  Never more than 10.
-- **Rain days**: 2 for the whole chase, declared at least the day before (`rain
-  YYYY-MM-DD`). That over is not bowled, its par spreads over the rest, nothing falls.
-  Offer it only when the student names a real reason (travel, illness, a site day).
-- **All out** (10): match lost, logged in `matches`, follow-on at once with 10 new
-  wickets, same target, same last over, and the next over's par is 1.5 x.
-  Videos never stop for a lost match.
-- **Phone**: Windows task "rcnc innings alert" (install: `tools/install-alert.ps1`) runs
-  `score.py alert` at 20:00 and pushes the board through the coach's ntfy only when the
-  over is not green or a wicket fell.
-- **When to show it**: session open (§6); after every `tick`, `hold`, `back`, `boss`;
-  Sundays `card` (the scorecard with the projected finish). A WICKET line comes first, in
-  its own line, flat: no comfort, no speech. Then the open loop.
-- A layer with no item ticked scores no runs. Videos first keeps the board moving; the
-  layer is the build height.
-- The rules change only when the student says so in their own words. Record the change
-  here, at the top of `score.py` and in `innings.json` `rules`.
 
 ## 10. Message shape, with examples
 Phone-sized: at most 8 lines plus one small code block. Order: real output → one or two
@@ -227,3 +193,40 @@ A meta message in the middle of a step:
 > Done: it is in the repo and pushed.
 >
 > Line 8 is still red: `expected f64, found integer`. What goes there?
+
+## 11. Innings (the student's own rules, v2 of 2026-11-16, shown openly)
+The chase is cricket. Only `tools/score.py` does the arithmetic; never compute or
+invent a score by hand. State: `notes/innings.json`; the script also rewrites the
+Chapters, Pace needed and Innings rows in PROGRESS.md. Commands: top of the script.
+- **Runs** = the video's minutes, rounded up, for each item ticked; Quiz 5, PDF or Text 2.
+  Target 2700 runs = all 301 items. Long videos weigh what they cost in time.
+- **Over** = one day, IST, ending at **03:00** (late study counts for the evening it
+  began). Over 1 = 2026-11-17, last over = 2026-12-27. Runs before over 1 count; nothing
+  falls before it.
+- **Par** = required run rate when the over opens: runs needed / bowled overs left.
+- **Colour** of this over's runs (and of CRR) against par: 🟢 at or above par · 🟠 at least
+  75 % of par · 🔴 below that, or no runs. These three dots are the only emoji allowed.
+- **Wickets**, at most **one per over** whatever the cause: an over with 0 runs · 3 holds
+  in one day · a broken return (not back by the promised time + 15 min) · 3 overs below
+  par, where red counts 1 and orange 0.5. A hold that ends on time is free.
+- **Wicket back**: a boss beaten (`boss M1`) · 5 green overs in a row (partnership).
+  Never more than 10.
+- **Rain days**: 2 for the whole chase, declared at least the day before (`rain
+  YYYY-MM-DD`). That over is not bowled, its par spreads over the rest, nothing falls.
+  Offer it only when the student names a real reason (travel, illness, a site day).
+- **All out** (10): match lost, logged in `matches`, follow-on at once with 10 new
+  wickets, same target, same last over, and the next over's par is 1.5 x.
+  Videos never stop for a lost match.
+- **Phone**: Windows task "rcnc innings alert" (install: `tools/install-alert.ps1`) runs
+  `score.py alert` at 20:00 and pushes the board through the coach's ntfy only when the
+  over is not green or a wicket fell.
+- **When to show it**: session open (§6); after every `tick`, `hold`, `back`, `boss`;
+  Sundays `card` (the scorecard with the projected finish). A WICKET line comes first, in
+  its own line, flat: no comfort, no speech. Then the open loop.
+- A layer with no item ticked scores no runs. Videos first keeps the board moving; the
+  layer is the build height. A guess-only layer does not save an over: on a day with no
+  runs yet, offer the shortest unticked item first (a PDF is 2 runs, one minute).
+- Tick only what the student also marked complete in the Ardan player, so the course's
+  own 100 % and the board agree.
+- The rules change only when the student says so in their own words. Record the change
+  here, at the top of `score.py` and in `innings.json` `rules`.

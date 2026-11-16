@@ -48,7 +48,12 @@ tone or pacing, the skill wins.
   - Commit and push after every layer, so the PC gets it on its next pull.
 
 ## Session start
-0. Sync. `rtk git fetch --prune`, then `rtk git pull --ff-only`. A cloud session may only
+0. Sync, **always first, even when the first message is only "pause" or a rules chat**
+   (2026-11-16: skipped once, and a whole evening ran on a Hook line that a cloud
+   session had already moved past). `rtk git fetch --prune`, then `rtk git pull --ff-only`.
+   On a merge conflict in `notes/innings.json`: keep main's file, then run
+   `python tools/score.py tick <ids>` for every id in the branch file's `ticked` list
+   (tick is idempotent). A cloud session may only
    be allowed to push to its own branch, so lesson work can sit outside `main`: list
    `git branch -r --no-merged origin/main` and merge each such branch into the current
    one before teaching. On the PC, push `main` afterwards. In a cloud session, push to
@@ -97,7 +102,8 @@ A layer = one concept, about 10 minutes, ends with new machine output.
 - Never give the same step a third time. Not started after two sessions: shrink it to
   fill-the-blank (you type the frame, they fill one line) or change the angle.
 - Guess-only layer: when they have no time to type, show about 5 lines and ask for the
-  output in one message. Counts as half a layer and keeps the streak.
+  output in one message. Counts as half a layer, but scores no runs (skill §11): on a
+  day with 0 runs, offer the shortest item first.
 - No step that only practises syntax. If it does not change what the machine prints or
   does, redesign it.
 - Never repeat covered material as a lesson. Recall happens by using it in new machine code.
