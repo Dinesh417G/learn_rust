@@ -226,9 +226,10 @@ Chapters, Pace needed and Innings rows in PROGRESS.md. Commands: top of the scri
 - **All out** (10): match lost, logged in `matches`, follow-on at once with 10 new
   wickets, same target, same last over, and the next over's par is 1.5 x.
   Videos never stop for a lost match.
-- **Phone**: Windows task "rcnc innings alert" (install: `tools/install-alert.ps1`) runs
-  `score.py alert` at 20:00 and pushes the board through the coach's ntfy only when the
-  over is not green or a wicket fell.
+- **Phone**: a cron line on home-pi (always on; `tools/pi-alert-setup.sh`) pulls the repo
+  and runs `score.py alert` at 20:00. It pushes the board through ntfy only when the over
+  is not green or a wicket fell. The phone gets it anywhere via Tailscale. So the push
+  sees the score only after a commit is pushed: push after every tick.
 - **When to show it**: session open (§6); after every `tick`, `hold`, `back`, `boss`;
   Sundays `card` (the scorecard with the projected finish). A WICKET line comes first, in
   its own line, flat: no comfort, no speech. Then the open loop.

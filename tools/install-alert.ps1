@@ -1,3 +1,5 @@
+# FALLBACK ONLY. Since 2026-11-16 the alert runs on home-pi (tools/pi-alert-setup.sh).
+# Do not install both, or every push arrives twice.
 # Installs the Windows task "rcnc innings alert": every day at 20:00 it runs
 # `python tools/score.py alert`, which pushes the board to the phone (coach ntfy) only
 # when today's over is not green or a wicket fell. Run once, as the student:
