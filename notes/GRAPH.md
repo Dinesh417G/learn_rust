@@ -79,3 +79,4 @@ graph LR
 | 11-16 | Why, size 0 ("What is missing at the caret?") | answered | hit: "; needed to be there" |
 | 11-16 | Predict (`{} at {}` of name, pos) | answered | hit on the value: "X at 480" (real: `x at 480`; the name is lowercase since their own line 8, phone capital in the answer) |
 | 11-16 | Your move, size 3, wrapped in a story ("operator slips a digit ... Send it there.") | turned aside | "What should I need to do": the order was not clear enough as a task. Shrunk to a Gap on the same line |
+| 11-16 | Gap (`x.pos = ____;` for 900) | answered | hit: `x.pos=900.0` (float unaided again; sent the whole line, no `;`, taken as the gap in the given frame) |

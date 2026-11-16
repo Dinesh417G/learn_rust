@@ -8,7 +8,7 @@ log: `notes/archive/PROGRESS-minidb.md`.
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
 **Now:** S1 · pull step 3 (ROADMAP): order the recoater to 900, nothing stops it, then a guarded `move_to`
-**Hook:** state: `rcnc` builds and prints `x travels 600` / `x at 480` (step 2 done; name is "x" since the student's line 8, max was moved to 600) · open closing (Gap, size 1, after "What should I need to do"): line 10 `x.pos = 480.0;` shown, new line 11 `x.pos = ____;` for the order 900 (answer `900.0`; it goes, nothing stops it → wish for a guard, `fn move_to(axis: &mut Axis, target: f64) -> bool`) · pocket (2026-11-15): "The recoater's wall is at 500 mm. In your program, what is stopping it from going to 900?" (answer: nothing yet) · last forms: Your move, Gap
+**Hook:** state: `rcnc` builds and prints `x travels 600` / `x at 900`: the recoater stands 300 mm past its wall and nothing complained · open closing (Why, size 1): "What in the program stopped it at 600?" (answer: nothing) · then the guard: `fn move_to(axis: &mut Axis, target: f64) -> bool`, teacher types the frame, student fills the comparison; later as a method · last forms: Gap, Why
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Debt:** due 39 by end of 2026-11-16, 65 by 2026-11-22 (table in the `rust-teacher` skill).
 
