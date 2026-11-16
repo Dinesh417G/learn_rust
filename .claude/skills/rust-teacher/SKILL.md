@@ -212,7 +212,9 @@ Chapters, Pace needed and Innings rows in PROGRESS.md. Commands: top of the scri
   falls before it.
 - **Par** = required run rate when the over opens: runs needed / bowled overs left.
 - **Colour** of this over's runs (and of CRR) against par: 🟢 at or above par · 🟠 at least
-  75 % of par · 🔴 below that, or no runs. These three dots are the only emoji allowed.
+  75 % of par · 🔴 below that, or no runs. These three dots and the 🏏 of the board are
+  the only emoji allowed. The board reads like a live cricket scoreline (student's
+  request, 2026-11-16): `🏏 RCNC 132/0 (0 ov) · target 2572`, runs/wickets fallen.
 - **Wickets**, at most **one per over** whatever the cause: an over with 0 runs · 3 holds
   in one day · a broken return (not back by the promised time + 15 min) · 3 overs below
   par, where red counts 1 and orange 0.5. A hold that ends on time is free.

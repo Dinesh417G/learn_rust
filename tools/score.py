@@ -170,7 +170,7 @@ def wicket(st, day, how, ev):
     st["wicket_days"].append(key)
     st["wickets"].append({"date": key, "how": how})
     n = len(st["wickets"])
-    ev.append(f"WICKET {n}: {how} ({key})")
+    ev.append(f"WICKET! {how} · {TEAM} {st['last_score']}/{n} ({short_day(day)})")
     if n >= 10:
         st["matches"].append({"innings": st["innings"], "result": "all out",
                               "score": st["last_score"], "date": key})
@@ -221,8 +221,8 @@ def close_over(st, day, sc, tg, ev):
         c = colour(st, runs, par)
         st["overs"].append({"date": day.isoformat(), "par": round(par, 1), "runs": runs,
                             "colour": c, "follow_on": st["open_follow_on"]})
-        ev.append(f"Over {sum(1 for o in st['overs'] if not o.get('rain'))} "
-                  f"({day.isoformat()}): {runs} off par {par:.1f}, {c}")
+        ev.append(f"End of over {sum(1 for o in st['overs'] if not o.get('rain'))} "
+                  f"({short_day(day)}): {runs} runs, par {par:.1f} {DOT[c]}")
         streak_out = False
         if c == "green":
             st["below_par"] = 0
@@ -275,38 +275,44 @@ def paint(text, c, chat):
     return f"{text} {DOT[c]}" if chat else f"{ANSI[c]}{text}{RESET}"
 
 
-def status_tail(st, now):
+TEAM = "RCNC"
+
+
+def short_day(day):
+    return f"{day.day} {day:%b}"
+
+
+def status_tail(st, items, now):
     day = game_day(st, now).isoformat()
     holds = st["holds"]["count"] if st["holds"]["date"] == day else 0
-    tail = (f"{10 - len(st['wickets'])} wkts · holds {holds}/3 today · "
-            f"below par {st['below_par']:g}/3 · green run {st['green_run']}/5 · "
-            f"rain days {st['rain_left']}")
+    tail = (f"Holds {holds}/3 · below par {st['below_par']:g}/3 · "
+            f"partnership {st['green_run']}/5 · rain {st['rain_left']} · "
+            f"items {items_done(st, items)}/{len(items)}")
     if st["hold_open"]:
-        tail += f" · on hold, back by {datetime.fromisoformat(st['hold_open']['until']):%H:%M}"
+        tail += f" · on hold till {datetime.fromisoformat(st['hold_open']['until']):%H:%M}"
     return tail
 
 
 def board(st, items, now, chat):
+    """Cricket-style scoreline: TEAM runs/wickets (overs) · target, then the chase."""
     sc, tg = score(st, items), target(items)
-    need = max(tg - sc, 0)
-    n_items = f"{items_done(st, items)}/{len(items)} items"
+    need, wk = max(tg - sc, 0), len(st["wickets"])
+    team = TEAM if st["innings"] == 1 else f"{TEAM} (inn {st['innings']})"
+    played = [o for o in st["overs"] if not o.get("rain")]
     if st["finished"]:
-        return [f"Match over: {st['matches'][-1]['result']} · {sc}/{tg} · {n_items}"]
+        return [f"🏏 {team} {sc}/{wk} ({len(played)} ov) · {st['matches'][-1]['result']}"]
     today, first = game_day(st, now), d(st["first_over"])
     if today < first:
         left = overs_left(st, first)
-        return [f"Toss · over 1 starts {first.isoformat()} · {sc}/{tg} · "
-                f"need {need} off {left} · RRR {rrr(st, first, sc, tg):.1f}",
-                f"{n_items} · runs before over 1 count, no wicket can fall",
-                status_tail(st, now)]
-    inn = f"Inn {st['innings']} · " if st["innings"] > 1 else ""
-    total = overs_left(st, first)
+        return [f"🏏 {team} {sc}/{wk} · target {tg} · toss",
+                f"Need {need} runs in {left} overs · RRR {rrr(st, first, sc, tg):.1f}",
+                f"Over 1 starts {short_day(first)} · runs tonight count, nothing falls",
+                status_tail(st, items, now)]
     if not bowled(st, today):
-        return [f"{inn}Rain day {today.isoformat()} · {sc}/{tg} · need {need} off "
-                f"{overs_left(st, today)} · nothing falls today", status_tail(st, now)]
-    over_no = total - overs_left(st, today) + 1
+        return [f"🏏 {team} {sc}/{wk} ({len(played)} ov) · target {tg} · rain day",
+                f"Need {need} runs in {overs_left(st, today)} overs · nothing falls today",
+                status_tail(st, items, now)]
     runs, par = sc - st["open_start"], st["open_par"]
-    played = [o for o in st["overs"] if not o.get("rain")]
     if played:
         crr = sum(o["runs"] for o in played) / len(played)
         crr_txt = paint(f"CRR {crr:.1f}", colour(st, crr, par), chat)
@@ -315,11 +321,12 @@ def board(st, items, now, chat):
     left = day_end(st, today) - now
     hh, mm = divmod(int(left.total_seconds()) // 60, 60)
     fo = " (follow-on x1.5)" if st["open_follow_on"] else ""
-    return [f"{inn}Over {over_no}/{total} · {sc}/{tg} · need {need} off "
-            f"{overs_left(st, today)} · RRR {rrr(st, today, sc, tg):.1f}",
-            f"{paint(f'This over {runs}', colour(st, runs, par), chat)} par {par:.1f}{fo} · "
-            f"{crr_txt} · {hh}h {mm:02d}m left · {n_items}",
-            status_tail(st, now)]
+    return [f"🏏 {team} {sc}/{wk} ({len(played)} ov) · target {tg}",
+            f"Need {need} runs in {overs_left(st, today)} overs · "
+            f"RRR {rrr(st, today, sc, tg):.1f} · {crr_txt}",
+            f"{paint(f'This over {runs}', colour(st, runs, par), chat)} · par {par:.1f}{fo} · "
+            f"{hh}h {mm:02d}m left",
+            status_tail(st, items, now)]
 
 
 def card(st, items, now, chat):
@@ -395,14 +402,25 @@ def remote_state():
     return remote if len(remote.get("ticked", [])) >= len(local.get("ticked", [])) else local
 
 
-def push_phone(title, body):
+def ntfy_target():
+    """(server, topic). SCORE_NTFY=http://host:port/topic wins (for the Pi); else coach.toml."""
+    if os.environ.get("SCORE_NTFY"):
+        server, topic = os.environ["SCORE_NTFY"].rstrip("/").rsplit("/", 1)
+        return server, topic
     cfg = tomllib.loads(COACH_TOML.read_text(encoding="utf-8"))
     server = cfg["phone_server"].rstrip("/")
     if not server.startswith("http"):
         server = "http://" + server
-    req = urllib.request.Request(f"{server}/{cfg['phone_topic']}", data=body.encode("utf-8"),
-                                 headers={"Title": title.encode("utf-8"), "Priority": "high",
-                                          "Tags": "cricket"})
+    return server, cfg["phone_topic"]
+
+
+def push_phone(title, body):
+    """JSON publish, so the title may hold any character."""
+    server, topic = ntfy_target()
+    payload = json.dumps({"topic": topic, "title": title, "message": body,
+                          "priority": 4, "tags": ["cricket_game"]}).encode("utf-8")
+    req = urllib.request.Request(server, data=payload,
+                                 headers={"Content-Type": "application/json"})
     urllib.request.urlopen(req, timeout=20).read()
 
 
@@ -418,11 +436,12 @@ def alert(argv):
     runs = score(st, items) - (st["open_start"] or 0)
     red = on_field and colour(st, runs, st["open_par"]) != "green"
     if "--test" in argv or red or any(e.startswith("WICKET") for e in ev):
-        body = "\n".join(ev + lines)
+        title = lines[0].replace("🏏 ", "")  # the cricket tag shows the bat already
+        body = "\n".join(ev + lines[1:])
         if "--dry" in argv:
-            print("would send:\n" + body)
+            print(f"would send:\n[{title}]\n{body}")
         else:
-            push_phone("rcnc innings", body)
+            push_phone(title, body)
             print("sent")
     else:
         print("no alert: " + (lines[1] if len(lines) > 1 else lines[0]))
