@@ -9,7 +9,7 @@ fn main() {
     x.max=600.0;
     x.pos = 480.0;
     x.pos = 900.0;
-    if x.pos<=480.0 {println!("The value accepted") } else{println!("Enter the value below 480.0")}
     println!("{} travels {}", x.name, x.max);
     println!("{} at {}", x.name, x.pos);
+    if x.pos<=480.0 {println!("The value accepted") } else{println!("Enter the value below 480.0")}
 }

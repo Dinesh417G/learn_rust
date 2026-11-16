@@ -86,3 +86,4 @@ graph LR
 | 11-16 | Gap, size 0 (closing `}` before `else`) | answered | hit: `}` |
 | 11-16 | Fork, two lines (`=<` / `<=`) | answered | hit: "2" |
 | 11-16 | Broken, size 0 ("Which word on line 12 does Rust not know?") | answered | hit: "Remove then" |
+| 11-16 | Why ("Which line put it there before your check ran?") | answered with their own idea | did not name line 11; proposed "after x at 900 put the if condition" (move the check below the print). Run as typed: order of output changes, axis still at 900 |

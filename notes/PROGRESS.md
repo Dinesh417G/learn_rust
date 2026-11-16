@@ -8,7 +8,7 @@ log: `notes/archive/PROGRESS-minidb.md`.
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
 **Now:** S1 · pull step 3 (ROADMAP): order the recoater to 900, nothing stops it, then a guarded `move_to`
-**Hook:** state: `rcnc` builds and prints `Enter the value below 480.0` / `x travels 600` / `x at 900`: the student's if/else runs, but the message comes after the move (line 11 `x.pos = 900.0;` sits above the check on line 12) and it compares with 480.0, not `x.max` · open closing (Why, size 1): "Which line put it at 900 before the check ran?" (answer: 11) · then: move the order inside the accepting branch, compare the target with `x.max` → `fn move_to(axis: &mut Axis, target: f64) -> bool`; when a refused order leaves pos unchanged, mark layer 1 · last forms: Broken, Why
+**Hook:** state: `rcnc` builds and prints `x travels 600` / `x at 900` / `Enter the value below 480.0`: on the student's idea the if/else now sits below the position print (line 14); the axis still stands at 900 because line 11 `x.pos = 900.0;` runs unguarded, and the check compares with 480.0, not `x.max` · open closing (Bet, size 1): main shown with line numbers, "I delete line 11. Does it still reach 900?" (answer: no, it stays at 480) · then: the move belongs inside the accepting branch, compare the target with `x.max` → `fn move_to(axis: &mut Axis, target: f64) -> bool`; when a refused order leaves pos unchanged, mark layer 1 · last forms: Why, Bet
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Debt:** due 39 by end of 2026-11-16, 65 by 2026-11-22 (table in the `rust-teacher` skill).
 
