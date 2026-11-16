@@ -78,3 +78,4 @@ graph LR
 | 11-16 | Broken ("What does line 8 need between its braces?") | answered | hit on the field (`pos:450.0`, own start value, name changed to "x"); sent the line without `;` → syntax error |
 | 11-16 | Why, size 0 ("What is missing at the caret?") | answered | hit: "; needed to be there" |
 | 11-16 | Predict (`{} at {}` of name, pos) | answered | hit on the value: "X at 480" (real: `x at 480`; the name is lowercase since their own line 8, phone capital in the answer) |
+| 11-16 | Your move, size 3, wrapped in a story ("operator slips a digit ... Send it there.") | turned aside | "What should I need to do": the order was not clear enough as a task. Shrunk to a Gap on the same line |
