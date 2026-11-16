@@ -6,5 +6,6 @@ struct Axis {
 fn main() {
     let mut x = Axis { name: "X".to_string(), max: 500.0 };
     x.max=600.0;
+    x.pos = 480.0;
     println!("{} travels {}", x.name, x.max);
 }

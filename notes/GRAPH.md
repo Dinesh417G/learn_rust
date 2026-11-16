@@ -17,7 +17,7 @@ graph LR
   own --> copy["Copy types"]:::s2
   own --> bor["& borrow"]:::s2
   bor --> bmut["&mut: one writer"]:::s2
-  var --> st["struct, fields"]:::s2
+  var --> st["struct, fields"]:::s3
   st --> impl["impl, new, &self, &mut self"]:::s2
   bmut --> impl
   st --> dbg["derive Debug"]:::s2
@@ -48,7 +48,7 @@ graph LR
 | Copy | 2 | 10-25 | missed on u8, got it in the quiz | passing `pos` |
 | & borrow | 2 | 10-25 | `save(&stored)` unaided | `report(&axis)` |
 | &mut | 2 | 10-25 | E0499 right after changing the guess; E0502 without a guess | `move_to(&mut axis)` |
-| struct | 2 | 11-15 | wrote one on 10-25; read a struct literal on 11-15 | Axis, Laser |
+| struct | 3 | 11-16 | wrote one on 10-25; read a struct literal on 11-15; 11-16 called E0609 before the run: "We are not having pos variable" | Axis, Laser |
 | impl / methods | 2 | 10-25 | wrote `set(&mut self)` unaided | `move_to` |
 | derive Debug | 2 | 10-25 | E0774 when put above `use` | print an Axis |
 | traits | 1 | 10-26 | idea only (4-20 mA rule); no code; a one-type trait step stalled for 20 days | two types, one `report` |
@@ -73,3 +73,4 @@ graph LR
 | 11-15 | Fork with three lettered options incl. "both", right after a miss, on a thing not seen yet (`as f64`) | turned aside | left the step, wrote feedback instead. Said: "some parts of the question turn me aside", "I still know I am hooked" |
 | 11-16 | Gap (`x.max = ____;`), repair after a miss | answered | float right (`600.0`); typed `X.max` (phone capital) → E0425, names are case-sensitive |
 | 11-16 | Why, size 0 ("Which letter does line 8 need?") | answered | hit: `x`; machine runs, prints `X travels 600` |
+| 11-16 | Bet (`x.pos = 480.0;` builds or not) | answered with their own idea | hit, gave the reason: "We are not having pos variable" |
