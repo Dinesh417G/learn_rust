@@ -83,3 +83,4 @@ graph LR
 | 11-16 | Why ("What in the program checked that move?") | answered with their own idea | skipped "nothing" and went to the fix: "Weather we need an if condition" |
 | 11-16 | Your move with a frame ("Write the `if` line") | answered with their own idea | miss on syntax, wrote a full if/else with two messages instead of the framed line; compares against 480.0, not `x.max` |
 | 11-16 | Broken, size 0 ("What replaces the `(` after `else`?") | answered | hit: `else{}` |
+| 11-16 | Gap, size 0 (closing `}` before `else`) | answered | hit: `}` |
