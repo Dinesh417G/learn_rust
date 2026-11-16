@@ -72,3 +72,4 @@ graph LR
 | 11-15 | Predict, two lettered options (`600` into `f64`) | answered | miss |
 | 11-15 | Fork with three lettered options incl. "both", right after a miss, on a thing not seen yet (`as f64`) | turned aside | left the step, wrote feedback instead. Said: "some parts of the question turn me aside", "I still know I am hooked" |
 | 11-16 | Gap (`x.max = ____;`), repair after a miss | answered | float right (`600.0`); typed `X.max` (phone capital) → E0425, names are case-sensitive |
+| 11-16 | Why, size 0 ("Which letter does line 8 need?") | answered | hit: `x`; machine runs, prints `X travels 600` |

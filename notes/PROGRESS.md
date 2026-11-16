@@ -7,8 +7,8 @@ log: `notes/archive/PROGRESS-minidb.md`.
 
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
-**Now:** S1 · pull step 1 (ROADMAP): repair line 8 of `rcnc/src/main.rs`, then step 2 add `pos`
-**Hook:** state: `rcnc` does not build, E0425 on line 8 `X.max=600.0;` (value right, capital `X` not found; line 7 names it `x`), pasted as sent · next closing (repair after a miss, size 0): "Which letter does line 8 need?" · then step 2: add `pos`, order "send the recoater to 480" · pocket (2026-11-15): "The recoater's wall is at 500 mm. In your program, what is stopping it from going to 900?" (answer: nothing yet; sets up pull step 3) · last forms: Gap, Why
+**Now:** S1 · pull step 2 (ROADMAP): add `pos` to `Axis`, order "send the recoater to 480"
+**Hook:** state: `rcnc` builds and prints `X travels 600` (step 1 done); `Axis` has no `pos` yet · open closing (Bet, size 1): operator order "recoater to 480", proposed line 9 `x.pos = 480.0;` shown but NOT in the file, "Builds or not?" (answer: no, E0609 no field `pos`) · then the student adds the field (struct, literal, assignment: split into three small steps) · pocket (2026-11-15): "The recoater's wall is at 500 mm. In your program, what is stopping it from going to 900?" (answer: nothing yet; sets up pull step 3) · last forms: Why, Bet
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Debt:** due 39 by end of 2026-11-16, 65 by 2026-11-22 (table in the `rust-teacher` skill).
 
