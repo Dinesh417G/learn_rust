@@ -8,7 +8,7 @@ log: `notes/archive/PROGRESS-minidb.md`.
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
 **Now:** S1 · pull step 3 (ROADMAP): order the recoater to 900, nothing stops it, then a guarded `move_to`
-**Hook:** state: `rcnc` does not build: line 12 `if x.pos<=480.0 then {println!("The value accepted") } else{println!("Enter the value below 480.0")}`, error "expected `{`, found `then`" · done: blocks closed, `<=` · last repair: remove `then` · open closing (Broken, size 0): "Which word on line 12 does Rust not know?" · afterwards Predict what it prints (pos is 900 → the else message; the axis still stands at 900: the check came after the move and compares with 480.0, not `x.max`) → guard before the move → `fn move_to(axis: &mut Axis, target: f64) -> bool` · last forms: Fork, Broken
+**Hook:** state: `rcnc` builds and prints `Enter the value below 480.0` / `x travels 600` / `x at 900`: the student's if/else runs, but the message comes after the move (line 11 `x.pos = 900.0;` sits above the check on line 12) and it compares with 480.0, not `x.max` · open closing (Why, size 1): "Which line put it at 900 before the check ran?" (answer: 11) · then: move the order inside the accepting branch, compare the target with `x.max` → `fn move_to(axis: &mut Axis, target: f64) -> bool`; when a refused order leaves pos unchanged, mark layer 1 · last forms: Broken, Why
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Debt:** due 39 by end of 2026-11-16, 65 by 2026-11-22 (table in the `rust-teacher` skill).
 

@@ -11,7 +11,7 @@ graph LR
   num --> cast["as casts"]:::s2
   num --> fmt["printing floats with {}"]:::s2
   var --> fnn["functions, tail value"]:::s2
-  fnn --> flow["if as value, loop, for, ranges"]:::s1
+  fnn --> flow["if as value, loop, for, ranges"]:::s2
   var --> strs["String vs &str"]:::s1
   own --> clone["clone"]:::s3
   own --> copy["Copy types"]:::s2
@@ -41,7 +41,7 @@ graph LR
 | as casts | 2 | 10-25 | `port as u8` gave 202, then widened the right way | µm to mm |
 | printing floats | 2 | 11-16 | expected `500.0`, got `500`; 11-16 predicted `480` for `{}` of 480.0 | Z after one layer |
 | functions | 2 | 10-20 | tail value, E0308 when `;` added | `in_limits` |
-| if / loop / for | 1 | 11-16 | `1..=len` off by one found at runtime; 11-16 wrote the guard in ST shape: `if x.pos=<480.0 then {println!(..) else(println!(..)` (`then`, `=<`, `else(`, first `{` never closed). Idea right: accept / reject message | layer loop |
+| if / loop / for | 2 | 11-16 | `1..=len` off by one found at runtime; 11-16 wrote the guard in ST shape: `if x.pos=<480.0 then {println!(..) else(println!(..)` (`then`, `=<`, `else(`, first `{` never closed). Idea right: accept / reject message; repaired it in four single steps, all hits (`else{}`, `}`, `<=`, "Remove then") | layer loop |
 | String vs &str | 1 | 10-25 | asked again what a string literal is | axis names, fault text |
 | ownership: move | 2 | 10-25 | thought a moved value is "empty", then predicted E0382 correctly | who owns the drive |
 | clone | 3 | 10-25 | predicted the output exactly | copy of a position |
@@ -85,3 +85,4 @@ graph LR
 | 11-16 | Broken, size 0 ("What replaces the `(` after `else`?") | answered | hit: `else{}` |
 | 11-16 | Gap, size 0 (closing `}` before `else`) | answered | hit: `}` |
 | 11-16 | Fork, two lines (`=<` / `<=`) | answered | hit: "2" |
+| 11-16 | Broken, size 0 ("Which word on line 12 does Rust not know?") | answered | hit: "Remove then" |
