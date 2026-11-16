@@ -8,7 +8,7 @@ log: `notes/archive/PROGRESS-minidb.md`.
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
 **Now:** S1 · pull step 3 (ROADMAP): order the recoater to 900, nothing stops it, then a guarded `move_to`
-**Hook:** state: `rcnc` builds and prints `x travels 600` / `x at 900`: the recoater stands 300 mm past its wall and nothing complained · open closing (Why, size 1): "What in the program stopped it at 600?" (answer: nothing) · then the guard: `fn move_to(axis: &mut Axis, target: f64) -> bool`, teacher types the frame, student fills the comparison; later as a method · last forms: Gap, Why
+**Hook:** state: `rcnc` builds and prints `x travels 600` / `x at 900` (recoater 300 mm past its wall); the student proposed "an if condition" · open closing (Your move, size 3): "Write the `if` line that goes above line 11." (e.g. `if 900.0 <= x.max {`; teacher closes the brace; expected output then `x at 480`) · then the same guard for every order → `fn move_to(axis: &mut Axis, target: f64) -> bool`, later a method · last forms: Why, Your move
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Debt:** due 39 by end of 2026-11-16, 65 by 2026-11-22 (table in the `rust-teacher` skill).
 
