@@ -17,5 +17,5 @@ else
 {
 println!("Refused");
 }
-Println!("{} Moves at {}",x.name,x.pos);
+println!("{} Moves at {}",x.name,x.pos);
 }
