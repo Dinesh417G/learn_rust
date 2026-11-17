@@ -8,7 +8,7 @@ log: `notes/archive/PROGRESS-minidb.md`.
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
 **Now:** S1 · L1 done (guard inside the check); L2: the guard becomes `fn move_to(axis: &mut Axis, target: f64)` (job card 3 path), video 1.5.3 Traits offered first (0 runs today)
-**Hook:** state (2026-11-17 cloud): `rcnc` prints `x travels 500` / `900 The entered value is greater than the it 500` / `x Moves at 480`; guard written inline in `main` (lines 12-19), wall back at 500 on line 9 · **next:** watch 1.5.3 (6 min, 0 runs today), then L2: the guard moves into `fn move_to(axis: &mut Axis, target: f64)`; first move: write only the `fn` line above `main` (Your move, size 3) · twist planned: calling it twice with `x` moved vs `&mut x` · last forms: Your move, Your move · holds 2026-11-17 18:03-19:03 (free), 19:03-20:03 (2/3; third hold today = wicket), pocket given: "the fn must change x.pos: is a read-only HMI tag of x enough?"; on return `score.py back --chat`, then 1.5.3 link again if not watched
+**Hook:** state (2026-11-17 cloud): `rcnc` prints `x travels 500` / `900 The entered value is greater than the it 500` / `x Moves at 480`; guard written inline in `main` (lines 12-19), wall back at 500 on line 9 · **next:** watch 1.5.3 (6 min, 0 runs today), then L2: the guard moves into `fn move_to(axis: &mut Axis, target: f64)`; first move: write only the `fn` line above `main` (Your move, size 3) · twist planned: calling it twice with `x` moved vs `&mut x` · last forms: Your move, Your move · holds 2026-11-17 18:03-19:03 (free), 19:03-20:03 (free), 20:06-22:00 (3/3: WICKET 132/1), pocket given: "the fn must change x.pos: is a read-only HMI tag of x enough?"; on return `score.py back --chat`, then 1.5.3 link again if not watched
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Innings (student's rules, v2 2026-11-16):** chasing 2572 runs (1 run = 1 video minute; PDF / quiz 1), 1 over = 1 day ending 03:00, over 1 = 2026-11-17, last 2026-12-27. Rules in skill §11. State `notes/innings.json`, board `python tools/score.py --chat`. The weekly table in the skill only says which stage closes when.
 
@@ -19,7 +19,7 @@ metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the v
 | Layers printed | 1 (build height 0.04 mm; 1 layer = 0.04 mm) |
 | Bosses beaten | 0 / 9 |
 | Streak | 1 day |
-| Innings | innings 1 · 10 wkts · below par 0/3 · green run 0/5 · rain days 2 · last over none yet (`python tools/score.py`) |
+| Innings | innings 1 · 9 wkts · below par 0/3 · green run 0/5 · rain days 2 · last over none yet (`python tools/score.py`) |
 
 PDF, quiz, exam = open it, mark complete, 1 run, no reading. The level check is the boss on `rcnc`.
 

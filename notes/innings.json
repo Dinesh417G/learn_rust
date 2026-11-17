@@ -11,15 +11,22 @@
   "innings": 1,
   "ticked": [],
   "last_score": 132,
-  "wickets": [],
-  "wicket_days": [],
+  "wickets": [
+    {
+      "date": "2026-11-17",
+      "how": "3 holds in one day"
+    }
+  ],
+  "wicket_days": [
+    "2026-11-17"
+  ],
   "holds": {
     "date": "2026-11-17",
-    "count": 2
+    "count": 3
   },
   "hold_open": {
-    "at": "2026-11-17T19:03+05:30",
-    "until": "2026-11-17T20:03+05:30"
+    "at": "2026-11-17T20:06+05:30",
+    "until": "2026-11-17T22:00+05:30"
   },
   "below_par": 0,
   "green_run": 0,
