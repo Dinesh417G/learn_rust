@@ -15,7 +15,7 @@ x.pos=pos;
 }
 else
 {
-println!("Refused");
+println!("{} The entered value is greater than the it {}",pos,x.max);
 }
 println!("{} Moves at {}",x.name,x.pos);
 }
