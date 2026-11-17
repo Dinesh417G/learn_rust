@@ -36,12 +36,12 @@ graph LR
 ## Nodes
 | Node | Strength | Last | Evidence, in order | Bring it back as |
 |---|---|---|---|---|
-| let / mut / const | 3 | 11-15 | E0384 on 10-20; on 11-15 called the E0594 error before the run and named `mut` on the `let` line | every new axis |
+| let / mut / const | 3 | 11-17 | E0384 on 10-20; on 11-15 called the E0594 error before the run and named `mut` on the `let` line; 11-17 wrote `pos=900.0;` without `let` (E0425), fixed it at once from the sample | every new axis |
 | number types | 2 | 11-16 | 10-25 ran `u8 + u16` before guessing; 11-15 expected `x.max = 600` to work on an `f64` ("a"). CODESYS habit: INT to LREAL is automatic; 11-16 wrote `600.0` unaided from the gap | layer counter (u32) times 0.04 |
 | as casts | 2 | 10-25 | `port as u8` gave 202, then widened the right way | µm to mm |
 | printing floats | 2 | 11-16 | expected `500.0`, got `500`; 11-16 predicted `480` for `{}` of 480.0 | Z after one layer |
 | functions | 2 | 10-20 | tail value, E0308 when `;` added | `in_limits` |
-| if / loop / for | 2 | 11-16 | `1..=len` off by one found at runtime; 11-16 wrote the guard in ST shape: `if x.pos=<480.0 then {println!(..) else(println!(..)` (`then`, `=<`, `else(`, first `{` never closed). Idea right: accept / reject message; repaired it in four single steps, all hits (`else{}`, `}`, `<=`, "Remove then") | layer loop |
+| if / loop / for | 2 | 11-16 | `1..=len` off by one found at runtime; 11-16 wrote the guard in ST shape: `if x.pos=<480.0 then {println!(..) else(println!(..)` (`then`, `=<`, `else(`, first `{` never closed). Idea right: accept / reject message; repaired it in four single steps, all hits (`else{}`, `}`, `<=`, "Remove then"); 11-17 asked for a sample, then wrote the guard with the move inside the accepting branch (`let pos`, `if pos<=x.max {x.pos=pos;}`) | layer loop |
 | String vs &str | 1 | 10-25 | asked again what a string literal is | axis names, fault text |
 | ownership: move | 2 | 10-25 | thought a moved value is "empty", then predicted E0382 correctly | who owns the drive |
 | clone | 3 | 10-25 | predicted the output exactly | copy of a position |
