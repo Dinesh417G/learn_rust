@@ -9,7 +9,7 @@ fn main() {
 x.max =480.0;
     x.pos = 480.0;
     println!("{} travels {}", x.name, x.max);
-pos=900.0;
+let pos=900.0;
 if pos<=x.max {
 x.pos=pos;
 }
