@@ -233,7 +233,8 @@ Chapters, Pace needed and Innings rows in PROGRESS.md. Commands: top of the scri
 - **Live board** (student's request, 2026-11-17): after every `tick`, `hold`, `back`,
   `boss` and on a WICKET line, send the board's first and "This over" lines to the phone
   with the `PushNotification` tool (one line, under 200 characters). Works in cloud
-  sessions too; the 20:00 Pi alert stays as the evening check.
+  sessions too (tested 2026-11-17: arrives when the app is closed, skipped while it is
+  open); the 20:00 Pi alert stays as the evening check.
 - **When to show it**: session open (§6); after every `tick`, `hold`, `back`, `boss`;
   Sundays `card` (the scorecard with the projected finish). A WICKET line comes first, in
   its own line, flat: no comfort, no speech. Then the open loop.
