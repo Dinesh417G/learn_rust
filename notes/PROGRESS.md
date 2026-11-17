@@ -7,8 +7,8 @@ log: `notes/archive/PROGRESS-minidb.md`.
 
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
-**Now:** S1 · pull step 3 (ROADMAP): order the recoater to 900, nothing stops it, then a guarded `move_to`
-**Hook:** state: `rcnc` builds and prints `x travels 600` / `x at 900` / `Enter the value below 480.0`: on the student's idea the if/else now sits below the position print (line 14); the axis still stands at 900 because line 11 `x.pos = 900.0;` runs unguarded, and the check compares with 480.0, not `x.max` · **next: job card 3 (ROADMAP S1 job queue), first shift of 2026-11-17:** `JOB: the recoater must refuse any order past its wall.` / `DONE WHEN: rcnc refuses 900 naming the 500 limit, and X still stands at 480.` First move (small, doing): the order to 900 goes into the check instead of above it; the student types it · when the refusal leaves pos unchanged, mark layer 1 · last forms: Why, Bet (both quiz-shaped: next closings are doing forms, skill §4) · 2026-11-16 evening (PC): no lesson; innings rules v2 set (skill §11), over 1 starts 2026-11-17; steps 1-3 above came from the cloud branch merged that evening
+**Now:** S1 · L1 done (guard inside the check); L2: the guard becomes `fn move_to(axis: &mut Axis, target: f64)` (job card 3 path), video 1.5.3 Traits offered first (0 runs today)
+**Hook:** state (2026-11-17 cloud): `rcnc` prints `x travels 500` / `900 The entered value is greater than the it 500` / `x Moves at 480`; guard written inline in `main` (lines 12-19), wall back at 500 on line 9 · **next:** watch 1.5.3 (6 min, 0 runs today), then L2: the guard moves into `fn move_to(axis: &mut Axis, target: f64)`; first move: write only the `fn` line above `main` (Your move, size 3) · twist planned: calling it twice with `x` moved vs `&mut x` · last forms: Your move, Your move
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Innings (student's rules, v2 2026-11-16):** chasing 2572 runs (1 run = 1 video minute; PDF / quiz 1), 1 over = 1 day ending 03:00, over 1 = 2026-11-17, last 2026-12-27. Rules in skill §11. State `notes/innings.json`, board `python tools/score.py --chat`. The weekly table in the skill only says which stage closes when.
 
@@ -16,16 +16,16 @@ metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the v
 |---|---|
 | Chapters | 35 / 301 items · runs 132 / 2572 (5 %) |
 | Pace needed | RRR 59.5 runs a day (2440 off 41 overs; 1 run = 1 video min) |
-| Layers printed | 0 (build height 0.00 mm; 1 layer = 0.04 mm) |
+| Layers printed | 1 (build height 0.04 mm; 1 layer = 0.04 mm) |
 | Bosses beaten | 0 / 9 |
-| Streak | 0 days |
+| Streak | 1 day |
 | Innings | innings 1 · 10 wkts · below par 0/3 · green run 0/5 · rain days 2 · last over none yet (`python tools/score.py`) |
 
 PDF, quiz, exam = open it, mark complete, 1 run, no reading. The level check is the boss on `rcnc`.
 
 ## S1 · The machine in memory · Part 1 (rest) · week 1
 - [x] 1.0.1–1.5.2 Modules 1-4 + Structs (done on minidb, 2026-10-16 to 10-25)
-- [ ] L1-L2 warm-up, no video: `struct Axis`, `new`, `move_to(&mut self)` with a limit check
+- [~] L1-L2 warm-up, no video: `struct Axis`, `new`, `move_to(&mut self)` with a limit check
 - [ ] 1.5.3–1.5.4 Traits + Exercise I → L3: `trait Status` for `Axis` AND `Laser`, one `report()` for both
 - [ ] 1.5.5–1.5.6 Collections + Exercise J → L4: `Vec<Axis>` (X, Z, W) + `HashMap` pin table (mini HAL)
 - [ ] 1.5.7–1.5.8 Enums + Exercise K → L5: `enum DriveState` (CiA 402) + `enum Command` + `match`
@@ -120,3 +120,4 @@ bacon, cargo-watch, protoc 36, Docker, VS Code.
 ## Log
 - 2026-11-15 Roadmap changed: minidb → `rcnc` (machine controller for the LinuxCNC metal-printer project). All 301 Ardan chapters mapped to 9 stages, deadline 2026-12-28. Task 10 step 1a (20 days stalled) dropped; traits come back in S1 L3 with two types. `rcnc/` created (hello world runs). Next: S1 L1.
 - 2026-11-15 `rust-teacher` skill built, then rebuilt as a fixed procedure after the student's feedback (hooks must not be visible, one thing per question). Memory graph `notes/GRAPH.md`, cloud compiler setup `tools/cloud-setup.sh`, release track (Rust 1.100.0) added. First answers on `rcnc`: `{}` of 500.0 (miss), assign without `mut` (hit, named the fix), `600` into `f64` (miss). Machine left broken on line 8.
+- 2026-11-17 (cloud) Layer 1 printed: the recoater refuses 900 naming the 500 wall and stays at 480. Student wrote the guard from a laser sample, repaired `Println` and the missing `let` in one step each, made the refusal print order and limit, put the wall back to 500. 0 runs (no video yet).
