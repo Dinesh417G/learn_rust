@@ -150,3 +150,17 @@ trait Controls {
 `error: expected one of ! or ::, found :` at `name: String` (a trait holds no data).
 Open question (size 0, repair): "Which one carries Swift's name plate: the struct or the trait?"
 Bus question parked behind it.
+
+Student: "Nope tell the example with car" (did not take the name-plate question; wants
+the whole story with one car). Told as four factory steps, one Rust word each:
+1. Body, `struct Car`: the body gets a name plate "Swift". Swift exists, can do nothing.
+2. Rulebook, `trait Controls`: a sheet of paper, "every vehicle needs a horn button:
+   honk". No car, no sound, no wire.
+3. Workshop, `impl Controls for Car`: the electrician reads the rulebook and wires
+   Swift's horn button to a beeper. Tata's workshop wires the same button to an air horn.
+   Extra job `impl Car`: a fuel gauge, Swift's own, not in the rulebook.
+4. Inspection bay, `fn inspect`: the inspector holds only the rulebook, presses honk,
+   never asks car or truck. A vehicle that skipped step 3 is not let in.
+Real run this session (same code as the morning demo above): `Swift: beep` /
+`Tata: HOOONK` / `Swift: tank 40 l`.
+Open question: "Which step gave Swift its beep?"
