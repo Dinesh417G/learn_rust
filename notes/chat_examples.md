@@ -128,3 +128,9 @@ fn main() {
 `help: the trait Controls is not implemented for Bus`.
 Open question (replaces the Bus one above): "Bus goes to the workshop and gets only a fuel
 gauge, no panel job: what happens at the bay?"
+
+Student: "We are learning about trait right?" (lost the link between struct impl and
+trait). Answer: yes; a trait alone is the list of buttons and does nothing; it becomes
+real only when a struct's impl wires its buttons, so half of every trait lives in a
+struct's workshop. Same open question, reworded to point at the trait: "Bus has a fuel
+gauge but never wired the trait's horn button: does the bay let it in?"
