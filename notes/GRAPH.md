@@ -90,4 +90,5 @@ graph LR
 | 11-18 | (meta) student: "check with git it has teaching me trait in a different way so you continue from there on" | answered with their own idea | switched the shift to the course's Exercise I file; Gap on the trait signature pending |
 | ~11-17 (cloud) | Your move ("Write the rule for rcnc: trait Status with one button named report") x3 | turned aside | asked for the concept / more uses each time; never written. Retired till 11-25 |
 | 11-18 | Broken, size 3 ("What goes on line 13 so the button prints `x at 480`?"), frame typed by the teacher | turned aside | asked why the chat was not synced, then to stay on the vehicle example first |
-| 11-18 | Catch, size 0 (Bike impl without `lights`, E0046: "Line 21. What did I leave out?") | pending | |
+| 11-18 | Catch, size 0 (Bike impl without `lights`, E0046: "Line 21. What did I leave out?") | answered with their own idea | "the trait is the button the implementaion block is the wiring ... explain me easily": asked for the concept in full before code; new order recorded (skill §13) |
+| 11-18 | Bet in the concept world ("Truck wires its horn as `fn honk(&self, loud: bool)`: does it still get into the bay?") | pending | |

@@ -38,6 +38,14 @@ tone or pacing, the skill wins.
 ## Where the session runs
 - **PC**: everything below applies.
 - **Cloud session (Claude Code on the web, Linux)**: the repo is a fresh clone.
+  - **Concepts only** (student's rule, 2026-11-18: "in claude code cloud session only
+    explain me concepts and find a way to sync with it"). No `rcnc` or exercise coding
+    there: the CONCEPT step of the layer loop, nothing after it. Every concept message
+    goes into `notes/chat_examples.md` in the same turn: the concept, the example, real
+    output, the student's questions in their own words, where it stopped. The Stop hook
+    `tools/cloud_autosync.py` commits and pushes `notes/`, `exercises/`, `rcnc/` after
+    every reply; the PC's start hook merges that branch, and the PC session continues
+    from the last entry of `notes/chat_examples.md`.
   - First command: `bash tools/cloud-setup.sh`. It installs Rust with rustup if `cargo`
     is missing and ends with `compiler ready`. In later shell calls run
     `. "$HOME/.cargo/env"` first if `cargo` is not found.
@@ -87,19 +95,27 @@ Everywhere: commit and push (`rtk git add -A`, `rtk git commit`, `rtk git push`)
 
 ## Layer loop (one step per reply)
 A layer = one concept, about 10 minutes, ends with new machine output.
-1. HOOK: show what the machine does now and one open question about it.
+Order (student's rule, 2026-11-18: "this real world examples are very useful in learning
+process so teach the concepts like this first after i say i am done suggest me the course
+vedios and then to code"): CONCEPT, then the videos, then code. Skill §13.
+1. CONCEPT: the idea in chat through one real-world picture (the vehicle: trait = the
+   button panel, `impl` = the wiring behind it). Annotated code, real runs only, the
+   corners shown as real compiler errors, one question at a time in the example's world.
+   No `rcnc` coding yet. Each message goes into `notes/chat_examples.md`. Ends when the
+   student says "done".
 2. WATCH: only the lines of `python tools/score.py next` (▶ number, title, minutes and
-   the direct Ardan player link). No description, no "what to look for": the link alone,
-   so the student taps it and is in the video (student's request, 2026-11-16: names
-   distract, links do not). They may watch on the phone and just say "done" or
-   "watched <number>".
-3. BUILD: the step in `rcnc`, with the file. Ask for the guess before any run.
-4. CHECK: read their files yourself, run `rtk cargo build` / `test` / `clippy`. One line
+   the direct Ardan player link) for the concept's chapters. No description, no "what to
+   look for": the link alone, so the student taps it and is in the video (student's
+   request, 2026-11-16: names distract, links do not). They may watch on the phone and
+   just say "done" or "watched <number>".
+3. HOOK: show what the machine does now and one open question about it.
+4. BUILD: the step in `rcnc`, with the file. Ask for the guess before any run.
+5. CHECK: read their files yourself, run `rtk cargo build` / `test` / `clippy`. One line
    on what is right, then at most 2 fixes.
-5. MARK: `python tools/score.py tick <item ids>` (it updates the Chapters, Pace and
+6. MARK: `python tools/score.py tick <item ids>` (it updates the Chapters, Pace and
    Innings rows), then PROGRESS.md (`[x]`, Now line, layers, build height = layers x
    0.04 mm, streak, bosses; one dated log line), then commit and push.
-6. NEXT: the next single layer.
+7. NEXT: the next single layer, starting again at CONCEPT.
 
 ## Anti-stall rules (from the 20-day stall on one trait step, 2026-10-26 to 11-15)
 - Never give the same step a third time. Not started after two sessions: shrink it to
@@ -134,6 +150,9 @@ The student studies on the phone and codes through you:
 - Rust beyond the course: the release track in `notes/ROADMAP.md`. Read the release
   announcement before teaching anything from it; never from memory.
 - On a compiler error: explain it in plain words first, then give the hint.
+- Real-world pictures that worked: the vehicle for traits (trait = button panel, `impl` =
+  the wiring, `&impl Controls` = the inspection bay; the student's own words 2026-11-18:
+  "the trait is the button the implementaion block is the wiring").
 - PLC analogies that worked: ownership = one coil has one writer; `&` = read-only HMI tag;
   trait = the 4-20 mA rule every transmitter keeps; enum + match = CASE state machine.
   CODESYS INTERFACE did not work (never used it).

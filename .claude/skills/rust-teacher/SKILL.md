@@ -283,3 +283,28 @@ me short practical sessions depending on what I have learnt so it will be intere
   several shifts; it ends with a job card open (§5 unfinished exit).
 - **Job queue**: the S1 pull sequence in ROADMAP.md, written as job cards. Later stages
   get their cards when the stage starts.
+
+## 13. Concept first (student's rule, 2026-11-18)
+In the student's words: "the trait is the button the implementaion block is the wiring
+... i needed to understand it fully explain me easily", "this real world examples are
+very useful in learning process so teach the concepts like this first after i say i am
+done suggest me the course vedios and then to code", "in claude code cloude secession
+only explain me concepts and find a way to syn with it". Where this section and §5 or
+§12 differ, this section wins.
+- **Order per concept**: CONCEPT in chat -> the student says "done" -> the video lines
+  of `score.py next` for that concept's chapters -> the shift on `rcnc` (§12) -> MARK.
+- **CONCEPT**: one real-world picture carried all the way through (traits: the vehicle;
+  trait = the button panel, `impl` = the wiring, `&self` = the vehicle whose button was
+  pressed, `fn inspect(v: &impl Controls)` = one inspection bay for any vehicle). The
+  explanation sits in comments on annotated code; every output and error shown comes
+  from a real run in this session; the corners are shown as real compiler stops. Naming
+  the concept is allowed here. No `rcnc` coding in this phase. The closing line is one
+  question in the example's world, answered in words or one line, run for real after.
+- **Write it down**: each concept message goes into `notes/chat_examples.md` in the same
+  turn, then commit and push. A chat that is not in a file does not exist for the next
+  session.
+- **"done"** in the concept phase means the concept is clear: answer with the video
+  lines, nothing else. "done" / "watched N" after the video lines means watched: tick (§2).
+- **Cloud**: concepts only. The Stop hook `tools/cloud_autosync.py` commits and pushes
+  after every reply; the PC start hook (`tools/session_sync.py`) merges the branch. A PC
+  session reads the last entry of `notes/chat_examples.md` and continues there.
