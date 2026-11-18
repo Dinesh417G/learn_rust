@@ -164,3 +164,15 @@ the whole story with one car). Told as four factory steps, one Rust word each:
 Real run this session (same code as the morning demo above): `Swift: beep` /
 `Tata: HOOONK` / `Swift: tank 40 l`.
 Open question: "Which step gave Swift its beep?"
+
+22:30. Coach called "Away" during the chat (no PC input); paused till 23:28, fix parked in
+`rust_learn/memory/PENDING.md`. Student's own doubt: "can we add additional features which
+are not in the rules book, where does this inspect comes from". Answered in the car world:
+- Extra features: yes, in Car's own workshop job (`impl Car { fn fuel }`). Not inside the
+  panel job: real run, `fn fuel` put inside `impl Controls for Car` ->
+  `error[E0407]: method fuel is not a member of trait Controls`.
+- `inspect` is not from Rust: we wrote it, a plain function like `fn show(pos: f64)`. The
+  name is free; what makes it a bay is the gate `v: &impl Controls`. Real run with the bay
+  renamed `fn rto_check(v: &impl Controls)`: `Swift: beep` / `Swift: tank 40 l`.
+Open question: "The RTO bay wants to read the fuel gauge too: what must happen to the rulebook?"
+(answer: `fuel` goes into the trait, then every vehicle's panel job must wire it.)
