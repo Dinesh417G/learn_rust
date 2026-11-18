@@ -81,3 +81,25 @@ Corners, each a real compiler stop (rustc 2021 edition, this session):
 4. The bay sees only panel buttons: `impl Car { fn fuel }` (no `for`) is Car's own switch; `swift.fuel()` works, `v.fuel()` inside `inspect` -> `E0599 no method named fuel found for reference &impl Controls`.
 Held back for the closing question: `fn honk(&self, loud: bool)` in Truck's wiring -> `E0050 method honk has 2 parameters but the declaration in trait Controls::honk has 1`.
 Open question: "Truck wires its horn as `fn honk(&self, loud: bool)`: does it still get into the bay?"
+
+## 2026-11-18 (PC, evening) · the `impl` block, no code
+Student, after the Truck question was shown with code: "Wait no code i still don't
+understand the concept the impl i don't till now so teach me". Taught in words only:
+
+- **Body (struct)**: a Car leaves the line as a body with a name plate ("Swift"). It holds
+  things, it does nothing. Nothing is wired yet.
+- **Workshop (impl)**: the impl block is the workshop visit. Every wire laid there becomes
+  something this vehicle can do, and only this vehicle: Car's workshop wires Cars.
+- Two kinds of job in the workshop: **own switch** (`impl Car`: the fuel gauge, only Car
+  has it, no rule asked for it) and **panel job** (`impl Controls for Car`: the rulebook
+  says every vehicle needs a horn button; Car's workshop connects it to a beeper, Truck's
+  to an air horn; same button, different wire).
+- **Bay** (`inspect`): reads only the rulebook, presses the horn, does not care what is
+  behind it. No panel job, no entry (E0277, seen with `inspect(&5)`).
+- PLC picture: struct + impl together = one function block. Struct = the VAR part
+  (data only, like a UDT), impl = the code part. Trait = the 4-20 mA rule; panel job =
+  "this transmitter is wired to meet the rule".
+
+Open question: "A Bus arrives with a body and a name plate, but it never went to the
+workshop: what can it do?" (real answer to show after: nothing; `bus.honk()` -> E0599,
+`inspect(&bus)` -> E0277. Run it before showing.)

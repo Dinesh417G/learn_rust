@@ -51,7 +51,7 @@ graph LR
 | struct | 3 | 11-16 | wrote one on 10-25; read a struct literal on 11-15; 11-16 called E0609 before the run: "We are not having pos variable" | Axis, Laser |
 | impl / methods | 2 | 10-25 | wrote `set(&mut self)` unaided | `move_to` |
 | derive Debug | 2 | 10-25 | E0774 when put above `use` | print an Axis |
-| traits | 1 | 11-18 | idea only (4-20 mA rule); no code; a one-type trait step stalled for 20 days; cloud chat (pasted 11-18): vehicle example `trait Controls { fn honk(&self); fn lights(&self); }` for Car/Truck, inspect bay `fn inspect(v: &impl Controls)`, E0277 on `5`. Asked "how we can use trait in more useful ways" before coding, then of `&impl Controls`: "I can't properly understand what is what"; landed via `fn show(pos: f64)` side by side. 11-18 teacher wrote `trait Status` + empty impl in rcnc | Axis + Laser, one `report` |
+| traits | 1 | 11-18 | idea only (4-20 mA rule); no code; a one-type trait step stalled for 20 days; cloud chat (pasted 11-18): vehicle example `trait Controls { fn honk(&self); fn lights(&self); }` for Car/Truck, inspect bay `fn inspect(v: &impl Controls)`, E0277 on `5`. Asked "how we can use trait in more useful ways" before coding, then of `&impl Controls`: "I can't properly understand what is what"; landed via `fn show(pos: f64)` side by side. 11-18 teacher wrote `trait Status` + empty impl in rcnc; 11-18 evening: "i still don't understand the concept the impl", asked for it with no code | Axis + Laser, one `report` |
 | mod / pub / use | 2 | 10-22 | E0603 on a private `use` | S2 lib + bin split |
 | Vec, HashMap, enum, Option | 0 | | not met | S1 pull sequence |
 
@@ -91,4 +91,5 @@ graph LR
 | ~11-17 (cloud) | Your move ("Write the rule for rcnc: trait Status with one button named report") x3 | turned aside | asked for the concept / more uses each time; never written. Retired till 11-25 |
 | 11-18 | Broken, size 3 ("What goes on line 13 so the button prints `x at 480`?"), frame typed by the teacher | turned aside | asked why the chat was not synced, then to stay on the vehicle example first |
 | 11-18 | Catch, size 0 (Bike impl without `lights`, E0046: "Line 21. What did I leave out?") | answered with their own idea | "the trait is the button the implementaion block is the wiring ... explain me easily": asked for the concept in full before code; new order recorded (skill §13) |
-| 11-18 | Bet in the concept world ("Truck wires its horn as `fn honk(&self, loud: bool)`: does it still get into the bay?") | pending | |
+| 11-18 | Bet in the concept world ("Truck wires its horn as `fn honk(&self, loud: bool)`: does it still get into the bay?") | turned aside | left as pocket over two holds, no answer; shown again with code at 21:00: "Wait no code i still don't understand the concept the impl i don't till now so teach me" |
+| 11-18 | Predict in words, concept world ("A Bus ... never went to the workshop: what can it do?") | pending | after the no-code impl explanation (body / workshop / own switch / panel job / bay, FB = VAR part + code part) |
