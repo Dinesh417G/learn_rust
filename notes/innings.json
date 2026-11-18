@@ -15,16 +15,24 @@
     {
       "date": "2026-11-17",
       "how": "3 holds in one day"
+    },
+    {
+      "date": "2026-11-18",
+      "how": "3 holds in one day"
     }
   ],
   "wicket_days": [
-    "2026-11-17"
+    "2026-11-17",
+    "2026-11-18"
   ],
   "holds": {
     "date": "2026-11-18",
-    "count": 2
+    "count": 3
   },
-  "hold_open": null,
+  "hold_open": {
+    "at": "2026-11-18T21:16+05:30",
+    "until": "2026-11-18T23:00+05:30"
+  },
   "below_par": 1,
   "green_run": 0,
   "rain_days": [],
