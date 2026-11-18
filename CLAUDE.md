@@ -117,6 +117,9 @@ A layer = one concept, about 10 minutes, ends with new machine output.
 ## Mobile mode (student's choice, 2026-10-25)
 The student studies on the phone and codes through you:
 - Teach the concept in chat first: short, a PLC analogy, a tiny example that is not their solution.
+- Every example shown in chat goes into `notes/chat_examples.md` (date, code, real output)
+  in the same turn, then commit and push. Chat is not in git (2026-11-18: the vehicle
+  trait example lived only in a cloud chat).
 - They send code as text. Paste it into the file exactly as sent, typos included, then run
   cargo yourself and show only the new or relevant output lines.
 - Fix typos only when they ask ("correct it").
