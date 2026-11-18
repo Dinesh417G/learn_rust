@@ -134,3 +134,19 @@ trait). Answer: yes; a trait alone is the list of buttons and does nothing; it b
 real only when a struct's impl wires its buttons, so half of every trait lives in a
 struct's workshop. Same open question, reworded to point at the trait: "Bus has a fuel
 gauge but never wired the trait's horn button: does the bay let it in?"
+
+22:21, back early from the hold. Student: "Okay trait is similar to struct right".
+Answer: they look alike on paper (a name, braces, a list), different job. Struct = the
+body, holds data, real ones get built (Swift, Tata). Trait = the list of buttons, names
+only, no data, no wiring, never a real vehicle. PLC: struct = UDT; trait = the 4-20 mA
+spec sheet (no transmitter is the spec; each one meets it). Real run, this session:
+
+```rust
+trait Controls {
+    name: String,
+    fn honk(&self);
+}
+```
+`error: expected one of ! or ::, found :` at `name: String` (a trait holds no data).
+Open question (size 0, repair): "Which one carries Swift's name plate: the struct or the trait?"
+Bus question parked behind it.

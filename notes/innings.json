@@ -29,10 +29,7 @@
     "date": "2026-11-18",
     "count": 3
   },
-  "hold_open": {
-    "at": "2026-11-18T21:16+05:30",
-    "until": "2026-11-18T23:00+05:30"
-  },
+  "hold_open": null,
   "below_par": 1,
   "green_run": 0,
   "rain_days": [],
