@@ -89,4 +89,5 @@ graph LR
 | 11-16 | Why ("Which line put it there before your check ran?") | answered with their own idea | did not name line 11; proposed "after x at 900 put the if condition" (move the check below the print). Run as typed: order of output changes, axis still at 900 |
 | 11-18 | (meta) student: "check with git it has teaching me trait in a different way so you continue from there on" | answered with their own idea | switched the shift to the course's Exercise I file; Gap on the trait signature pending |
 | ~11-17 (cloud) | Your move ("Write the rule for rcnc: trait Status with one button named report") x3 | turned aside | asked for the concept / more uses each time; never written. Retired till 11-25 |
-| 11-18 | Broken, size 3 ("What goes on line 13 so the button prints `x at 480`?"), frame typed by the teacher | pending | |
+| 11-18 | Broken, size 3 ("What goes on line 13 so the button prints `x at 480`?"), frame typed by the teacher | turned aside | asked why the chat was not synced, then to stay on the vehicle example first |
+| 11-18 | Catch, size 0 (Bike impl without `lights`, E0046: "Line 21. What did I leave out?") | pending | |
