@@ -32,22 +32,22 @@ _Not yet written._
 <!-- AUTO:BEGIN - rewritten by the dtree hooks. Edit outside this block. -->
 ## Machine snapshot
 
-- Refreshed: 2026-11-10 22:23:53 +05:30 (trigger: SessionEnd)
-- Branch: main    HEAD: 8c652b7
-- Budget band: **limited** - 5h at 38% -> normal. 7-day at 72% is over 70%, so dropped one band tighter to limited.
-- 5h used: 38%    7-day used: 72%
+- Refreshed: 2026-11-18 11:49:56 +05:30 (trigger: SessionEnd)
+- Branch: main    HEAD: c56d162
+- Budget band: **normal** - 5h at 30% -> normal.
+- 5h used: 30%    7-day used: 21%
 
 ### Working tree
 ```
-(clean)
+M .claude/session/HANDOFF.md
 ```
 
 ### Last 5 commits
 ```
-8c652b7 docs: session end, step 1a moved to tomorrow
-02c02a5 docs: student back at 21:00, step 1a still next
-cbee453 docs: student back at 19:00, step 1a still next
-b4edc5c docs: student back at 19:00, step 1a still next
-d54bed2 docs: student back at 20:00, step 1a still next
+c56d162 docs: session end 11-18 morning, traits concept open
+da1022f Concept-first order and cloud auto-sync (student's rules, 2026-11-18)
+b2f8260 exercises/vehicle: cloud chat example as a real project, Bike misses lights
+9915469 Chat examples go to notes/chat_examples.md; vehicle trait example saved
+df8528a rcnc: Status trait frame for Axis, report body left to the student
 ```
 <!-- AUTO:END -->
