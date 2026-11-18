@@ -103,3 +103,28 @@ understand the concept the impl i don't till now so teach me". Taught in words o
 Open question: "A Bus arrives with a body and a name plate, but it never went to the
 workshop: what can it do?" (real answer to show after: nothing; `bus.honk()` -> E0599,
 `inspect(&bus)` -> E0277. Run it before showing.)
+
+Student's own question next (before answering the Bus one): "We are taking about trait
+right, does struct also have impl block". The confusion: impl seen as part of the trait.
+Answer given in words: every impl block belongs to a struct (one vehicle's workshop
+visit); the trait itself is never wired, it is only the list of buttons. Two shapes:
+`impl Car` (no trait involved: own switches) and `impl Controls for Car` (still Car's
+workshop, this visit wires the trait's buttons). Their own `minidb/src/main.rs` line 7:
+`impl Entery { fn new, fn show, fn set }`, and the word `trait` appears 0 times in that file.
+Proof held for the next question (real run, this session):
+
+```rust
+struct Bus { name: String }
+trait Controls { fn honk(&self); }
+impl Bus { fn fuel(&self) { println!("{}: tank 200 l", self.name); } }
+fn inspect(v: &impl Controls) { v.honk(); }
+fn main() {
+    let volvo = Bus { name: "Volvo".to_string() };
+    volvo.fuel();
+    inspect(&volvo);
+}
+```
+`error[E0277]: the trait bound Bus: Controls is not satisfied` at `inspect(&volvo)`;
+`help: the trait Controls is not implemented for Bus`.
+Open question (replaces the Bus one above): "Bus goes to the workshop and gets only a fuel
+gauge, no panel job: what happens at the bay?"
