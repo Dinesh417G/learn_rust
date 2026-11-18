@@ -24,21 +24,26 @@
     "date": "2026-11-17",
     "count": 3
   },
-  "hold_open": {
-    "at": "2026-11-17T20:06+05:30",
-    "until": "2026-11-17T22:00+05:30"
-  },
-  "below_par": 0,
+  "hold_open": null,
+  "below_par": 1,
   "green_run": 0,
   "rain_days": [],
   "rain_left": 2,
   "bosses": [],
   "follow_on_next": false,
-  "open_day": "2026-11-17",
+  "open_day": "2026-11-18",
   "open_start": 132,
-  "open_par": 59.51219512195122,
+  "open_par": 61.0,
   "open_follow_on": false,
-  "overs": [],
+  "overs": [
+    {
+      "date": "2026-11-17",
+      "par": 59.5,
+      "runs": 0,
+      "colour": "red",
+      "follow_on": false
+    }
+  ],
   "matches": [],
   "finished": false
 }
