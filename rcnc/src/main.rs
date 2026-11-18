@@ -4,6 +4,16 @@ max:f64,
 pos:f64,
 }
 
+trait Status {
+    fn report(&self);
+}
+
+impl Status for Axis {
+    fn report(&self) {
+
+    }
+}
+
 fn main() {
     let mut x= Axis {name:"x".to_string(),max:500.0,pos:450.0};
 x.max =500.0;
@@ -18,4 +28,5 @@ else
 println!("{} The entered value is greater than the it {}",pos,x.max);
 }
 println!("{} Moves at {}",x.name,x.pos);
+x.report();
 }

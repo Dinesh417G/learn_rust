@@ -51,7 +51,7 @@ graph LR
 | struct | 3 | 11-16 | wrote one on 10-25; read a struct literal on 11-15; 11-16 called E0609 before the run: "We are not having pos variable" | Axis, Laser |
 | impl / methods | 2 | 10-25 | wrote `set(&mut self)` unaided | `move_to` |
 | derive Debug | 2 | 10-25 | E0774 when put above `use` | print an Axis |
-| traits | 1 | 10-26 | idea only (4-20 mA rule); no code; a one-type trait step stalled for 20 days | two types, one `report` |
+| traits | 1 | 11-18 | idea only (4-20 mA rule); no code; a one-type trait step stalled for 20 days; cloud chat (pasted 11-18): vehicle example `trait Controls { fn honk(&self); fn lights(&self); }` for Car/Truck, inspect bay `fn inspect(v: &impl Controls)`, E0277 on `5`. Asked "how we can use trait in more useful ways" before coding, then of `&impl Controls`: "I can't properly understand what is what"; landed via `fn show(pos: f64)` side by side. 11-18 teacher wrote `trait Status` + empty impl in rcnc | Axis + Laser, one `report` |
 | mod / pub / use | 2 | 10-22 | E0603 on a private `use` | S2 lib + bin split |
 | Vec, HashMap, enum, Option | 0 | | not met | S1 pull sequence |
 
@@ -88,3 +88,5 @@ graph LR
 | 11-16 | Broken, size 0 ("Which word on line 12 does Rust not know?") | answered | hit: "Remove then" |
 | 11-16 | Why ("Which line put it there before your check ran?") | answered with their own idea | did not name line 11; proposed "after x at 900 put the if condition" (move the check below the print). Run as typed: order of output changes, axis still at 900 |
 | 11-18 | (meta) student: "check with git it has teaching me trait in a different way so you continue from there on" | answered with their own idea | switched the shift to the course's Exercise I file; Gap on the trait signature pending |
+| ~11-17 (cloud) | Your move ("Write the rule for rcnc: trait Status with one button named report") x3 | turned aside | asked for the concept / more uses each time; never written. Retired till 11-25 |
+| 11-18 | Broken, size 3 ("What goes on line 13 so the button prints `x at 480`?"), frame typed by the teacher | pending | |
