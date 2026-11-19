@@ -96,4 +96,5 @@ graph LR
 | 11-18 | Predict in words ("Bus ... only a fuel gauge, no panel job: what happens at the bay?"), reworded once, pocket over a hold | turned aside | "We are learning about trait right?", then "Okay trait is similar to struct right" |
 | 11-18 | Fork-shaped, size 0 ("Which one carries Swift's name plate: the struct or the trait?") | turned aside | "Nope tell the example with car": wants the whole story, not a check |
 | 11-18 | Predict, size 0, after the 4-step car story ("Which step gave Swift its beep?") | answered with their own idea | skipped it, asked: "can we add additional features which are not in the rules book, where does this inspect comes from" (first question that builds on the picture instead of asking for it again) |
-| 11-18 | Predict in the car world ("The RTO bay wants to read the fuel gauge too: what must happen to the rulebook?") | pending | | after the no-code impl explanation (body / workshop / own switch / panel job / bay, FB = VAR part + code part) |
+| 11-18 | Predict in the car world ("The RTO bay wants to read the fuel gauge too: what must happen to the rulebook?") | silence | asked 11-18 22:35 and 11-19 18:23, both followed by a hold; teacher ran it 11-19 18:43 (E0046 missing `fuel` on Truck) |
+| 11-19 | Your move in the car world, size 3, answer visible ("Tata's tank holds 300 l: write its fuel line.") | pending | |

@@ -181,3 +181,45 @@ Open question: "The RTO bay wants to read the fuel gauge too: what must happen t
 again, unchanged: "The RTO bay wants to read the fuel gauge too: what must happen to the
 rulebook?" (answer to run after theirs: `fuel` goes into `trait Controls`; every panel job
 must then wire it, Truck too, else E0046.)
+
+2026-11-19 18:43 (PC). Back early from hold 2 (free). RTO question open in two sessions
+with no answer, so the teacher ran it (skill §2: do it, leave one gap). `fuel` moved into
+the rulebook, `rto_check` presses both buttons, Truck's panel job left unwired:
+
+```rust
+struct Car { name: String }
+struct Truck { name: String }
+
+trait Controls {
+    fn honk(&self);
+    fn fuel(&self);          // new rule: every vehicle shows its fuel
+}
+
+impl Controls for Car {
+    fn honk(&self) { println!("{}: beep", self.name); }
+    fn fuel(&self) { println!("{}: tank 40 l", self.name); }
+}
+
+impl Controls for Truck {
+    fn honk(&self) { println!("{}: HOOONK", self.name); }
+}
+
+fn rto_check(v: &impl Controls) {
+    v.honk();
+    v.fuel();
+}
+
+fn main() {
+    let swift = Car { name: "Swift".to_string() };
+    let tata = Truck { name: "Tata".to_string() };
+    rto_check(&swift);
+    rto_check(&tata);
+}
+```
+Real run: `error[E0046]: not all trait items implemented, missing: fuel` at
+`impl Controls for Truck` (14:1), `fuel from trait` pointing at line 6.
+Point: a new button in the rulebook = every workshop must wire it; Swift passes, Tata is
+stopped at the workshop, not at the bay.
+Teacher checked the gap offline: with Truck's line `fn fuel(&self) { println!("{}: tank 300 l", self.name); }`
+the run prints `Swift: beep` / `Swift: tank 40 l` / `Tata: HOOONK` / `Tata: tank 300 l`.
+Open (Your move, the gap): "Tata's tank holds 300 l: write its fuel line."
