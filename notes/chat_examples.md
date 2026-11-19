@@ -176,3 +176,8 @@ are not in the rules book, where does this inspect comes from". Answered in the 
   renamed `fn rto_check(v: &impl Controls)`: `Swift: beep` / `Swift: tank 40 l`.
 Open question: "The RTO bay wants to read the fuel gauge too: what must happen to the rulebook?"
 (answer: `fuel` goes into the trait, then every vehicle's panel job must wire it.)
+
+2026-11-19 18:23 (PC). Back from the hold (23 min late, wicket). Open question asked
+again, unchanged: "The RTO bay wants to read the fuel gauge too: what must happen to the
+rulebook?" (answer to run after theirs: `fuel` goes into `trait Controls`; every panel job
+must then wire it, Truck too, else E0046.)
