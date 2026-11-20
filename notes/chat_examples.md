@@ -228,3 +228,10 @@ Open (Your move, the gap): "Tata's tank holds 300 l: write its fuel line."
 above, real run again: `error[E0046]: not all trait items implemented, missing: fuel` at
 `impl Controls for Truck` (14:1). Shown: Car's two wired buttons beside Truck's one.
 Open (Your move, size 3, carried over): "Tata's tank holds 300 l: write its fuel line."
+
+2026-11-20 10:09 (PC). Back early from the hold (free). Tata's fuel line open in two
+sessions with no answer, so the teacher wired it (skill §2): Truck's panel job now has
+`fn fuel(&self) { println!("{}: tank 300 l", self.name); }`. Real run (scratchpad car.rs):
+`Swift: beep` / `Swift: tank 40 l` / `Tata: HOOONK` / `Tata: tank 300 l`. Output not shown yet.
+Open (Predict, size 1): "Tata rolls through rto_check: what are its two lines?"
+(answer: `Tata: HOOONK` / `Tata: tank 300 l`.)
