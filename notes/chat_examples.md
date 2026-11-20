@@ -223,3 +223,8 @@ stopped at the workshop, not at the bay.
 Teacher checked the gap offline: with Truck's line `fn fuel(&self) { println!("{}: tank 300 l", self.name); }`
 the run prints `Swift: beep` / `Swift: tank 40 l` / `Tata: HOOONK` / `Tata: tank 300 l`.
 Open (Your move, the gap): "Tata's tank holds 300 l: write its fuel line."
+
+2026-11-20 09:19 (PC). Session open. Car demo rebuilt in the scratchpad from the entry
+above, real run again: `error[E0046]: not all trait items implemented, missing: fuel` at
+`impl Controls for Truck` (14:1). Shown: Car's two wired buttons beside Truck's one.
+Open (Your move, size 3, carried over): "Tata's tank holds 300 l: write its fuel line."
