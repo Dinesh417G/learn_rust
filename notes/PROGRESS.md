@@ -8,7 +8,7 @@ log: `notes/archive/PROGRESS-minidb.md`.
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
 **Now:** S1 · traits in the CONCEPT step (new order from 2026-11-18, skill §13: concept with a real-world example -> student's "done" -> videos 1.5.3, 1.5.4 -> code). Picture: the vehicle; trait = button panel, `impl` = wiring. rcnc has `trait Status` + empty `impl Status for Axis` waiting for the BUILD step. L2 `fn move_to` parked
-**Hook:** 2026-11-20 10:12 PC: hold 1/3 till 18:00 RESTORED (a bare "Start my Rust lesson" at 10:09 was taken as a return by mistake; coach paused till 18:02). Run `back` only at/after 18:00 or when the student says they are back. Tata fuel gap open 2 sessions -> teacher wired Truck `fuel` (300 l) in scratchpad car.rs (rebuild from chat_examples). Open closing (Predict, size 1, car world): "Tata rolls through rto_check: what are its two lines?" Expected `Tata: HOOONK` / `Tata: tank 300 l` (real run). Then: on a hit, ask nothing more in the concept; give ▶ 1.5.3 Traits (6 min) via `score.py next` (0 runs today, shortest item first); on "watched 1.5.3" tick at once. Then 1.5.4, BUILD: `exercises/vehicle` Bike fix, rcnc line 13 `report` (`x at 480`), Laser. Ardan sync (skill §11) not yet run today. Parked: Bus E0277, Truck E0050. Last forms: Your move (car world, silence), Predict. Predict · Your move-in-rcnc retired till 11-25
+**Hook:** 2026-11-20 18:23 PC: 18:00 return broken (WICKET 132/4, hook). Student said "will come by 10": hold 2/3 till 22:00, coach paused till 21:59. Run `back` only at/after 22:00 or when the student says they are back; a bare "Start" before 22:00 = hold line only. Offered during the hold: ▶ 1.5.3 Traits (5:05) on the phone; on "watched 1.5.3" tick at once. Pocket and open closing (Predict, size 1, car world, asked 10:09 and 18:23): "Tata rolls through rto_check: what are its two lines?" Expected `Tata: HOOONK` / `Tata: tank 300 l` (real run; rebuild scratchpad car.rs from chat_examples). Then: on a hit, ask nothing more in the concept; give ▶ 1.5.3 unless watched; then 1.5.4, BUILD: `exercises/vehicle` Bike fix, rcnc line 13 `report` (`x at 480`), Laser. rcnc today: `x travels 500` / `900 The entered value is greater than the it 500` / `x Moves at 480`. Ardan sync (skill §11) not yet run today. Parked: Bus E0277, Truck E0050. Last forms: Your move (car world, silence), Predict. Predict · Your move-in-rcnc retired till 11-25
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Innings (student's rules, v2 2026-11-16):** chasing 2572 runs (1 run = 1 video minute; PDF / quiz 1), 1 over = 1 day ending 03:00, over 1 = 2026-11-17, last 2026-12-27. Rules in skill §11. State `notes/innings.json`, board `python tools/score.py --chat`. The weekly table in the skill only says which stage closes when.
 
@@ -19,7 +19,7 @@ metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the v
 | Layers printed | 1 (build height 0.04 mm; 1 layer = 0.04 mm) |
 | Bosses beaten | 0 / 9 |
 | Streak | 1 day |
-| Innings | innings 1 · 7 wkts · below par 0/3 · green run 0/5 · rain days 2 · last over red (`python tools/score.py`) |
+| Innings | innings 1 · 6 wkts · below par 0/3 · green run 0/5 · rain days 2 · last over red (`python tools/score.py`) |
 
 PDF, quiz, exam = open it, mark complete, 1 run, no reading. The level check is the boss on `rcnc`.
 
