@@ -44,10 +44,7 @@
     "date": "2026-11-22",
     "count": 1
   },
-  "hold_open": {
-    "at": "2026-11-22T20:44+05:30",
-    "until": "2026-11-22T22:00+05:30"
-  },
+  "hold_open": null,
   "below_par": 2,
   "green_run": 0,
   "rain_days": [],

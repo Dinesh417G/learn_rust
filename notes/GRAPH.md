@@ -61,7 +61,7 @@ graph LR
 - Offers their own fix or variation when the step is concrete. That is the moment to follow.
 - Words do not land for layout or abstract ideas; a run or a picture does.
 - 11-22: "i still cant able to continue to the course give me some practical ideas to focus on", after 4 days of concept-only chat in the car world with every closing silent or turned aside. The machine days (11-16, 11-17) were all answered.
-- 11-22 20:50: "i am not learning from this kind of this tell me whats wrong with me". Both trait stalls had one type only: a trait with nothing to share has no visible job. Concrete before abstract.
+- 11-22 (during the hold): "i am not learning from this kind of this tell me whats wrong with me". Both trait stalls had one type only: a trait with nothing to share has no visible job. Concrete before abstract.
 - Analogies that worked: one coil one writer; read-only HMI tag; the 4-20 mA rule; CASE state machine. CODESYS INTERFACE did not.
 
 ## Closing forms tried
