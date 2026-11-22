@@ -7,19 +7,19 @@ log: `notes/archive/PROGRESS-minidb.md`.
 
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
-**Now:** S1 · traits in the CONCEPT step (new order from 2026-11-18, skill §13: concept with a real-world example -> student's "done" -> videos 1.5.3, 1.5.4 -> code). Picture: the vehicle; trait = button panel, `impl` = wiring. rcnc has `trait Status` + empty `impl Status for Axis` waiting for the BUILD step. L2 `fn move_to` parked
-**Hook:** 2026-11-20 18:23 PC: 18:00 return broken (WICKET 132/4, hook). Student said "will come by 10": hold 2/3 till 22:00, coach paused till 21:59. Run `back` only at/after 22:00 or when the student says they are back; a bare "Start" before 22:00 = hold line only. Offered during the hold: ▶ 1.5.3 Traits (5:05) on the phone; on "watched 1.5.3" tick at once. Pocket and open closing (Predict, size 1, car world, asked 10:09 and 18:23): "Tata rolls through rto_check: what are its two lines?" Expected `Tata: HOOONK` / `Tata: tank 300 l` (real run; rebuild scratchpad car.rs from chat_examples). Then: on a hit, ask nothing more in the concept; give ▶ 1.5.3 unless watched; then 1.5.4, BUILD: `exercises/vehicle` Bike fix, rcnc line 13 `report` (`x at 480`), Laser. rcnc today: `x travels 500` / `900 The entered value is greater than the it 500` / `x Moves at 480`. Ardan sync (skill §11) not yet run today. Parked: Bus E0277, Truck E0050. Last forms: Your move (car world, silence), Predict. Predict · Your move-in-rcnc retired till 11-25
+**Now:** S1 · Z plate job (ROADMAP pull 4, known Rust only), at the student's request 2026-11-22 ("give me some practical ideas to focus on"). Traits concept (car world) paused after 4 days of silence; `trait Status` + empty `impl Status for Axis` stay in rcnc for the job after ▶ 1.5.3. L2 `fn move_to` parked
+**Hook:** 2026-11-22 20:15 PC (Sunday). Student: "i still cant able to continue to the course give me some practical ideas to focus on". Car world closed (Tata predict asked twice, silence; teacher's real run is in chat_examples). Given 3 ideas: machine jobs with Rust already known, 5-min videos on the phone with no question after, one fixed 15-min shift a day. Shift open: JOB plate Z from 0 down to -200, refuse both ends. DONE WHEN: orders -250 and +10 refused, `z at -0.04` after -0.04. Twist (checked, scratchpad zchk): a guard on `max` only lets -250 through (`z at -250`). Open closing (Your move, size 3, line 18 shown): "Bring up the plate: write Z's line under line 18, top wall 0.0, parked at 0.0." Pocket: "The plate's wall is at 0. What stops it at -200?" ▶ 1.5.3 Traits (5:05) offered as a phone bite; tick on "watched". Webinar 7.4.1 (63 min) is today's S9 slot, not offered yet. Ardan sync and Sunday release check not run. Last forms: Predict (silence x2), Your move. rcnc today: `x travels 500` / `900 The entered value is greater than the it 500` / `x Moves at 480`
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Innings (student's rules, v2 2026-11-16):** chasing 2572 runs (1 run = 1 video minute; PDF / quiz 1), 1 over = 1 day ending 03:00, over 1 = 2026-11-17, last 2026-12-27. Rules in skill §11. State `notes/innings.json`, board `python tools/score.py --chat`. The weekly table in the skill only says which stage closes when.
 
 | Scoreboard | |
 |---|---|
 | Chapters | 35 / 301 items · runs 132 / 2572 (5 %) |
-| Pace needed | RRR 64.2 runs a day (2440 off 38 overs; 1 run = 1 video min) |
+| Pace needed | RRR 67.8 runs a day (2440 off 36 overs; 1 run = 1 video min) |
 | Layers printed | 1 (build height 0.04 mm; 1 layer = 0.04 mm) |
 | Bosses beaten | 0 / 9 |
 | Streak | 1 day |
-| Innings | innings 1 · 6 wkts · below par 0/3 · green run 0/5 · rain days 2 · last over red (`python tools/score.py`) |
+| Innings | innings 1 · 5 wkts · below par 2/3 · green run 0/5 · rain days 2 · last over red (`python tools/score.py`) |
 
 PDF, quiz, exam = open it, mark complete, 1 run, no reading. The level check is the boss on `rcnc`.
 

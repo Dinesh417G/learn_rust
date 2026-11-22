@@ -60,6 +60,7 @@ graph LR
 - Runs before guessing about half the time. A guess asked as one short thing gets given.
 - Offers their own fix or variation when the step is concrete. That is the moment to follow.
 - Words do not land for layout or abstract ideas; a run or a picture does.
+- 11-22: "i still cant able to continue to the course give me some practical ideas to focus on", after 4 days of concept-only chat in the car world with every closing silent or turned aside. The machine days (11-16, 11-17) were all answered.
 - Analogies that worked: one coil one writer; read-only HMI tag; the 4-20 mA rule; CASE state machine. CODESYS INTERFACE did not.
 
 ## Closing forms tried
@@ -98,4 +99,5 @@ graph LR
 | 11-18 | Predict, size 0, after the 4-step car story ("Which step gave Swift its beep?") | answered with their own idea | skipped it, asked: "can we add additional features which are not in the rules book, where does this inspect comes from" (first question that builds on the picture instead of asking for it again) |
 | 11-18 | Predict in the car world ("The RTO bay wants to read the fuel gauge too: what must happen to the rulebook?") | silence | asked 11-18 22:35 and 11-19 18:23, both followed by a hold; teacher ran it 11-19 18:43 (E0046 missing `fuel` on Truck) |
 | 11-19 | Your move in the car world, size 3, answer visible ("Tata's tank holds 300 l: write its fuel line.") | silence | asked 11-19 18:43 and 11-20 09:19, both followed by a hold; teacher wired it 11-20 10:09 |
-| 11-20 | Predict, size 1, car world ("Tata rolls through rto_check: what are its two lines?") | pending | |
+| 11-20 | Predict, size 1, car world ("Tata rolls through rto_check: what are its two lines?") | silence | asked 11-20 10:09 and 18:23, both followed by holds; 11-21 no session; 11-22 student asked for practical ideas instead, car world closed |
+| 11-22 | Your move, size 3, rcnc, line 18 shown ("Bring up the plate: write Z's line under line 18, top wall 0.0, parked at 0.0.") | pending | first machine step since 11-17 |

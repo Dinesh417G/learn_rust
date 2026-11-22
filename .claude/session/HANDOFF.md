@@ -32,10 +32,10 @@ _Not yet written._
 <!-- AUTO:BEGIN - rewritten by the dtree hooks. Edit outside this block. -->
 ## Machine snapshot
 
-- Refreshed: 2026-11-19 18:37:22 +05:30 (trigger: SessionEnd)
-- Branch: main    HEAD: 923ef2a
-- Budget band: **normal** - 5h at 13% -> normal.
-- 5h used: 13%    7-day used: 60%
+- Refreshed: 2026-11-20 10:05:16 +05:30 (trigger: SessionEnd)
+- Branch: main    HEAD: f45fb77
+- Budget band: **limited** - 5h at 8% -> normal. 7-day at 71% is over 70%, so dropped one band tighter to limited.
+- 5h used: 8%    7-day used: 71%
 
 ### Working tree
 ```
@@ -44,10 +44,10 @@ _Not yet written._
 
 ### Last 5 commits
 ```
-923ef2a docs: hold 2/3 till 20:00
-e835216 docs: back 18:23, RTO question reopened
-7641895 docs: hold till 18:00, RTO pocket question
-e8ed664 docs: session end 11-18 evening, traits concept open
-bb622b1 notes: extra features and where inspect comes from
+f45fb77 docs: hold 1/3 till 18:00
+374f780 notes: session open 11-20, Tata fuel gap carried
+84b0bed docs: session end 11-19, Tata fuel gap open
+7d1b112 docs: restore hold till 20:00 (back run by mistake)
+8518924 notes: back 18:43, RTO run shown, Tata fuel gap
 ```
 <!-- AUTO:END -->

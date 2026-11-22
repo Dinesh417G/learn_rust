@@ -235,3 +235,11 @@ sessions with no answer, so the teacher wired it (skill §2): Truck's panel job 
 `Swift: beep` / `Swift: tank 40 l` / `Tata: HOOONK` / `Tata: tank 300 l`. Output not shown yet.
 Open (Predict, size 1): "Tata rolls through rto_check: what are its two lines?"
 (answer: `Tata: HOOONK` / `Tata: tank 300 l`.)
+
+2026-11-22 20:15 (PC, Sunday). Student: "i still cant able to continue to the course give
+me some practical ideas to focus on". Car world closed here; Tata's two lines were never
+shown in chat (real run 11-20: `Tata: HOOONK` / `Tata: tank 300 l`). Back to the machine with
+Rust already known: JOB plate Z from 0 down to -200, refuse both ends. Teacher's check
+run (scratchpad zchk, a guard on `max` only): `z at -250` / `10 refused, wall 0` /
+`z at -250` / `z at -0.04` (the -250 order goes through: that is the twist, not shown).
+Open: "Bring up the plate: write Z's line under line 18, top wall 0.0, parked at 0.0."
