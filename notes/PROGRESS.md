@@ -15,11 +15,11 @@ metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the v
 | Scoreboard | |
 |---|---|
 | Chapters | 35 / 301 items · runs 132 / 2572 (5 %) |
-| Pace needed | RRR 67.8 runs a day (2440 off 36 overs; 1 run = 1 video min) |
+| Pace needed | RRR 69.7 runs a day (2440 off 35 overs; 1 run = 1 video min) |
 | Layers printed | 1 (build height 0.04 mm; 1 layer = 0.04 mm) |
 | Bosses beaten | 0 / 9 |
 | Streak | 1 day |
-| Innings | innings 1 · 5 wkts · below par 2/3 · green run 0/5 · rain days 2 · last over red (`python tools/score.py`) |
+| Innings | innings 1 · 4 wkts · below par 0/3 · green run 0/5 · rain days 2 · last over red (`python tools/score.py`) |
 
 PDF, quiz, exam = open it, mark complete, 1 run, no reading. The level check is the boss on `rcnc`.
 
