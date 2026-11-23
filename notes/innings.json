@@ -52,9 +52,12 @@
   ],
   "holds": {
     "date": "2026-11-23",
-    "count": 3
+    "count": 4
   },
-  "hold_open": null,
+  "hold_open": {
+    "at": "2026-11-23T18:52+05:30",
+    "until": "2026-11-23T20:00+05:30"
+  },
   "below_par": 0,
   "green_run": 0,
   "rain_days": [],
