@@ -32,10 +32,10 @@ _Not yet written._
 <!-- AUTO:BEGIN - rewritten by the dtree hooks. Edit outside this block. -->
 ## Machine snapshot
 
-- Refreshed: 2026-11-22 22:20:49 +05:30 (trigger: SessionEnd)
-- Branch: main    HEAD: e09f051
-- Budget band: **winddown** - 5h at 90% -> winddown.
-- 5h used: 90%    7-day used: 13%
+- Refreshed: 2026-11-23 08:25:03 +05:30 (trigger: SessionEnd)
+- Branch: main    HEAD: e19a015
+- Budget band: **normal** - 5h at 9% -> normal.
+- 5h used: 9%    7-day used: 16%
 
 ### Working tree
 ```
@@ -44,10 +44,10 @@ _Not yet written._
 
 ### Last 5 commits
 ```
+e19a015 docs: hold 1/3 till 10:00, plan pending
+9813540 notes: over 6 closed, missed-day wicket, session open 11-23
 e09f051 docs: session end 11-22, new plan due 11-23
 74411d4 notes: student asks what is wrong, enums offered
 b46f064 docs: hold 1/3 till 22:00
-453dc1c notes: days-left asked, flip declined
-a939d22 notes: analysis asked, order flip proposed
 ```
 <!-- AUTO:END -->
