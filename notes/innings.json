@@ -39,6 +39,10 @@
     {
       "date": "2026-11-23",
       "how": "3 holds in one day"
+    },
+    {
+      "date": "2026-11-24",
+      "how": "broken return (promised back at 18:00)"
     }
   ],
   "wicket_days": [
@@ -48,25 +52,26 @@
     "2026-11-20",
     "2026-11-21",
     "2026-11-22",
-    "2026-11-23"
+    "2026-11-23",
+    "2026-11-24"
   ],
   "holds": {
-    "date": "2026-11-24",
+    "date": "2026-11-25",
     "count": 1
   },
   "hold_open": {
-    "at": "2026-11-24T07:42+05:30",
-    "until": "2026-11-24T18:00+05:30"
+    "at": "2026-11-25T15:00+05:30",
+    "until": "2026-11-25T18:00+05:30"
   },
-  "below_par": 1,
+  "below_par": 2,
   "green_run": 0,
   "rain_days": [],
   "rain_left": 2,
   "bosses": [],
   "follow_on_next": false,
-  "open_day": "2026-11-24",
+  "open_day": "2026-11-25",
   "open_start": 132,
-  "open_par": 71.76470588235294,
+  "open_par": 73.93939393939394,
   "open_follow_on": false,
   "overs": [
     {
@@ -114,6 +119,13 @@
     {
       "date": "2026-11-23",
       "par": 69.7,
+      "runs": 0,
+      "colour": "red",
+      "follow_on": false
+    },
+    {
+      "date": "2026-11-24",
+      "par": 71.8,
       "runs": 0,
       "colour": "red",
       "follow_on": false
