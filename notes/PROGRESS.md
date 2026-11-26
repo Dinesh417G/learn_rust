@@ -8,18 +8,18 @@ log: `notes/archive/PROGRESS-minidb.md`.
 **Target (changed 2026-11-15):** `rcnc/`, a small machine controller in Rust for a laser
 metal printer (3 axes, layer loop, drives, HMI), built stage by stage with the videos.
 **Now:** S1 · Z plate job (ROADMAP pull 4, known Rust only), at the student's request 2026-11-22 ("give me some practical ideas to focus on"). Traits concept (car world) paused after 4 days of silence; `trait Status` + empty `impl Status for Axis` stay in rcnc for the job after ▶ 1.5.3. L2 `fn move_to` parked
-**Hook:** 2026-11-25 15:00 PC. Opened, then "i will come by evening" (same words as 11-24, whose 18:00 return broke = WICKET 132/8; 2 wickets left). Hold 1/3 till 18:00, coach paused till 18:00. A bare "Start my Rust lesson" before 18:00 is not a return (keep hold). Over 9 still 0 runs: at 03:00 that is a wicket unless an item is ticked. Offered ▶ 1.5.3 Traits (6 min, phone link) for runs. Pocket given a 2nd time, reworded: "Plate starts at 0, drops 0.04 each layer. Five layers done: where is it?" (answer -0.2; BOSS M1 end state). Never a 3rd time: if unanswered at the return, print it on rcnc yourself and leave one gap. The plan promised 11-22: do NOT ask for it; if the student brings it, hear it first and record rule changes in their own words. NEXT OPEN (after back, size 0): `x Moves at 480`, then the job card JOB: the Z plate drops one layer / DONE WHEN: rcnc prints `z at -0.04` (later: -250 and +10 refused; twist: a max-only guard lets -250 through). 0 runs since 11-16. Last forms: Pocket, Pocket, Pocket, Pocket. rcnc now: `x travels 500` / `900 The entered value is greater than the it 500` / `x Moves at 480`
+**Hook:** 2026-11-26 12:20 PC. Opened, then "will come by evening" (3rd day running; 11-24 and 11-25 both broke = WICKET 132/9, LAST wicket: the next one is all out). Hold 1/3 till 18:00, coach paused till 17:59. A bare "Start my Rust lesson" before 18:00 is not a return (keep hold). Over 10 still 0 runs: at 03:00 that is the 10th wicket unless an item is ticked; a broken return (after 18:15) is too. Pocket = ▶ 1.5.3 Traits (6 min, phone link) for runs; the Z plate pocket was NOT given a 3rd time (silent 11-24, 11-25). At the return: print the 5-layer Z drop on rcnc yourself and leave one gap (answer -0.2; BOSS M1 end state). The plan promised 11-22: do NOT ask for it; if the student brings it, hear it first and record rule changes in their own words. NEXT OPEN (after back, size 0): `x Moves at 480`, then the job card JOB: the Z plate drops one layer / DONE WHEN: rcnc prints `z at -0.04` (later: -250 and +10 refused; twist: a max-only guard lets -250 through). 0 runs since 11-16. Last forms: Pocket, Pocket, Pocket, Pocket. rcnc now: `x travels 500` / `900 The entered value is greater than the it 500` / `x Moves at 480`
 **Deadline:** Ardan access ends **2026-12-28**. Videos first; a boss may finish later.
 **Innings (student's rules, v2 2026-11-16):** chasing 2572 runs (1 run = 1 video minute; PDF / quiz 1), 1 over = 1 day ending 03:00, over 1 = 2026-11-17, last 2026-12-27. Rules in skill §11. State `notes/innings.json`, board `python tools/score.py --chat`. The weekly table in the skill only says which stage closes when.
 
 | Scoreboard | |
 |---|---|
 | Chapters | 35 / 301 items · runs 132 / 2572 (5 %) |
-| Pace needed | RRR 73.9 runs a day (2440 off 33 overs; 1 run = 1 video min) |
+| Pace needed | RRR 76.2 runs a day (2440 off 32 overs; 1 run = 1 video min) |
 | Layers printed | 1 (build height 0.04 mm; 1 layer = 0.04 mm) |
 | Bosses beaten | 0 / 9 |
 | Streak | 1 day |
-| Innings | innings 1 · 2 wkts · below par 2/3 · green run 0/5 · rain days 2 · last over red (`python tools/score.py`) |
+| Innings | innings 1 · 1 wkts · below par 0/3 · green run 0/5 · rain days 2 · last over red (`python tools/score.py`) |
 
 PDF, quiz, exam = open it, mark complete, 1 run, no reading. The level check is the boss on `rcnc`.
 
