@@ -8,47 +8,10 @@
   "orange_at": 0.75,
   "runs_quiz": 1,
   "runs_page": 1,
-  "innings": 1,
+  "innings": 2,
   "ticked": [],
   "last_score": 132,
-  "wickets": [
-    {
-      "date": "2026-11-17",
-      "how": "3 holds in one day"
-    },
-    {
-      "date": "2026-11-18",
-      "how": "3 holds in one day"
-    },
-    {
-      "date": "2026-11-19",
-      "how": "broken return (promised back at 18:00)"
-    },
-    {
-      "date": "2026-11-20",
-      "how": "broken return (promised back at 18:00)"
-    },
-    {
-      "date": "2026-11-21",
-      "how": "missed day (0 runs)"
-    },
-    {
-      "date": "2026-11-22",
-      "how": "missed day (0 runs)"
-    },
-    {
-      "date": "2026-11-23",
-      "how": "3 holds in one day"
-    },
-    {
-      "date": "2026-11-24",
-      "how": "broken return (promised back at 18:00)"
-    },
-    {
-      "date": "2026-11-25",
-      "how": "broken return (promised back at 18:00)"
-    }
-  ],
+  "wickets": [],
   "wicket_days": [
     "2026-11-17",
     "2026-11-18",
@@ -58,22 +21,20 @@
     "2026-11-22",
     "2026-11-23",
     "2026-11-24",
-    "2026-11-25"
+    "2026-11-25",
+    "2026-11-26"
   ],
   "holds": {
     "date": "2026-11-26",
     "count": 1
   },
-  "hold_open": {
-    "at": "2026-11-26T12:19+05:30",
-    "until": "2026-11-26T18:00+05:30"
-  },
+  "hold_open": null,
   "below_par": 0,
   "green_run": 0,
   "rain_days": [],
   "rain_left": 2,
   "bosses": [],
-  "follow_on_next": false,
+  "follow_on_next": true,
   "open_day": "2026-11-26",
   "open_start": 132,
   "open_par": 76.25,
@@ -143,6 +104,13 @@
       "follow_on": false
     }
   ],
-  "matches": [],
+  "matches": [
+    {
+      "innings": 1,
+      "result": "all out",
+      "score": 132,
+      "date": "2026-11-26"
+    }
+  ],
   "finished": false
 }

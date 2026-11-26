@@ -32,10 +32,10 @@ _Not yet written._
 <!-- AUTO:BEGIN - rewritten by the dtree hooks. Edit outside this block. -->
 ## Machine snapshot
 
-- Refreshed: 2026-11-25 15:06:33 +05:30 (trigger: SessionEnd)
-- Branch: main    HEAD: 0b764ae
-- Budget band: **normal** - 5h at 8% -> normal.
-- 5h used: 8%    7-day used: 50%
+- Refreshed: 2026-11-26 12:29:25 +05:30 (trigger: SessionEnd)
+- Branch: main    HEAD: 6b9b27e
+- Budget band: **normal** - 5h at 9% -> normal.
+- 5h used: 9%    7-day used: 68%
 
 ### Working tree
 ```
@@ -44,10 +44,10 @@ _Not yet written._
 
 ### Last 5 commits
 ```
+6b9b27e docs: hold 1/3 till 18:00 (11-26), last wicket, video offered
 0b764ae docs: hold 1/3 till 18:00 (11-25), pocket Z plate again
 c9c65b6 docs: hold 1/3 till 18:00, pocket Z plate
 dc3533c docs: session end 11-23 evening, back tomorrow
 69d71f7 docs: hold 4/3 till 20:00
-1683c14 docs: back 18:51, plan asked
 ```
 <!-- AUTO:END -->
