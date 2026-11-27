@@ -106,4 +106,4 @@ graph LR
 | 11-24 | Pocket ("The plate starts at 0 and drops 0.04 per layer: where is it after 5 layers?") | silence | hold till 18:00 never returned (broken-return wicket); given again reworded 11-25 15:00 with a new hold |
 | 11-25 | Pocket, reworded ("Plate starts at 0, drops 0.04 each layer. Five layers done: where is it?") | silence | hold till 18:00 broke again (wicket 132/9). 11-26 12:20 "will come by evening": no 3rd Pocket; the 6-min video link given instead |
 | 11-26 | Pocket (▶ 1.5.3 Traits, 6 min, link only) | silence | hold till 18:00, back 19:23 (broken return, ALL OUT), then "i will learn by tommorow"; link given a 2nd time, never a 3rd |
-| 11-27 | Predict, size 1, rcnc (teacher wrote the Z plate loop for 4 layers: "Layer 5: where is z?") | pending | first machine closing since 11-22 |
+| 11-27 | Predict, size 1, rcnc (teacher wrote the Z plate loop for 4 layers: "Layer 5: where is z?") | pending | first machine closing since 11-22; 2 min later "will come by 10 clock" (hold till 22:00), left as the pocket |
