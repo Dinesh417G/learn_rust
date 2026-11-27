@@ -29,16 +29,16 @@
     "count": 1
   },
   "hold_open": null,
-  "below_par": 0,
+  "below_par": 1,
   "green_run": 0,
   "rain_days": [],
   "rain_left": 2,
   "bosses": [],
-  "follow_on_next": true,
-  "open_day": "2026-11-26",
+  "follow_on_next": false,
+  "open_day": "2026-11-27",
   "open_start": 132,
-  "open_par": 76.25,
-  "open_follow_on": false,
+  "open_par": 118.06451612903226,
+  "open_follow_on": true,
   "overs": [
     {
       "date": "2026-11-17",
@@ -99,6 +99,13 @@
     {
       "date": "2026-11-25",
       "par": 73.9,
+      "runs": 0,
+      "colour": "red",
+      "follow_on": false
+    },
+    {
+      "date": "2026-11-26",
+      "par": 76.2,
       "runs": 0,
       "colour": "red",
       "follow_on": false
